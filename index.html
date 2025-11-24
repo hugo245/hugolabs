@@ -172,7 +172,7 @@
     .status-dot {
       width: 6px;
       height: 6px;
-      background: #10b981;
+      background: #ff4d01;
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
@@ -203,12 +203,143 @@
       font-weight: 400;
     }
 
+
+
     .cta-group {
       display: flex;
       gap: 16px;
       align-items: center;
       flex-wrap: wrap;
     }
+
+    .promo-section {
+      max-width: 1280px;
+      margin: -40px auto 60px;
+      padding: 0 40px;
+    }
+
+    .promo-card {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+      border: 2px solid rgba(0, 102, 255, 0.2);
+      border-radius: 20px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: all 0.3 s ease;
+      box-shadow: var(--shadow-md);
+
+      padding: 30px 40px 10px;
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary);
+    }
+
+    .promo-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .promo-content p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .promo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .promo-link::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .promo-link:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+    }
+
+    .promo-link:hover::before {
+      opacity: 1;
+      inset: -8px;
+    }
+
+    .promo-link svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      border: 2px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: transparent;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      border: 2px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+
 
     .btn-primary {
       display: inline-flex;
@@ -954,6 +1085,8 @@
 
 
 
+
+
   </style>
 </head>
 <body>
@@ -984,11 +1117,22 @@
     </div>
   </nav>
 
+  
+
+  
+
   <section class="hero" id="home">
+
+       
+</div>
+    
     <div class="hero-badge">
+      
       <span class="status-dot"></span>
-      Available for new projects
+      Delayed Response
     </div>
+
+    
     <h1>Building <span class="gradient-text">digital experiences</span> for games and communities</h1>
     <p>I create custom Roblox systems, Discord bots, and web tools that feel polished and professional. Let's build something great together.</p>
     <div class="cta-group">
@@ -1001,6 +1145,21 @@
       <a href="#contact" class="btn-secondary">Get in touch</a>
     </div>
   </section>
+
+   <div class="promo-section">
+  <div class="promo-card">
+    <div class="promo-content">
+      <h2>Looking for CreatorLink?</h2>
+      <p>Check out my newest service called CreatorLink</p>
+    </div>
+    <a href="https://creators.hugolabs.eu" class="promo-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+
+
 
 <section id="services">
   <div class="section-header">
