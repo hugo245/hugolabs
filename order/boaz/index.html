@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Status — Boaz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --white: #ffffff;
+            --off: #f7f6f3;
+            --surface: #f0efe9;
+            --border: #e2e0d8;
+            --border-strong: #c8c5bb;
+            --text-primary: #1a1917;
+            --text-secondary: #706d64;
+            --text-muted: #a09d95;
+            --green: #16a34a;
+            --green-light: #dcfce7;
+            --green-mid: #4ade80;
+            --green-dark: #14532d;
+            --amber: #d97706;
+            --amber-light: #fef3c7;
+            --blue: #2563eb;
+            --blue-light: #dbeafe;
+            --radius: 14px;
+            --radius-sm: 8px;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--off);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topbar-logo {
+            width: 28px;
+            height: 28px;
+            background: var(--text-primary);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topbar-logo svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: white;
+            stroke-width: 1.8;
+        }
+
+        .topbar-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .topbar-right {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* MAIN LAYOUT */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* STATUS HERO */
+        .hero {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.4s ease both;
+        }
+
+        .hero-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--amber-light);
+            color: var(--amber);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .status-pill .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--amber);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* DEVICE ROW */
+        .device-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--off);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        .device-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .device-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: var(--text-secondary);
+            stroke-width: 1.6;
+        }
+
+        .device-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .device-model {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .device-type {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+
+        .device-repair {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .device-repair-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .device-repair-value {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-top: 1px;
+        }
+
+        /* PROGRESS BAR */
+        .progress-section {
+            margin-top: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .progress-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .progress-fraction {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .progress-track {
+            height: 4px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 33%;
+            background: linear-gradient(90deg, var(--green), var(--green-mid));
+            border-radius: 100px;
+            animation: fillBar 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+        }
+
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 33%;
+            }
+        }
+
+        /* STEPS CARD */
+        .steps-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            animation: fadeUp 0.4s ease 0.1s both;
+        }
+
+        .steps-card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .steps-card-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .steps-card-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* STEP ITEM */
+        .step-item {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+
+        .step-item:not(:last-child) {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step-left-col {
+            width: 64px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.25rem 0;
+            position: relative;
+        }
+
+        .step-node {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .step-node.done {
+            background: var(--green);
+            border: none;
+        }
+
+        .step-node.done svg {
+            stroke: white;
+        }
+
+        .step-node.active {
+            background: var(--white);
+            border: 2px solid var(--amber);
+            box-shadow: 0 0 0 4px var(--amber-light);
+        }
+
+        .step-node.active svg {
+            stroke: var(--amber);
+        }
+
+        .step-node.pending {
+            background: var(--white);
+            border: 1.5px solid var(--border-strong);
+        }
+
+        .step-node.pending svg {
+            stroke: var(--text-muted);
+        }
+
+        .step-node svg {
+            width: 15px;
+            height: 15px;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .step-connector {
+            width: 1.5px;
+            flex: 1;
+            min-height: 16px;
+            margin: 4px 0 0 0;
+        }
+
+        .step-connector.done {
+            background: var(--green);
+        }
+
+        .step-connector.pending {
+            background: var(--border);
+        }
+
+        .step-content {
+            flex: 1;
+            padding: 1.25rem 1.5rem 1.25rem 0;
+            min-width: 0;
+        }
+
+        .step-name {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 3px;
+        }
+
+        .step-name.done {
+            color: var(--text-primary);
+        }
+
+        .step-name.active {
+            color: var(--text-primary);
+        }
+
+        .step-name.pending {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 8px;
+        }
+
+        .step-desc.pending {
+            color: var(--text-muted);
+        }
+
+        .step-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .step-time {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        .badge-done {
+            background: var(--green-light);
+            color: var(--green-dark);
+        }
+
+        .badge-active {
+            background: var(--amber-light);
+            color: var(--amber);
+        }
+
+        .badge-pending {
+            background: var(--surface);
+            color: var(--text-muted);
+        }
+
+        .badge-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        /* FOOTER INFO */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            animation: fadeUp 0.4s ease 0.2s both;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+        }
+
+        .info-card-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: .75rem;
+        }
+
+        .info-card-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .info-card-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .page-footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 12px;
+            color: var(--text-muted);
+            animation: fadeUp 0.4s ease 0.25s both;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .hero {
+                padding: 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 22px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <div class="topbar-brand">
+            <div class="topbar-logo">
+                <svg viewBox="0 0 16 16">
+                    <rect x="4" y="1" width="8" height="14" rx="1.5" />
+                    <line x1="6" y1="13" x2="10" y2="13" />
+                </svg>
+            </div>
+            <span class="topbar-name">Phone Repair</span>
+        </div>
+        <div class="topbar-right">Order #PR-2024</div>
+    </header>
+
+    <main class="container">
+
+        <!-- HERO CARD -->
+        <div class="hero">
+            <div class="hero-eyebrow">Repair order &middot; Samsung Galaxy A22 5G</div>
+            <div class="hero-header">
+                <div class="hero-title">Hey Boaz, <br><span>here's your repair status.</span></div>
+                <div class="status-pill">
+                    <span class="dot"></span>
+                    Parts on the way
+                </div>
+            </div>
+
+            <div class="device-row">
+                <div class="device-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="5" y="2" width="14" height="20" rx="2" />
+                        <line x1="9" y1="18" x2="15" y2="18" />
+                        <line x1="9" y1="6" x2="15" y2="6" />
+                    </svg>
+                </div>
+                <div class="device-info">
+                    <div class="device-model">Samsung Galaxy A22 5G</div>
+                    <div class="device-type">Android &middot; 5G</div>
+                </div>
+                <div class="device-repair">
+                    <div class="device-repair-label">Service</div>
+                    <div class="device-repair-value">Display repair</div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-label">Overall progress</span>
+                    <span class="progress-fraction">2 / 6 steps done</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEPS -->
+        <div class="steps-card">
+            <div class="steps-card-header">
+                <span class="steps-card-title">Repair timeline</span>
+                <span class="steps-card-sub">Fri 15 May 2025</span>
+            </div>
+
+            <!-- Step 1: Payment -->
+            <div class="step-item">
+                <div class="step-left-col">
+                    <div class="step-node done">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <div class="step-connector done"></div>
+                </div>
+                <div class="step-content">
+                    <div class="step-name done">Payment received</div>
+                    <div class="step-desc">Boaz paid for the display repair. All confirmed — we're good to go.</div>
+                    <div class="step-footer">
+                        <span class="step-badge badge-done"><span class="badge-dot"></span> Completed</span>
+                        <span class="step-time">Today &middot; 13:48</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Parts ordered -->
+            <div class="step-item">
+                <div class="step-left-col">
+                    <div class="step-node done">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <div class="step-connector done"></div>
+                </div>
+                <div class="step-content">
+                    <div class="step-name done">Parts ordered</div>
+                    <div class="step-desc">The replacement display for the Galaxy A22 5G has been ordered from the
+                        supplier.</div>
+                    <div class="step-footer">
+                        <span class="step-badge badge-done"><span class="badge-dot"></span> Completed</span>
+                        <span class="step-time">Today &middot; 15:02</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Parts delivered -->
+            <div class="step-item">
+                <div class="step-left-col">
+                    <div class="step-node active">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="1" y="3" width="15" height="13" rx="1" />
+                            <polyline points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                            <circle cx="5.5" cy="18.5" r="2.5" />
+                            <circle cx="18.5" cy="18.5" r="2.5" />
+                        </svg>
+                    </div>
+                    <div class="step-connector pending"></div>
+                </div>
+                <div class="step-content">
+                    <div class="step-name active">Parts being delivered</div>
+                    <div class="step-desc">The parts are on their way. Once they arrive we can schedule the repair.
+                    </div>
+                    <div class="step-footer">
+                        <span class="step-badge badge-active"><span class="badge-dot"></span> In transit</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Drop off phone -->
+            <div class="step-item">
+                <div class="step-left-col">
+                    <div class="step-node pending">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="5" y="2" width="14" height="20" rx="2" />
+                            <line x1="12" y1="18" x2="12" y2="18" />
+                        </svg>
+                    </div>
+                    <div class="step-connector pending"></div>
+                </div>
+                <div class="step-content">
+                    <div class="step-name pending">Drop off your phone</div>
+                    <div class="step-desc pending">Once parts are in, Boaz brings his Galaxy A22 5G in for the repair.
+                    </div>
+                    <div class="step-footer">
+                        <span class="step-badge badge-pending"><span class="badge-dot"></span> Waiting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Repair -->
+            <div class="step-item">
+                <div class="step-left-col">
+                    <div class="step-node pending">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                    </div>
+                    <div class="step-connector pending"></div>
+                </div>
+                <div class="step-content">
+                    <div class="step-name pending">Repair in progress</div>
+                    <div class="step-desc pending">The display will be carefully replaced. Usually takes 1–2 hours.
+                    </div>
+                    <div class="step-footer">
+                        <span class="step-badge badge-pending"><span class="badge-dot"></span> Waiting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Ready -->
+            <div class="step-item">
+                <div class="step-left-col">
+                    <div class="step-node pending">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-name pending">Ready for pickup</div>
+                    <div class="step-desc pending">Phone is fully repaired, tested, and ready to be picked up. Good as
+                        new.</div>
+                    <div class="step-footer">
+                        <span class="step-badge badge-pending"><span class="badge-dot"></span> Waiting</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- INFO CARDS -->
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-label">Customer</div>
+                <div class="info-card-value">Boaz</div>
+                <div class="info-card-sub">Display repair</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card-label">Est. completion</div>
+                <div class="info-card-value">After parts arrive</div>
+                <div class="info-card-sub">1–2 hrs repair time</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            Questions? Just reach out. &nbsp;&middot;&nbsp; Last updated Fri 15 May 2025, 15:02
+        </div>
+
+    </main>
+
+</body>
+
+</html>
