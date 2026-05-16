@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repair Status — Boaz</title>
+    <title>HugoLabs — Repair Status Boaz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,7 +16,7 @@
         *::after {
             box-sizing: border-box;
             margin: 0;
-            padding: 0;
+            padding: 0
         }
 
         :root {
@@ -34,14 +34,12 @@
             --green-dark: #14532d;
             --amber: #d97706;
             --amber-light: #fef3c7;
-            --blue: #2563eb;
-            --blue-light: #dbeafe;
             --radius: 14px;
             --radius-sm: 8px;
         }
 
         html {
-            font-size: 16px;
+            font-size: 16px
         }
 
         body {
@@ -49,7 +47,7 @@
             background-color: var(--off);
             color: var(--text-primary);
             min-height: 100vh;
-            padding: 0;
+            padding: 0
         }
 
         /* TOP BAR */
@@ -63,13 +61,13 @@
             justify-content: space-between;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 10
         }
 
         .topbar-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 10px
         }
 
         .topbar-logo {
@@ -79,7 +77,7 @@
             border-radius: 7px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center
         }
 
         .topbar-logo svg {
@@ -87,37 +85,42 @@
             height: 16px;
             fill: none;
             stroke: white;
-            stroke-width: 1.8;
+            stroke-width: 1.8
         }
 
         .topbar-name {
             font-size: 14px;
             font-weight: 500;
             color: var(--text-primary);
-            letter-spacing: -0.01em;
+            letter-spacing: -0.01em
+        }
+
+        .topbar-name span {
+            color: var(--text-muted);
+            font-weight: 400
         }
 
         .topbar-right {
             font-family: 'DM Mono', monospace;
             font-size: 12px;
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
-        /* MAIN LAYOUT */
+        /* MAIN */
         .container {
             max-width: 680px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem 4rem;
+            padding: 2.5rem 1.5rem 4rem
         }
 
-        /* STATUS HERO */
+        /* HERO */
         .hero {
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 2rem;
             margin-bottom: 1.5rem;
-            animation: fadeUp 0.4s ease both;
+            animation: fadeUp .4s ease both
         }
 
         .hero-eyebrow {
@@ -126,7 +129,7 @@
             color: var(--text-muted);
             letter-spacing: .08em;
             text-transform: uppercase;
-            margin-bottom: 1rem;
+            margin-bottom: 1rem
         }
 
         .hero-header {
@@ -135,7 +138,7 @@
             justify-content: space-between;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.5rem
         }
 
         .hero-title {
@@ -143,12 +146,12 @@
             font-weight: 500;
             letter-spacing: -0.03em;
             color: var(--text-primary);
-            line-height: 1.2;
+            line-height: 1.2
         }
 
         .hero-title span {
             color: var(--text-muted);
-            font-weight: 300;
+            font-weight: 300
         }
 
         .status-pill {
@@ -162,7 +165,7 @@
             font-size: 13px;
             font-weight: 500;
             flex-shrink: 0;
-            margin-top: 4px;
+            margin-top: 4px
         }
 
         .status-pill .dot {
@@ -170,7 +173,7 @@
             height: 7px;
             border-radius: 50%;
             background: var(--amber);
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 2s ease-in-out infinite
         }
 
         /* DEVICE ROW */
@@ -181,7 +184,7 @@
             padding: 14px 16px;
             background: var(--off);
             border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border)
         }
 
         .device-icon {
@@ -193,7 +196,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .device-icon svg {
@@ -201,88 +204,88 @@
             height: 18px;
             fill: none;
             stroke: var(--text-secondary);
-            stroke-width: 1.6;
+            stroke-width: 1.6
         }
 
         .device-info {
             flex: 1;
-            min-width: 0;
+            min-width: 0
         }
 
         .device-model {
             font-size: 14px;
             font-weight: 500;
-            color: var(--text-primary);
+            color: var(--text-primary)
         }
 
         .device-type {
             font-size: 12px;
             color: var(--text-muted);
-            margin-top: 1px;
+            margin-top: 1px
         }
 
         .device-repair {
             text-align: right;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .device-repair-label {
             font-size: 11px;
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .device-repair-value {
             font-size: 13px;
             font-weight: 500;
             color: var(--text-primary);
-            margin-top: 1px;
+            margin-top: 1px
         }
 
-        /* PROGRESS BAR */
+        /* PROGRESS */
         .progress-section {
-            margin-top: 1.5rem;
+            margin-top: 1.5rem
         }
 
         .progress-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 8px
         }
 
         .progress-label {
             font-size: 12px;
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .progress-fraction {
             font-family: 'DM Mono', monospace;
             font-size: 12px;
-            color: var(--text-secondary);
+            color: var(--text-secondary)
         }
 
         .progress-track {
             height: 4px;
             background: var(--border);
             border-radius: 100px;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .progress-fill {
             height: 100%;
-            width: 33%;
+            width: 40%;
             background: linear-gradient(90deg, var(--green), var(--green-mid));
             border-radius: 100px;
-            animation: fillBar 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+            animation: fillBar 1s cubic-bezier(.4, 0, .2, 1) .3s both
         }
 
         @keyframes fillBar {
             from {
-                width: 0;
+                width: 0
             }
 
             to {
-                width: 33%;
+                width: 40%
             }
         }
 
@@ -292,7 +295,7 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
-            animation: fadeUp 0.4s ease 0.1s both;
+            animation: fadeUp .4s ease .1s both
         }
 
         .steps-card-header {
@@ -300,30 +303,29 @@
             border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-between
         }
 
         .steps-card-title {
             font-size: 13px;
             font-weight: 500;
             color: var(--text-primary);
-            letter-spacing: -0.01em;
+            letter-spacing: -0.01em
         }
 
         .steps-card-sub {
             font-size: 12px;
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
-        /* STEP ITEM */
+        /* STEP */
         .step-item {
             display: flex;
-            gap: 0;
-            position: relative;
+            position: relative
         }
 
         .step-item:not(:last-child) {
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
         }
 
         .step-left-col {
@@ -332,8 +334,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 1.25rem 0;
-            position: relative;
+            padding: 1.25rem 0
         }
 
         .step-node {
@@ -345,35 +346,34 @@
             justify-content: center;
             position: relative;
             z-index: 1;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .step-node.done {
-            background: var(--green);
-            border: none;
+            background: var(--green)
         }
 
         .step-node.done svg {
-            stroke: white;
+            stroke: white
         }
 
         .step-node.active {
             background: var(--white);
             border: 2px solid var(--amber);
-            box-shadow: 0 0 0 4px var(--amber-light);
+            box-shadow: 0 0 0 4px var(--amber-light)
         }
 
         .step-node.active svg {
-            stroke: var(--amber);
+            stroke: var(--amber)
         }
 
         .step-node.pending {
             background: var(--white);
-            border: 1.5px solid var(--border-strong);
+            border: 1.5px solid var(--border-strong)
         }
 
         .step-node.pending svg {
-            stroke: var(--text-muted);
+            stroke: var(--text-muted)
         }
 
         .step-node svg {
@@ -382,72 +382,72 @@
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
-            stroke-linejoin: round;
+            stroke-linejoin: round
         }
 
         .step-connector {
             width: 1.5px;
             flex: 1;
             min-height: 16px;
-            margin: 4px 0 0 0;
+            margin: 4px 0 0 0
         }
 
         .step-connector.done {
-            background: var(--green);
+            background: var(--green)
         }
 
         .step-connector.pending {
-            background: var(--border);
+            background: var(--border)
         }
 
         .step-content {
             flex: 1;
             padding: 1.25rem 1.5rem 1.25rem 0;
-            min-width: 0;
+            min-width: 0
         }
 
         .step-name {
             font-size: 15px;
             font-weight: 500;
             letter-spacing: -0.01em;
-            margin-bottom: 3px;
+            margin-bottom: 3px
         }
 
         .step-name.done {
-            color: var(--text-primary);
+            color: var(--text-primary)
         }
 
         .step-name.active {
-            color: var(--text-primary);
+            color: var(--text-primary)
         }
 
         .step-name.pending {
             color: var(--text-muted);
-            font-weight: 400;
+            font-weight: 400
         }
 
         .step-desc {
             font-size: 13px;
             color: var(--text-secondary);
             line-height: 1.55;
-            margin-bottom: 8px;
+            margin-bottom: 8px
         }
 
         .step-desc.pending {
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .step-footer {
             display: flex;
             align-items: center;
             gap: 8px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .step-time {
             font-family: 'DM Mono', monospace;
             font-size: 11px;
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .step-badge {
@@ -457,45 +457,145 @@
             font-size: 11px;
             font-weight: 500;
             padding: 3px 10px;
-            border-radius: 100px;
+            border-radius: 100px
         }
 
         .badge-done {
             background: var(--green-light);
-            color: var(--green-dark);
+            color: var(--green-dark)
         }
 
         .badge-active {
             background: var(--amber-light);
-            color: var(--amber);
+            color: var(--amber)
         }
 
         .badge-pending {
             background: var(--surface);
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .badge-dot {
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: currentColor;
+            background: currentColor
         }
 
-        /* FOOTER INFO */
+        /* ─── DELIVERY ITEMS ─── */
+        .delivery-items {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-top: 10px;
+            margin-bottom: 4px
+        }
+
+        .delivery-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--off);
+        }
+
+        .di-icon {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .di-icon.green {
+            background: var(--green-light)
+        }
+
+        .di-icon.green svg {
+            stroke: var(--green)
+        }
+
+        .di-icon.amber {
+            background: var(--amber-light)
+        }
+
+        .di-icon.amber svg {
+            stroke: var(--amber)
+        }
+
+        .di-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .di-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .di-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary)
+        }
+
+        .di-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 1px
+        }
+
+        .di-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 9px;
+            border-radius: 100px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .di-badge.done {
+            background: var(--green-light);
+            color: var(--green-dark)
+        }
+
+        .di-badge.transit {
+            background: var(--amber-light);
+            color: var(--amber)
+        }
+
+        .di-badge .badge-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: currentColor
+        }
+
+        /* INFO GRID */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
             margin-top: 1.5rem;
-            animation: fadeUp 0.4s ease 0.2s both;
+            animation: fadeUp .4s ease .2s both
         }
 
         .info-card {
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.25rem;
+            padding: 1.25rem
         }
 
         .info-card-label {
@@ -504,20 +604,20 @@
             color: var(--text-muted);
             letter-spacing: .06em;
             text-transform: uppercase;
-            margin-bottom: .75rem;
+            margin-bottom: .75rem
         }
 
         .info-card-value {
             font-size: 14px;
             font-weight: 500;
             color: var(--text-primary);
-            line-height: 1.4;
+            line-height: 1.4
         }
 
         .info-card-sub {
             font-size: 12px;
             color: var(--text-muted);
-            margin-top: 2px;
+            margin-top: 2px
         }
 
         .page-footer {
@@ -525,19 +625,20 @@
             margin-top: 2.5rem;
             font-size: 12px;
             color: var(--text-muted);
-            animation: fadeUp 0.4s ease 0.25s both;
+            animation: fadeUp .4s ease .25s both;
+            line-height: 1.8
         }
 
         /* ANIMATIONS */
         @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(12px);
+                transform: translateY(12px)
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0)
             }
         }
 
@@ -546,35 +647,40 @@
             0%,
             100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1)
             }
 
             50% {
-                opacity: 0.5;
-                transform: scale(0.8);
+                opacity: .5;
+                transform: scale(.8)
             }
         }
 
         /* RESPONSIVE */
-        @media (max-width: 480px) {
+        @media(max-width:480px) {
             .container {
-                padding: 1.5rem 1rem 3rem;
+                padding: 1.5rem 1rem 3rem
             }
 
             .hero {
-                padding: 1.5rem;
+                padding: 1.5rem
             }
 
             .hero-title {
-                font-size: 22px;
+                font-size: 22px
             }
 
             .info-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .topbar {
-                padding: 0 1rem;
+                padding: 0 1rem
+            }
+
+            .delivery-item {
+                flex-wrap: wrap;
+                gap: 6px
             }
         }
     </style>
@@ -591,21 +697,21 @@
                     <line x1="6" y1="13" x2="10" y2="13" />
                 </svg>
             </div>
-            <span class="topbar-name">Phone Repair</span>
+            <span class="topbar-name">Hugo<span>Labs</span></span>
         </div>
-        <div class="topbar-right">Order #PR-2024</div>
+        <div class="topbar-right">Order #HL-2024</div>
     </header>
 
     <main class="container">
 
-        <!-- HERO CARD -->
+        <!-- HERO -->
         <div class="hero">
             <div class="hero-eyebrow">Repair order &middot; Samsung Galaxy A22 5G</div>
             <div class="hero-header">
                 <div class="hero-title">Hey Boaz, <br><span>here's your repair status.</span></div>
                 <div class="status-pill">
                     <span class="dot"></span>
-                    Parts on the way
+                    Display on the way
                 </div>
             </div>
 
@@ -642,10 +748,10 @@
         <div class="steps-card">
             <div class="steps-card-header">
                 <span class="steps-card-title">Repair timeline</span>
-                <span class="steps-card-sub">Fri 15 May 2025</span>
+                <span class="steps-card-sub">Fri 15 May — Sat 16 May 2025</span>
             </div>
 
-            <!-- Step 1: Payment -->
+            <!-- 1. Payment -->
             <div class="step-item">
                 <div class="step-left-col">
                     <div class="step-node done">
@@ -660,12 +766,12 @@
                     <div class="step-desc">Boaz paid for the display repair. All confirmed — we're good to go.</div>
                     <div class="step-footer">
                         <span class="step-badge badge-done"><span class="badge-dot"></span> Completed</span>
-                        <span class="step-time">Today &middot; 13:48</span>
+                        <span class="step-time">Fri 15 May &middot; 13:48</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 2: Parts ordered -->
+            <!-- 2. Parts ordered -->
             <div class="step-item">
                 <div class="step-left-col">
                     <div class="step-node done">
@@ -677,16 +783,16 @@
                 </div>
                 <div class="step-content">
                     <div class="step-name done">Parts ordered</div>
-                    <div class="step-desc">The replacement display for the Galaxy A22 5G has been ordered from the
-                        supplier.</div>
+                    <div class="step-desc">Replacement display and screen protector for the Galaxy A22 5G ordered from
+                        the supplier.</div>
                     <div class="step-footer">
                         <span class="step-badge badge-done"><span class="badge-dot"></span> Completed</span>
-                        <span class="step-time">Today &middot; 15:02</span>
+                        <span class="step-time">Fri 15 May &middot; 15:02</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 3: Parts delivered -->
+            <!-- 3. Delivery (ACTIVE — split) -->
             <div class="step-item">
                 <div class="step-left-col">
                     <div class="step-node active">
@@ -701,15 +807,47 @@
                 </div>
                 <div class="step-content">
                     <div class="step-name active">Parts being delivered</div>
-                    <div class="step-desc">The parts are on their way. Once they arrive we can schedule the repair.
-                    </div>
-                    <div class="step-footer">
-                        <span class="step-badge badge-active"><span class="badge-dot"></span> In transit</span>
+                    <div class="step-desc">2 items ordered — screen protector is in, still waiting on the replacement
+                        display.</div>
+
+                    <div class="delivery-items">
+
+                        <!-- Screen protector: delivered -->
+                        <div class="delivery-item">
+                            <div class="di-icon green">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </div>
+                            <div class="di-info">
+                                <div class="di-name">Screen protector</div>
+                                <div class="di-sub">Sat 16 May &middot; 12:18</div>
+                            </div>
+                            <span class="di-badge done"><span class="badge-dot"></span> Delivered</span>
+                        </div>
+
+                        <!-- Display: in transit -->
+                        <div class="delivery-item">
+                            <div class="di-icon amber">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="1" y="3" width="15" height="13" rx="1" />
+                                    <polyline points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                    <circle cx="5.5" cy="18.5" r="2.5" />
+                                    <circle cx="18.5" cy="18.5" r="2.5" />
+                                </svg>
+                            </div>
+                            <div class="di-info">
+                                <div class="di-name">Replacement display</div>
+                                <div class="di-sub">Estimated today</div>
+                            </div>
+                            <span class="di-badge transit"><span class="badge-dot"></span> In transit</span>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <!-- Step 4: Drop off phone -->
+            <!-- 4. Drop off -->
             <div class="step-item">
                 <div class="step-left-col">
                     <div class="step-node pending">
@@ -722,15 +860,15 @@
                 </div>
                 <div class="step-content">
                     <div class="step-name pending">Drop off your phone</div>
-                    <div class="step-desc pending">Once parts are in, Boaz brings his Galaxy A22 5G in for the repair.
-                    </div>
+                    <div class="step-desc pending">Once all parts are in, Boaz brings his Galaxy A22 5G in for the
+                        repair.</div>
                     <div class="step-footer">
                         <span class="step-badge badge-pending"><span class="badge-dot"></span> Waiting</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 5: Repair -->
+            <!-- 5. Repair -->
             <div class="step-item">
                 <div class="step-left-col">
                     <div class="step-node pending">
@@ -743,15 +881,15 @@
                 </div>
                 <div class="step-content">
                     <div class="step-name pending">Repair in progress</div>
-                    <div class="step-desc pending">The display will be carefully replaced. Usually takes 1–2 hours.
-                    </div>
+                    <div class="step-desc pending">Display carefully replaced and screen protector applied. Usually
+                        takes 1–2 hours.</div>
                     <div class="step-footer">
                         <span class="step-badge badge-pending"><span class="badge-dot"></span> Waiting</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 6: Ready -->
+            <!-- 6. Ready -->
             <div class="step-item">
                 <div class="step-left-col">
                     <div class="step-node pending">
@@ -778,21 +916,20 @@
             <div class="info-card">
                 <div class="info-card-label">Customer</div>
                 <div class="info-card-value">Boaz</div>
-                <div class="info-card-sub">Display repair</div>
+                <div class="info-card-sub">Display repair + screen protector</div>
             </div>
             <div class="info-card">
                 <div class="info-card-label">Est. completion</div>
-                <div class="info-card-value">After parts arrive</div>
+                <div class="info-card-value">After display arrives</div>
                 <div class="info-card-sub">1–2 hrs repair time</div>
             </div>
         </div>
 
         <div class="page-footer">
-            Questions? Just reach out. &nbsp;&middot;&nbsp; Last updated Fri 15 May 2025, 15:02
+            Questions? Just reach out. &nbsp;&middot;&nbsp; Last updated Sat 16 May 2025, 12:18
         </div>
 
     </main>
-
 </body>
 
 </html>
