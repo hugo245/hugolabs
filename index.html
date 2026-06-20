@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -220,136 +219,6 @@
       align-items: center;
       flex-wrap: wrap;
     }
-
-    .promo-section {
-      max-width: 1280px;
-      margin: -40px auto 60px;
-      padding: 0 40px;
-    }
-
-    .promo-card {
-      background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
-      border: 2px solid rgba(0, 102, 255, 0.2);
-      border-radius: 20px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      transition: all 0.3 s ease;
-      box-shadow: var(--shadow-md);
-
-      padding: 30px 40px 10px;
-      max-width: 1280px;
-      margin: 0 auto;
-      margin-top: 20px;
-      min-height: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .promo-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--primary);
-    }
-
-    .promo-content h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .promo-content p {
-      font-size: 1.125rem;
-      color: var(--text-secondary);
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .promo-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-      position: relative;
-    }
-
-    .promo-link::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border: 2px solid var(--primary);
-      border-radius: 50%;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-
-    .promo-link:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
-    }
-
-    .promo-link:hover::before {
-      opacity: 1;
-      inset: -8px;
-    }
-
-    .promo-link svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 16px 32px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      border: 2px solid var(--primary);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 16px 32px;
-      background: transparent;
-      color: var(--text-primary);
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      border: 2px solid var(--border);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--text-primary);
-      transform: translateY(-2px);
-    }
-
-
 
     .btn-primary {
       display: inline-flex;
@@ -650,6 +519,11 @@
       font-weight: 500;
     }
 
+    .stats-compact {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 240px));
+      justify-content: center;
+    }
+
     .project-card {
       padding: 40px;
       background: var(--bg-primary);
@@ -703,6 +577,127 @@
       font-size: 0.8125rem;
       color: var(--text-tertiary);
       font-weight: 500;
+    }
+
+    /* --- Featured project case-study card --- */
+    .featured-project {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .featured-project:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(0, 102, 255, 0.2);
+    }
+
+    .featured-project-media {
+      position: relative;
+      min-height: 340px;
+      background: #0a0a0a;
+    }
+
+    .featured-project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-project-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(15, 15, 15, 0.7);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .featured-project-content {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-project-eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .featured-project-content h3 {
+      font-size: 1.875rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+    }
+
+    .featured-project-content>p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .featured-project-stats {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fp-stat-number {
+      display: block;
+      font-size: 1.625rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .fp-stat-label {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+
+    .featured-project-content .tags {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1024px) {
+      .featured-project {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-project-media {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .featured-project-content {
+        padding: 32px;
+      }
     }
 
     .testimonial-card {
@@ -813,6 +808,10 @@
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
       border-color: var(--primary);
+    }
+
+    .contact-card[role="button"] {
+      cursor: pointer;
     }
 
     .contact-icon {
@@ -1074,50 +1073,6 @@
         transition-duration: 0.01ms !important;
       }
     }
-
-    /* Fullscreen overlay */
-    /* Fullscreen countdown wrapper */
-    #countdownWrapper {
-      position: fixed;
-      inset: 0;
-      background: #0f0f0f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      font-size: 6rem;
-      font-weight: 800;
-      overflow: hidden;
-      transition: transform 1s ease, opacity 1s ease;
-    }
-
-    /* Timer explode/glow animation */
-    .explode {
-      animation: explodeAnim 1s forwards;
-    }
-
-    @keyframes explodeAnim {
-      0% {
-        color: #ffffff;
-        text-shadow: none;
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        color: #ffcc00;
-        text-shadow: 0 0 20px #ffcc00, 0 0 40px #ff9900, 0 0 60px #ff6600;
-        transform: scale(1.5);
-        opacity: 1;
-      }
-
-      100% {
-        transform: scale(2) translateY(-200%);
-        opacity: 0;
-      }
-    }
   </style>
 </head>
 
@@ -1154,10 +1109,6 @@
 
 
   <section class="hero" id="home">
-
-
-    </div>
-
     <div class="hero-badge">
 
       <span class="status-dot"></span>
@@ -1326,18 +1277,10 @@
       </div>
     </div>
 
-    <div class="stats">
+    <div class="stats stats-compact">
       <div class="stat">
-        <span class="stat-number" data-target="172">0</span>
-        <span class="stat-label">Projects Completed</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="217">0</span>
-        <span class="stat-label">Happy Clients</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="8430371">0</span>
-        <span class="stat-label">Lines of Code</span>
+        <span class="stat-number" data-target="999" data-suffix="K+">0</span>
+        <span class="stat-label">Visits Contributed</span>
       </div>
       <div class="stat">
         <span class="stat-number">24/7</span>
@@ -1349,76 +1292,65 @@
   <section id="work">
     <div class="section-header">
       <span class="section-badge">Portfolio</span>
-      <h2>Featured projects</h2>
-      <p class="section-description">A selection of recent work showcasing different types of solutions I've built for
-        clients.</p>
+      <h2>Selected work</h2>
+      <p class="section-description">Real work I've shipped, not stock placeholders. More case studies are on the way
+        — get in touch if you want to see code samples in the meantime.</p>
+    </div>
+
+    <div class="featured-project">
+      <div class="featured-project-media">
+        <img src="https://tr.rbxcdn.com/180DAY-515fd57159c1eeeb025149c8786f3891/500/280/Image/Jpeg/noFilter"
+          alt="Hex Incremental cover art">
+        <span class="featured-project-badge">🎮 Live on Roblox</span>
+      </div>
+      <div class="featured-project-content">
+        <span class="featured-project-eyebrow">Backend Development</span>
+        <h3>Hex Incremental</h3>
+        <p>An incremental/clicker game on Roblox by Concept Gaming. I built the entire backend: the currency and
+          upgrade economy, save data and persistence, progression systems, and the leaderboards that keep players
+          coming back for more.</p>
+        <div class="featured-project-stats">
+          <div>
+            <span class="fp-stat-number">850K+</span>
+            <span class="fp-stat-label">Visits</span>
+          </div>
+          <div>
+            <span class="fp-stat-number">98%</span>
+            <span class="fp-stat-label">Backend built by me</span>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Lua</span>
+          <span class="tag">Roblox Studio</span>
+          <span class="tag">DataStores</span>
+          <span class="tag">Game Economy</span>
+        </div>
+        <div class="cta-group">
+          <a href="https://www.roblox.com/games/72379741980124/Hex-Incremental" target="_blank" rel="noopener"
+            class="btn-primary">
+            Play on Roblox
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="grid grid-2">
-
-      <div class="project-card">
-        <div class="project-icon">🤖</div>
-        <h3>Discord Moderation Bot</h3>
-        <p>Advanced moderation system with slash commands, auto-mod, warning systems, and detailed logging. Scales to
-          handle large communities.</p>
-        <div class="tags">
-          <span class="tag">Discord.js</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">MongoDB</span>
-          <span class="tag">REST API</span>
-        </div>
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>More projects coming soon</h3>
+        <p>I'm steadily writing up more case studies as I finish them. In the meantime, reach out and I'm happy to
+          talk through past work directly.</p>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">🎮</div>
-        <h3>Web Clicker Game</h3>
-        <p>Addictive incremental game with upgrades, achievements, prestige mechanics, and leaderboards. Built for
-          maximum performance.</p>
-        <div class="tags">
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">Animation</span>
-          <span class="tag">Game Logic</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🎨</div>
-        <h3>Roblox UI Framework</h3>
-        <p>Professional component library with smooth animations, responsive layouts, and easy customization. Used by
-          multiple developers.</p>
-        <div class="tags">
-          <span class="tag">UI Design</span>
-          <span class="tag">Animations</span>
-          <span class="tag">Roblox</span>
-          <span class="tag">Components</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🏆</div>
-        <h3>Tournament Management System</h3>
-        <p>Complete tournament solution with bracket generation, stat tracking, live leaderboards, and match scheduling
-          for competitive events.</p>
-        <div class="tags">
-          <span class="tag">Data Systems</span>
-          <span class="tag">APIs</span>
-          <span class="tag">Lua</span>
-          <span class="tag">Real-time</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">💬</div>
-        <h3>Smart Chat Filter</h3>
-        <p>Intelligent content moderation with automatic filtering, spam detection, raid protection, and detailed
-          logging for safe communities.</p>
-        <div class="tags">
-          <span class="tag">Moderation</span>
-          <span class="tag">Discord.js</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Automation</span>
-        </div>
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Want to see code?</h3>
+        <p>Ask and I'll walk you through real scripts I made or share snippets relevant to your
+          project, so you know what you're getting before you commit.</p>
       </div>
     </div>
   </section>
@@ -1467,21 +1399,10 @@
         <p>support@hugolabs.eu</p>
       </a>
 
-      <a href="https://discord.com" class="contact-card" target="_blank" rel="noopener">
+      <div class="contact-card" id="discordCard" role="button" tabindex="0" aria-label="Copy Discord username hugodev.">
         <span class="contact-icon">💬</span>
         <h3>Discord</h3>
-        <p>hugodev.</p>
-      </a>
-
-      <!-- Disabled Twitter Card -->
-      <div class="contact-card unavailable">
-        <div class="card-overlay">
-          <span class="cross">✖</span>
-          <p>Temporarily Unavailable</p>
-        </div>
-        <span class="contact-icon">🐦</span>
-        <h3>Twitter</h3>
-        <p>@noaccountcurrentlylol</p>
+        <p id="discordHandle">hugodev.</p>
       </div>
     </div>
   </section>
@@ -1520,20 +1441,13 @@
           <h4>Connect</h4>
           <div class="footer-links">
             <a href="mailto:support@hugolabs.eu">Email</a>
-            <a href="https://discord.com">Discord</a>
-            <a href="https://twitter.com">Twitter</a>
-            <a href="https://github.com">GitHub</a>
+            <a href="#contact">Discord</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 HugoLabs. All rights reserved.</p>
-        <div class="social-links">
-          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
-          <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
-        </div>
+        <p>© 2026 HugoLabs. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1632,17 +1546,42 @@
     }
 
     function animateCounter(element, target) {
+      const suffix = element.getAttribute('data-suffix') || '';
       let current = 0;
       const increment = target / 60;
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-          element.textContent = target;
+          element.textContent = target + suffix;
           clearInterval(timer);
         } else {
-          element.textContent = Math.floor(current);
+          element.textContent = Math.floor(current) + suffix;
         }
       }, 30);
+    }
+
+    // Discord card: click to copy username
+    const discordCard = document.getElementById('discordCard');
+    const discordHandle = document.getElementById('discordHandle');
+
+    if (discordCard && discordHandle) {
+      const copyDiscord = () => {
+        const handle = 'hugodev.';
+        navigator.clipboard.writeText(handle).then(() => {
+          discordHandle.textContent = 'Copied!';
+          setTimeout(() => {
+            discordHandle.textContent = handle;
+          }, 1500);
+        }).catch(() => { });
+      };
+
+      discordCard.addEventListener('click', copyDiscord);
+      discordCard.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          copyDiscord();
+        }
+      });
     }
 
     // Card hover effects
@@ -1672,47 +1611,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.body.style.opacity = '1';
     });
-
-    function startCountdown() {
-      const timerEl = document.getElementById('countdownTimer');
-      const wrapper = document.getElementById('countdownWrapper');
-
-      // Example: global release at 23:00 UTC
-      const targetUTC = new Date();
-      targetUTC.setUTCHours(21, 0, 0, 0);
-
-      function updateTimer() {
-        const now = new Date();
-        const diff = targetUTC - now; // difference in milliseconds
-
-        if (diff <= 0) {
-          // Timer reached 0 → explode animation
-          timerEl.textContent = "00:00:00";
-          timerEl.classList.add('explode');
-
-          setTimeout(() => {
-            wrapper.style.display = 'none';
-          }, 1000);
-
-          clearInterval(interval);
-          return;
-        }
-
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        timerEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-      }
-
-      updateTimer(); // initial call
-      const interval = setInterval(updateTimer, 1000);
-    }
-
-    startCountdown();
-
-
-
   </script>
 
 </body>
