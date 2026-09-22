@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Pricing, HugoLabs</title>
-    <meta name="description"
-        content="Figure out the exact price of your website, web app, Discord bot or Roblox system.">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Work out the exact price of your HugoLabs project.">
     <meta name="theme-color" content="#000000">
     <link rel="icon"
         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA9CAMAAAAqC5/zAAAAflBMVEX9+/wjn/79/f39/v0odP4A/f8imvwdbv3+/v7/AAAms/+h4v4hw/8bt/0AB///f3///wAmwf4Af38Zwf9/f3+0tLQAAH8Av78A/wCq/6r/AP//v7///3///78AAAD+/f4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBwtFOAAAAIHRSTlML+Neb9gIqGlcBuvjqTAICAboCSgIDAgQBAwEEAgQA/FaMLxoAAAF4SURBVHja7dfpcoIwFAXgSxYhLRXQ2r3X939LY2kwq8kljv3TMzrGAb45YEAAzAYU6CzfzmOwlhYAcyJfCgCl3wMsW5kRqBUNnODdga4zm84jegMj/H46wNLrE2IcfP8s5LzT4f72fgOVbsEZ1y97ezUD2r4EPNFazI463C9wXuNoJQLYi+cG/hrMWiEDxBswaoMCQCWA6K9AaMCi84AGQDUABcBYC+ANgcEDkAgoiAK4fhfC098HwhCB8ESmAV1QoKMB18MiVywqAP/AnwPPtcChFviqnUgjSueCFQI8zKOV/DF4DypumyV9L/Gt8HpwWM7GjQtss9eDwfmfl+gAr9mD6M8UB2gaGd5NpAEVAbCogUo3iNxH0nbBVFM3Ogb3AVoHgFbKnZSyla0eyR0VwNoGD3amadJTkwa46fv+qQrQ2dcCJQ2EENVAmtiXAoLUwJrsWwOIlbtwAUTdMUgRWeClABgSz3NzxtZkEw2CwqtPTR8q80x3Ah9cSpxnsVG9AAAAAElFTkSuQmCC"
@@ -22,23 +21,20 @@
             --bg: #000;
             --bg-2: #0b0c0f;
             --card: #111216;
-            --line: rgba(255, 255, 255, 0.11);
+            --card-2: #17181d;
+            --line: rgba(255, 255, 255, 0.1);
             --line-2: rgba(255, 255, 255, 0.2);
             --fg: #f5f5f7;
             --mid: #a1a1a6;
             --dim: #6e6e73;
-            --paper: #f5f5f7;
-            --paper-ink: #1d1d1f;
-            --paper-mid: #6e6e73;
-            --paper-line: rgba(0, 0, 0, 0.12);
             --blue: #0a84ff;
             --blue-hi: #409cff;
-            --green: #1f9d55;
-            --red: #d93025;
+            --blue-bg: rgba(10, 132, 255, 0.12);
+            --green: #30d158;
             --font: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             --wrap: min(1200px, 100% - 48px);
             --ease: cubic-bezier(0.32, 0.72, 0, 1);
-            --nav-h: 68px;
+            --nav-h: 64px;
         }
 
         *,
@@ -49,7 +45,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--nav-h) + 20px);
+            scroll-padding-top: calc(var(--nav-h) + 70px);
             -webkit-text-size-adjust: 100%;
         }
 
@@ -58,7 +54,7 @@
             background: var(--bg);
             color: var(--fg);
             font-family: var(--font);
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.55;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
@@ -72,7 +68,7 @@
             margin: 0;
             font-weight: 600;
             letter-spacing: -0.025em;
-            line-height: 1.08;
+            line-height: 1.1;
         }
 
         p {
@@ -81,11 +77,6 @@
 
         a {
             color: inherit;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
         }
 
         button,
@@ -100,7 +91,7 @@
 
         :focus-visible {
             outline: 2px solid var(--blue-hi);
-            outline-offset: 3px;
+            outline-offset: 2px;
             border-radius: 6px;
         }
 
@@ -109,14 +100,18 @@
             margin-inline: auto;
         }
 
-        /* Buttons */
+        .num {
+            font-variant-numeric: tabular-nums;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             border: 1px solid transparent;
             border-radius: 980px;
-            padding: 12px 22px;
+            padding: 11px 20px;
             font-size: 0.9375rem;
             font-weight: 500;
             text-decoration: none;
@@ -163,15 +158,18 @@
         }
 
         .btn-line {
-            border-color: rgba(255, 255, 255, 0.24);
-            color: #fff;
+            border-color: var(--line-2);
         }
 
         .btn-line:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.07);
         }
 
-        /* Navigation */
+        .btn-sm {
+            padding: 8px 14px;
+            font-size: 0.8125rem;
+        }
+
         .nav {
             position: fixed;
             inset: 0 0 auto 0;
@@ -190,7 +188,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 16px;
         }
 
         .brand {
@@ -198,13 +196,12 @@
             align-items: center;
             gap: 9px;
             text-decoration: none;
-            font-size: 1.0625rem;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
         .brand img {
-            width: 22px;
+            width: 21px;
         }
 
         .brand i {
@@ -212,91 +209,73 @@
             color: var(--blue);
         }
 
-        .nav-right {
+        .nav-links {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 22px;
+            font-size: 0.875rem;
         }
 
-        .nav-right>a:not(.btn) {
-            font-size: 0.875rem;
+        .nav-links a:not(.btn) {
             color: var(--mid);
             text-decoration: none;
             transition: color 0.3s var(--ease);
         }
 
-        .nav-right>a:not(.btn):hover {
+        .nav-links a:not(.btn):hover {
             color: var(--fg);
         }
 
-        .nav-right .btn {
-            font-size: 0.875rem;
-            padding: 9px 18px;
-        }
-
-        /* Header */
         .head {
-            padding-top: clamp(128px, 15vw, 172px);
-            padding-bottom: clamp(48px, 6vw, 72px);
+            padding-top: calc(var(--nav-h) + clamp(48px, 7vw, 88px));
+            padding-bottom: clamp(28px, 4vw, 44px);
         }
 
         .kicker {
             font-size: 0.875rem;
             color: var(--dim);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .head h1 {
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            font-size: clamp(2.4rem, 6vw, 4rem);
             letter-spacing: -0.042em;
             line-height: 1.03;
         }
 
-        .head h1 .ln {
-            display: block;
-            overflow: hidden;
-            padding-bottom: 0.08em;
-            margin-bottom: -0.08em;
-        }
-
-        .head h1 .ln>span {
-            display: block;
-            transform: translateY(105%);
-            animation: rise 1.15s var(--ease) forwards;
-            animation-delay: var(--d, 0ms);
-        }
-
-        @keyframes rise {
-            to {
-                transform: none;
-            }
-        }
-
-        .head-sub {
+        .head p.sub {
             color: var(--mid);
-            font-size: clamp(1.0625rem, 1.8vw, 1.1875rem);
-            max-width: 56ch;
-            margin-top: 24px;
+            font-size: 1.0625rem;
+            max-width: 60ch;
+            margin-top: 18px;
         }
 
-        .head-facts {
+        .promise {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 30px;
+            gap: 8px 20px;
+            margin-top: 22px;
+            font-size: 0.8125rem;
+            color: var(--dim);
         }
 
-        .head-facts span {
-            font-size: 0.8125rem;
-            color: var(--mid);
-            border: 1px solid var(--line);
-            border-radius: 980px;
-            padding: 6px 13px;
+        .promise span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .promise span::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--blue);
         }
 
         .fade {
             opacity: 0;
-            animation: fadeUp 1s var(--ease) forwards;
+            animation: fadeUp 0.9s var(--ease) forwards;
             animation-delay: var(--d, 0ms);
         }
 
@@ -312,133 +291,196 @@
             }
         }
 
-        /* Calculator area */
-        .calc {
-            background: var(--paper);
-            color: var(--paper-ink);
-            padding-block: clamp(36px, 5vw, 64px) clamp(70px, 8vw, 110px);
+        .stepnav {
+            position: sticky;
+            top: var(--nav-h);
+            z-index: 40;
+            background: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line);
         }
 
-        .calc-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 380px;
-            gap: 22px;
-            align-items: start;
-        }
-
-        .left {
-            display: grid;
-            gap: 16px;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 26px;
-        }
-
-        .card-h {
+        .stepnav ol {
+            width: var(--wrap);
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .card-h h2 {
-            font-size: 1.125rem;
-            letter-spacing: -0.015em;
-        }
-
-        .card-h span {
-            font-size: 0.8125rem;
-            color: var(--paper-mid);
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* Project tabs */
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            height: 54px;
             align-items: center;
         }
 
-        .ptab {
+        .stepnav ol::-webkit-scrollbar {
+            display: none;
+        }
+
+        .stepnav a {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            border: 1px solid var(--paper-line);
-            background: #fff;
-            border-radius: 12px;
-            padding: 9px 12px 9px 14px;
-            cursor: pointer;
-            font-size: 0.875rem;
-            color: var(--paper-mid);
-            transition: border-color 0.3s var(--ease), color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+            gap: 8px;
+            padding: 7px 14px 7px 8px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 0.8125rem;
+            color: var(--mid);
+            white-space: nowrap;
+            transition: background 0.3s var(--ease), color 0.3s var(--ease);
         }
 
-        .ptab b {
-            font-weight: 500;
-        }
-
-        .ptab small {
-            font-size: 0.75rem;
-            font-variant-numeric: tabular-nums;
-            opacity: 0.8;
-        }
-
-        .ptab.on {
-            border-color: var(--paper-ink);
-            color: var(--paper-ink);
-            box-shadow: 0 0 0 1px var(--paper-ink) inset;
-        }
-
-        .ptab .x {
-            display: grid;
-            place-items: center;
+        .stepnav a em {
+            font-style: normal;
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.06);
-            border: 0;
-            cursor: pointer;
-            padding: 0;
+            display: grid;
+            place-items: center;
+            font-size: 0.6875rem;
+            background: rgba(255, 255, 255, 0.08);
             transition: background 0.3s var(--ease);
         }
 
-        .ptab .x:hover {
-            background: rgba(0, 0, 0, 0.14);
+        .stepnav a.on {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--fg);
         }
 
-        .padd {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            border: 1px dashed rgba(0, 0, 0, 0.25);
-            background: none;
-            border-radius: 12px;
-            padding: 9px 14px;
+        .stepnav a.on em {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 380px;
+            gap: 24px;
+            align-items: start;
+            padding-top: 28px;
+            padding-bottom: 120px;
+        }
+
+        .config {
+            display: grid;
+            gap: 20px;
+        }
+
+        .block {
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: var(--bg-2);
+            padding: clamp(20px, 3vw, 30px);
+        }
+
+        .block-h {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .block-h em {
+            font-style: normal;
+            font-size: 0.8125rem;
+            color: var(--blue-hi);
+            font-weight: 500;
+        }
+
+        .block-h h2 {
+            font-size: 1.375rem;
+        }
+
+        .block-d {
+            color: var(--dim);
+            font-size: 0.9375rem;
+            margin-bottom: 22px;
+        }
+
+        .typecards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .typecard {
+            position: relative;
+            text-align: left;
+            border: 1px solid var(--line);
+            background: var(--card);
+            border-radius: 16px;
+            padding: 16px 16px 16px 50px;
             cursor: pointer;
-            font-size: 0.875rem;
-            color: var(--paper-mid);
-            transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+            transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.25s var(--ease);
         }
 
-        .padd:hover {
-            border-color: var(--paper-ink);
-            color: var(--paper-ink);
+        .typecard:active {
+            transform: scale(0.985);
         }
 
-        .padd[disabled] {
-            opacity: 0.4;
-            cursor: default;
+        .typecard:hover {
+            border-color: var(--line-2);
+        }
+
+        .typecard b {
+            display: block;
+            font-weight: 600;
+        }
+
+        .typecard span {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--dim);
+            margin-top: 3px;
+        }
+
+        .typecard small {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--mid);
+            margin-top: 8px;
+        }
+
+        .check {
+            position: absolute;
+            left: 16px;
+            top: 17px;
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            border: 1.5px solid var(--line-2);
+            display: grid !important;
+            place-items: center;
+            margin: 0 !important;
+            transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+        }
+
+        .check svg {
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 0.2s, transform 0.3s var(--ease);
+        }
+
+        .typecard[aria-pressed="true"] {
+            border-color: var(--blue);
+            background: var(--blue-bg);
+        }
+
+        .typecard[aria-pressed="true"] .check {
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .typecard[aria-pressed="true"] .check svg {
+            opacity: 1;
+            transform: none;
         }
 
         .bundle-note {
-            margin-top: 12px;
+            margin-top: 14px;
             font-size: 0.8125rem;
-            color: var(--paper-mid);
+            color: var(--dim);
         }
 
         .bundle-note b {
@@ -446,95 +488,155 @@
             font-weight: 500;
         }
 
-        /* Segmented control */
-        .seg {
-            position: relative;
+        .projects {
             display: grid;
-            grid-auto-flow: column;
-            grid-auto-columns: 1fr;
-            gap: 4px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 12px;
-            padding: 4px;
+            gap: 16px;
         }
 
-        .seg-ind {
-            position: absolute;
-            top: 4px;
-            left: 0;
-            height: calc(100% - 8px);
-            background: #fff;
-            border-radius: 9px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-            transition: transform 0.5s var(--ease), width 0.5s var(--ease);
-            z-index: 0;
+        .proj {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--card);
+            overflow: hidden;
+            animation: projIn 0.6s var(--ease);
         }
 
-        .seg button {
-            position: relative;
-            z-index: 1;
-            border: 0;
-            background: none;
-            border-radius: 9px;
-            padding: 10px 6px;
-            min-height: 42px;
-            cursor: pointer;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--paper-mid);
-            transition: color 0.35s var(--ease);
+        @keyframes projIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
         }
 
-        .seg button[aria-pressed="true"] {
-            color: var(--paper-ink);
+        .proj-h {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line);
+            background: var(--card-2);
         }
 
-        /* Groups inside a card */
-        .grp+.grp {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(0, 0, 0, 0.07);
+        .proj-h h3 {
+            font-size: 1.0625rem;
         }
 
-        .grp-head {
+        .proj-h .num {
+            font-size: 0.9375rem;
+            color: var(--mid);
+        }
+
+        .proj-b {
+            padding: 6px 20px 20px;
+        }
+
+        .empty {
+            border: 1px dashed var(--line-2);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            color: var(--dim);
+            font-size: 0.9375rem;
+        }
+
+        .ctrl {
+            padding-top: 20px;
+        }
+
+        .ctrl[hidden] {
+            display: none;
+        }
+
+        .ctrl-h {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            gap: 14px;
+            gap: 12px;
+            margin-bottom: 10px;
         }
 
-        .grp-label {
-            font-size: 0.9375rem;
+        .ctrl-h p {
+            font-size: 0.875rem;
             font-weight: 500;
         }
 
-        .grp-val {
-            font-size: 0.9375rem;
-            font-weight: 600;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .grp-hint {
+        .ctrl-h span {
             font-size: 0.8125rem;
-            color: var(--paper-mid);
-            margin-top: 3px;
-            max-width: 60ch;
+            color: var(--dim);
+            text-align: right;
         }
 
-        .grp-ctrl {
-            margin-top: 12px;
+        .opts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 8px;
         }
 
-        .grp-price {
+        .opt {
+            text-align: left;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 10px 12px;
+            cursor: pointer;
+            min-height: 52px;
+            transition: border-color 0.25s var(--ease), background 0.25s var(--ease), transform 0.2s var(--ease);
+        }
+
+        .opt:active {
+            transform: scale(0.98);
+        }
+
+        .opt:hover {
+            border-color: var(--line-2);
+        }
+
+        .opt b {
+            display: block;
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1.3;
+        }
+
+        .opt small {
+            display: block;
             font-size: 0.75rem;
-            color: var(--paper-mid);
-            margin-top: 6px;
+            color: var(--dim);
+            margin-top: 3px;
+        }
+
+        .opt[aria-pressed="true"] {
+            border-color: var(--blue);
+            background: var(--blue-bg);
+        }
+
+        .opt[aria-pressed="true"] small {
+            color: var(--blue-hi);
+        }
+
+        .opt:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+
+        .range-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .range-row output {
+            min-width: 48px;
+            text-align: right;
+            font-weight: 600;
             font-variant-numeric: tabular-nums;
         }
 
         input[type="range"] {
             -webkit-appearance: none;
             appearance: none;
+            flex: 1;
             width: 100%;
             height: 30px;
             background: none;
@@ -545,18 +647,17 @@
         input[type="range"]::-webkit-slider-runnable-track {
             height: 4px;
             border-radius: 4px;
-            background: linear-gradient(90deg, var(--blue) var(--fill, 40%), rgba(0, 0, 0, 0.1) var(--fill, 40%));
+            background: linear-gradient(90deg, var(--blue) var(--fill, 40%), rgba(255, 255, 255, 0.12) var(--fill, 40%));
         }
 
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
-            margin-top: -10px;
+            width: 22px;
+            height: 22px;
+            margin-top: -9px;
             border-radius: 50%;
             background: #fff;
-            border: 0.5px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s var(--ease);
         }
 
@@ -567,7 +668,7 @@
         input[type="range"]::-moz-range-track {
             height: 4px;
             border-radius: 4px;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.12);
         }
 
         input[type="range"]::-moz-range-progress {
@@ -577,104 +678,47 @@
         }
 
         input[type="range"]::-moz-range-thumb {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
+            border: 0;
             border-radius: 50%;
             background: #fff;
-            border: 0.5px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
         }
 
         .stepper {
             display: inline-flex;
             align-items: center;
-            border: 1px solid var(--paper-line);
-            border-radius: 12px;
+            border: 1px solid var(--line);
+            border-radius: 980px;
             overflow: hidden;
         }
 
         .stepper button {
-            width: 44px;
-            height: 42px;
+            width: 40px;
+            height: 38px;
             border: 0;
-            background: #fff;
+            background: none;
             cursor: pointer;
-            display: grid;
-            place-items: center;
-            transition: background 0.25s var(--ease);
+            font-size: 1.125rem;
+            color: var(--mid);
+            transition: background 0.2s, color 0.2s;
         }
 
-        .stepper button:hover {
-            background: rgba(0, 0, 0, 0.04);
+        .stepper button:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.07);
+            color: var(--fg);
         }
 
-        .stepper button:active {
-            background: rgba(0, 0, 0, 0.08);
-        }
-
-        .stepper button[disabled] {
+        .stepper button:disabled {
             opacity: 0.3;
-            cursor: default;
+            cursor: not-allowed;
         }
 
         .stepper output {
-            min-width: 48px;
+            min-width: 38px;
             text-align: center;
             font-weight: 600;
             font-variant-numeric: tabular-nums;
-            border-inline: 1px solid var(--paper-line);
-            line-height: 42px;
-        }
-
-        .opts {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 8px;
-        }
-
-        .opt {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 3px;
-            text-align: left;
-            border: 1px solid var(--paper-line);
-            background: #fff;
-            border-radius: 14px;
-            padding: 12px 14px;
-            cursor: pointer;
-            transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease), transform 0.25s var(--ease);
-        }
-
-        .opt:active {
-            transform: scale(0.98);
-        }
-
-        @media (hover: hover) {
-            .opt:hover {
-                border-color: rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        .opt b {
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .opt small {
-            font-size: 0.75rem;
-            color: var(--paper-mid);
-            font-variant-numeric: tabular-nums;
-        }
-
-        .opt[aria-pressed="true"] {
-            border-color: var(--blue);
-            box-shadow: 0 0 0 1px var(--blue) inset;
-            background: rgba(10, 132, 255, 0.05);
-        }
-
-        .opt[aria-pressed="true"] small {
-            color: var(--blue);
         }
 
         .chips {
@@ -687,32 +731,30 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid var(--paper-line);
-            background: #fff;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.02);
             border-radius: 980px;
             padding: 8px 14px;
-            min-height: 40px;
-            font-size: 0.875rem;
-            color: var(--paper-mid);
+            min-height: 38px;
+            font-size: 0.8125rem;
+            color: var(--mid);
             cursor: pointer;
-            transition: border-color 0.3s var(--ease), color 0.3s var(--ease), background 0.3s var(--ease), transform 0.25s var(--ease);
+            transition: border-color 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), transform 0.2s var(--ease);
         }
 
         .chip:active {
             transform: scale(0.96);
         }
 
-        @media (hover: hover) {
-            .chip:hover {
-                border-color: rgba(0, 0, 0, 0.3);
-            }
+        .chip:hover {
+            border-color: var(--line-2);
+            color: var(--fg);
         }
 
         .chip u {
             text-decoration: none;
+            opacity: 0.6;
             font-variant-numeric: tabular-nums;
-            opacity: 0.65;
-            font-size: 0.8125rem;
         }
 
         .chip[aria-pressed="true"] {
@@ -725,132 +767,111 @@
             opacity: 0.85;
         }
 
-        .chip-count {
-            font-size: 0.75rem;
-            color: var(--paper-mid);
-            margin-top: 10px;
+        .ctrl-note {
+            font-size: 0.8125rem;
+            color: var(--dim);
+            margin-top: 8px;
         }
 
-        /* Summary */
-        .sheet {
+        /* Overview */
+        .sum {
             position: sticky;
-            top: calc(var(--nav-h) + 20px);
-            background: var(--paper-ink);
-            color: #fff;
+            top: calc(var(--nav-h) + 74px);
             border-radius: 22px;
-            padding: 24px;
-            max-height: calc(100vh - var(--nav-h) - 40px);
+            background: #f5f5f7;
+            color: #1d1d1f;
+            overflow: hidden;
+            max-height: calc(100vh - var(--nav-h) - 94px);
             display: flex;
             flex-direction: column;
         }
 
-        .sheet-top {
+        .sum-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sum-top p {
             font-size: 0.8125rem;
-            color: rgba(255, 255, 255, 0.55);
+            color: #6e6e73;
+        }
+
+        .sum-top b {
+            display: block;
+            color: #1d1d1f;
+            font-size: 0.9375rem;
+            font-weight: 600;
         }
 
         .cur {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            position: relative;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            background: rgba(0, 0, 0, 0.07);
+            border-radius: 9px;
             padding: 3px;
-            width: 144px;
+            width: 136px;
         }
 
-        .cur .seg-ind {
+        .cur-ind {
+            position: absolute;
             top: 3px;
+            left: 0;
             height: calc(100% - 6px);
-            background: rgba(255, 255, 255, 0.92);
-            box-shadow: none;
+            background: #fff;
             border-radius: 7px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+            transition: transform 0.5s var(--ease), width 0.5s var(--ease);
         }
 
         .cur button {
+            position: relative;
+            z-index: 1;
+            border: 0;
+            background: none;
             font-size: 0.75rem;
+            font-weight: 500;
             padding: 6px 4px;
-            min-height: 30px;
-            color: rgba(255, 255, 255, 0.6);
-            border-radius: 7px;
+            cursor: pointer;
+            color: #6e6e73;
+            transition: color 0.3s;
         }
 
         .cur button[aria-pressed="true"] {
-            color: var(--paper-ink);
+            color: #1d1d1f;
         }
 
-        .price {
-            padding-block: 18px;
-        }
-
-        .price small {
-            display: block;
-            font-size: 0.8125rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 6px;
-        }
-
-        .price b {
-            display: block;
-            font-size: clamp(2.2rem, 4vw, 2.8rem);
-            font-weight: 600;
-            letter-spacing: -0.035em;
-            font-variant-numeric: tabular-nums;
-            line-height: 1;
-            white-space: nowrap;
-            transition: opacity 0.25s linear, transform 0.4s var(--ease);
-        }
-
-        .price b.swap-out {
-            opacity: 0;
-            transform: translateY(6px);
-        }
-
-        .price-sub {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 4px 12px;
-            margin-top: 12px;
-            font-size: 0.8125rem;
-            color: rgba(255, 255, 255, 0.55);
-        }
-
-        .price-sub .save {
-            color: #5fd38d;
-        }
-
-        .breakdown {
-            overflow: auto;
+        .sum-scroll {
+            overflow-y: auto;
+            padding: 6px 22px 16px;
             scrollbar-width: thin;
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
-            padding-top: 14px;
-            margin-bottom: 14px;
-            flex: 1 1 auto;
-            min-height: 80px;
+            flex: 1;
         }
 
-        .bproj+.bproj {
-            margin-top: 14px;
+        .grp {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
-        .bproj h4 {
-            margin: 0 0 7px;
-            font-size: 0.8125rem;
-            font-weight: 600;
+        .grp:last-child {
+            border-bottom: 0;
+        }
+
+        .grp-h {
             display: flex;
             justify-content: space-between;
-            gap: 10px;
+            gap: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .bproj h4 span {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .blines {
+        .grp ul {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -858,158 +879,281 @@
             gap: 6px;
         }
 
-        .blines li {
+        .grp li {
             display: flex;
             justify-content: space-between;
-            gap: 14px;
-            font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.6);
+            gap: 12px;
+            font-size: 0.8125rem;
+            color: #515154;
         }
 
-        .blines li span:last-child {
-            color: rgba(255, 255, 255, 0.92);
+        .grp li span:last-child {
             font-variant-numeric: tabular-nums;
             white-space: nowrap;
+            color: #1d1d1f;
         }
 
-        .blines li.neg span:last-child {
-            color: #5fd38d;
+        .grp li.minus span:last-child {
+            color: #1f8f3f;
         }
 
-        .totals {
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
-            padding-top: 12px;
-            margin-top: 14px;
+        .grp-empty {
+            font-size: 0.8125rem;
+            color: #86868b;
         }
 
         .code {
+            padding: 14px 22px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .code-row {
             display: flex;
             gap: 8px;
-            margin-bottom: 8px;
+        }
+
+        .code-row[hidden],
+        #codeApplied[hidden] {
+            display: none;
         }
 
         .code input {
             flex: 1;
             min-width: 0;
-            height: 42px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            background: #fff;
+            color: #1d1d1f;
             border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(255, 255, 255, 0.06);
-            padding: 0 12px;
+            padding: 9px 12px;
             font-size: 0.875rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: #fff;
-            transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+            transition: border-color 0.25s;
         }
 
         .code input::placeholder {
             text-transform: none;
             letter-spacing: 0;
-            color: rgba(255, 255, 255, 0.4);
+            color: #86868b;
         }
 
         .code input:focus {
             outline: none;
-            border-color: var(--blue-hi);
-            background: rgba(255, 255, 255, 0.09);
+            border-color: var(--blue);
         }
 
-        .code button {
-            height: 42px;
-            border-radius: 10px;
+        .code-row button {
             border: 0;
-            padding: 0 16px;
-            background: rgba(255, 255, 255, 0.14);
+            border-radius: 10px;
+            padding: 9px 14px;
+            background: #1d1d1f;
             color: #fff;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 500;
             cursor: pointer;
-            transition: background 0.3s var(--ease);
+            transition: transform 0.2s var(--ease);
         }
 
-        .code button:hover {
-            background: rgba(255, 255, 255, 0.22);
+        .code-row button:active {
+            transform: scale(0.96);
         }
 
         .code-msg {
-            font-size: 0.78rem;
-            min-height: 1.2em;
-            margin-bottom: 12px;
-            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.8125rem;
+            margin-top: 8px;
+            min-height: 1em;
         }
 
         .code-msg.ok {
-            color: #5fd38d;
+            color: #1f8f3f;
         }
 
         .code-msg.bad {
-            color: #ff8a80;
+            color: #d70015;
         }
 
-        .code-msg button {
-            background: none;
-            border: 0;
-            padding: 0;
-            margin-left: 6px;
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: inherit;
+        .code-msg.shake {
+            animation: shake 0.4s var(--ease);
         }
 
-        .sheet-act {
-            display: grid;
-            grid-template-columns: 1fr auto;
+        @keyframes shake {
+
+            20%,
+            60% {
+                transform: translateX(-4px);
+            }
+
+            40%,
+            80% {
+                transform: translateX(4px);
+            }
+        }
+
+        .applied {
+            display: inline-flex;
+            align-items: center;
             gap: 8px;
+            background: rgba(31, 143, 63, 0.1);
+            color: #1f8f3f;
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 0.8125rem;
+            font-weight: 500;
         }
 
-        .sheet-act .btn {
-            padding: 12px 16px;
+        .applied button {
+            border: 0;
+            background: none;
+            color: #1f8f3f;
+            padding: 0 2px;
+            font-size: 1rem;
+            line-height: 1;
+            cursor: pointer;
         }
 
-        .sheet-foot {
+        .total {
+            padding: 16px 22px 20px;
+            background: #1d1d1f;
+            color: #fff;
+        }
+
+        .total-row {
             display: flex;
             justify-content: space-between;
-            margin-top: 12px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.42);
+            gap: 12px;
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 3px 0;
         }
 
-        .sheet-foot button {
-            background: none;
-            border: 0;
-            padding: 0;
+        .total-row span:last-child {
+            font-variant-numeric: tabular-nums;
+            color: #fff;
+        }
+
+        .total-row.save span:last-child {
+            color: var(--green);
+        }
+
+        .total-big {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-top: 10px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .total-big span {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .total-big b {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.035em;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .fact {
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 10px 12px;
+        }
+
+        .fact small {
+            display: block;
+            font-size: 0.6875rem;
             color: rgba(255, 255, 255, 0.55);
-            cursor: pointer;
-            font-size: inherit;
-            text-decoration: underline;
         }
 
-        .mini-total {
+        .fact b {
+            font-size: 0.875rem;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .fact.wide {
+            grid-column: 1 / -1;
+        }
+
+        .sched {
+            list-style: none;
+            margin: 6px 0 0;
+            padding: 0;
+            display: grid;
+            gap: 4px;
+        }
+
+        .sched li {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.8125rem;
+        }
+
+        .sched li span:last-child {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .actions .btn-solid {
+            grid-column: 1 / -1;
+        }
+
+        .actions .btn-line {
+            border-color: rgba(255, 255, 255, 0.22);
+            color: #fff;
+        }
+
+        .fine {
+            margin-top: 12px;
+            font-size: 0.6875rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.5;
+        }
+
+        .mbar {
             display: none;
         }
 
-        /* Small print */
-        .print {
-            padding-block: clamp(60px, 7vw, 90px);
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+            transform: translate(-50%, 16px);
+            background: var(--card-2);
+            border: 1px solid var(--line-2);
+            padding: 10px 18px;
+            border-radius: 980px;
+            font-size: 0.875rem;
+            opacity: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            transition: opacity 0.3s linear, transform 0.45s var(--ease);
+            z-index: 90;
         }
 
-        .print-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 32px;
-        }
-
-        .print h3 {
-            font-size: 1rem;
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        .print p {
-            color: var(--mid);
-            font-size: 0.9375rem;
+        .toast.show {
+            opacity: 1;
+            transform: translate(-50%, 0);
         }
 
         .foot {
@@ -1019,17 +1163,11 @@
             color: var(--dim);
         }
 
-        .foot-in {
+        .foot .wrap {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 10px 28px;
-        }
-
-        .foot-in div {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px 20px;
+            gap: 8px 24px;
         }
 
         .foot a {
@@ -1041,178 +1179,94 @@
             color: var(--fg);
         }
 
-        .rv {
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-            transition-delay: var(--d, 0ms);
-        }
-
-        .rv.in {
-            opacity: 1;
-            transform: none;
-        }
-
-        .swapin {
-            animation: swapIn 0.5s var(--ease);
-        }
-
-        @keyframes swapIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-        }
-
-        .toast {
-            position: fixed;
-            left: 50%;
-            bottom: calc(28px + env(safe-area-inset-bottom, 0px));
-            transform: translate(-50%, 16px);
-            background: var(--card);
-            border: 1px solid var(--line-2);
-            color: var(--fg);
-            padding: 10px 18px;
-            border-radius: 980px;
-            font-size: 0.875rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s linear, transform 0.45s var(--ease);
-            z-index: 80;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translate(-50%, 0);
-        }
-
-        @media (max-width: 1000px) {
-            .calc-grid {
+        @media (max-width: 1040px) {
+            .layout {
                 grid-template-columns: 1fr;
             }
 
-            .sheet {
+            .sum {
                 position: static;
                 max-height: none;
             }
 
-            .breakdown {
+            .sum-scroll {
                 overflow: visible;
             }
 
-            .print-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .mini-total {
+            .mbar {
                 display: flex;
-                position: sticky;
-                top: calc(var(--nav-h) + 10px);
-                z-index: 5;
+                position: fixed;
+                left: 12px;
+                right: 12px;
+                bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+                z-index: 70;
                 align-items: center;
                 justify-content: space-between;
                 gap: 12px;
-                padding: 12px 12px 12px 18px;
-                border-radius: 16px;
+                padding: 10px 10px 10px 18px;
+                border-radius: 18px;
                 background: rgba(29, 29, 31, 0.92);
-                backdrop-filter: blur(16px) saturate(160%);
-                -webkit-backdrop-filter: blur(16px) saturate(160%);
-                color: #fff;
-                box-shadow: 0 12px 30px -16px rgba(0, 0, 0, 0.6);
-                transition: opacity 0.35s var(--ease), transform 0.45s var(--ease);
+                backdrop-filter: blur(18px) saturate(160%);
+                -webkit-backdrop-filter: blur(18px) saturate(160%);
+                border: 1px solid var(--line);
+                box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.8);
+                transition: transform 0.5s var(--ease), opacity 0.3s;
             }
 
-            .mini-total.hide {
+            .mbar.hide {
+                transform: translateY(140%);
                 opacity: 0;
-                transform: translateY(-8px);
-                pointer-events: none;
             }
 
-            .mini-total small {
+            .mbar small {
                 display: block;
                 font-size: 0.6875rem;
-                color: rgba(255, 255, 255, 0.55);
+                color: var(--dim);
             }
 
-            .mini-total b {
+            .mbar b {
                 font-size: 1.125rem;
                 font-variant-numeric: tabular-nums;
             }
-
-            .mini-total a {
-                font-size: 0.8125rem;
-                color: #fff;
-                text-decoration: none;
-                background: rgba(255, 255, 255, 0.14);
-                padding: 8px 14px;
-                border-radius: 980px;
-                white-space: nowrap;
-            }
         }
 
-        @media (max-width: 720px) {
+        @media (max-width: 640px) {
             :root {
-                --wrap: min(1200px, 100% - 32px);
-                --nav-h: 60px;
+                --wrap: min(1200px, 100% - 28px);
+                --nav-h: 58px;
             }
 
-            body {
-                font-size: 16px;
-            }
-
-            .nav-right>a:not(.btn) {
+            .nav-links a:not(.btn) {
                 display: none;
             }
 
-            .head {
-                padding-top: 108px;
+            .typecards {
+                grid-template-columns: 1fr;
             }
 
-            .card {
-                padding: 20px 18px;
+            .opts {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .proj-b {
+                padding: 4px 16px 18px;
+            }
+
+            .proj-h {
+                padding: 14px 16px;
+            }
+
+            .block {
                 border-radius: 18px;
             }
 
-            .seg.types {
-                grid-auto-flow: row;
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .seg.types .seg-ind {
-                display: none;
-            }
-
-            .seg.types button[aria-pressed="true"] {
-                background: #fff;
-                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-            }
-
-            .opts {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .chip {
-                font-size: 0.8125rem;
-                padding: 8px 12px;
-            }
-
-            .sheet {
-                padding: 20px;
-            }
-
-            .sheet-act {
-                grid-template-columns: 1fr;
-            }
-
-            .foot-in {
+            .ctrl-h {
                 flex-direction: column;
+                gap: 2px;
             }
-        }
 
-        @media (max-width: 380px) {
-            .opts {
-                grid-template-columns: 1fr;
+            .ctrl-h span {
+                text-align: left;
             }
         }
 
@@ -1223,22 +1277,17 @@
             *::after {
                 animation-duration: 0.01ms !important;
                 transition-duration: 0.01ms !important;
-                transition-delay: 0s !important;
                 scroll-behavior: auto !important;
             }
 
-            .rv,
-            .fade,
-            .head h1 .ln>span {
+            .fade {
                 opacity: 1;
-                transform: none;
             }
         }
     </style>
 </head>
 
 <body>
-
     <header class="nav">
         <div class="nav-in">
             <a class="brand" href="/">
@@ -1246,152 +1295,150 @@
                     alt="">
                 <span>Hugo<i>Labs</i></span>
             </a>
-            <div class="nav-right">
-                <a href="/">Back to site</a>
-                <a class="btn btn-solid" href="/#contact">Get in touch</a>
+            <div class="nav-links">
+                <a href="/#work">Work</a>
+                <a href="/#faq">FAQ</a>
+                <a class="btn btn-line btn-sm" href="/">Back to site</a>
             </div>
         </div>
     </header>
 
     <main>
         <section class="head wrap">
-            <p class="kicker fade" style="--d:100ms">Pricing</p>
-            <h1>
-                <span class="ln"><span style="--d:180ms">Figure out</span></span>
-                <span class="ln"><span style="--d:280ms">your price.</span></span>
-            </h1>
-            <p class="head-sub fade" style="--d:440ms">Every option below has its own price, so the total is exact
-                rather
-                than a guess. Build one project or several, pick how you pay, and add a discount code if you have one.
-            </p>
-            <div class="head-facts fade" style="--d:560ms">
-                <span>Fixed price in writing</span>
-                <span>Source code included</span>
+            <p class="kicker fade" style="--d:60ms">Pricing</p>
+            <h1 class="fade" style="--d:120ms">Figure out your price.</h1>
+            <p class="sub fade" style="--d:200ms">Put your project together piece by piece. Every option shows what it
+                costs, the overview updates as you go, and you can combine several projects in one quote.</p>
+            <div class="promise fade" style="--d:280ms">
+                <span>Your written quote never comes in higher for the same scope</span>
+                <span>Your choices are saved in the link</span>
                 <span>Pay in euro or Robux</span>
-                <span>5% off when you combine projects</span>
             </div>
         </section>
 
-        <section class="calc">
-            <div class="wrap calc-grid">
+        <nav class="stepnav" aria-label="Sections">
+            <ol>
+                <li><a href="#s-projects" data-step><em>1</em>Projects</a></li>
+                <li><a href="#s-details" data-step><em>2</em>Details</a></li>
+                <li><a href="#s-order" data-step><em>3</em>Delivery and support</a></li>
+                <li><a href="#s-payment" data-step><em>4</em>Payment</a></li>
+                <li><a href="#summary" data-step><em>5</em>Overview</a></li>
+            </ol>
+        </nav>
 
-                <div class="mini-total" id="miniTotal">
+        <div class="wrap layout">
+            <div class="config">
+
+                <section class="block" id="s-projects">
+                    <div class="block-h"><em>1</em>
+                        <h2>What do you need?</h2>
+                    </div>
+                    <p class="block-d">Pick one or more. Combining projects gives a bundle discount.</p>
+                    <div class="typecards" id="typecards"></div>
+                    <p class="bundle-note" id="bundleNote"></p>
+                </section>
+
+                <section class="block" id="s-details">
+                    <div class="block-h"><em>2</em>
+                        <h2>The details</h2>
+                    </div>
+                    <p class="block-d">The more you fill in, the more precise the price. Anything you skip stays at a
+                        sensible
+                        default.</p>
+                    <div class="projects" id="projects"></div>
+                </section>
+
+                <section class="block" id="s-order">
+                    <div class="block-h"><em>3</em>
+                        <h2>Delivery and support</h2>
+                    </div>
+                    <p class="block-d">How deep the build goes, how fast you need it, and what happens after launch.</p>
+                    <div id="orderCtrls"></div>
+                </section>
+
+                <section class="block" id="s-payment">
+                    <div class="block-h"><em>4</em>
+                        <h2>Payment</h2>
+                    </div>
+                    <p class="block-d">Who is paying decides the VAT. The schedule decides when.</p>
+                    <div id="payCtrls"></div>
+                </section>
+            </div>
+
+            <aside class="sum" id="summary" aria-label="Overview">
+                <div class="sum-top">
                     <div>
-                        <small>Your total</small>
-                        <b id="miniPrice">&euro;0</b>
+                        <p>Overview</p>
+                        <b id="ref">HL-000000</b>
                     </div>
-                    <a href="#sheet">Summary</a>
-                </div>
-
-                <div class="left">
-                    <div class="card rv">
-                        <div class="card-h">
-                            <h2>Your quote</h2>
-                            <span id="projCount">1 project</span>
-                        </div>
-                        <div class="projects" id="projects"></div>
-                        <p class="bundle-note" id="bundleNote"></p>
-                    </div>
-
-                    <div class="card rv" style="--d:60ms">
-                        <div class="card-h">
-                            <h2>What are we building</h2>
-                        </div>
-                        <div class="seg types" id="type">
-                            <span class="seg-ind" aria-hidden="true"></span>
-                            <button data-val="website" aria-pressed="true">Website</button>
-                            <button data-val="bot" aria-pressed="false">Discord bot</button>
-                            <button data-val="webapp" aria-pressed="false">Web app</button>
-                            <button data-val="roblox" aria-pressed="false">Roblox</button>
-                        </div>
-                    </div>
-
-                    <div id="sections" class="left"></div>
-
-                    <div class="card rv">
-                        <div class="card-h">
-                            <h2>Quote settings</h2>
-                            <span>Applies to the whole quote</span>
-                        </div>
-                        <div id="settings"></div>
+                    <div class="cur" id="currency" role="group" aria-label="Currency">
+                        <span class="cur-ind" aria-hidden="true"></span>
+                        <button type="button" data-val="eur" aria-pressed="true">Euro</button>
+                        <button type="button" data-val="robux" aria-pressed="false">Robux</button>
                     </div>
                 </div>
 
-                <aside class="sheet" id="sheet">
-                    <div class="sheet-top">
-                        <span>Summary</span>
-                        <div class="seg cur" id="currency" role="group" aria-label="Currency">
-                            <span class="seg-ind" aria-hidden="true"></span>
-                            <button data-val="eur" aria-pressed="true">Euro</button>
-                            <button data-val="robux" aria-pressed="false">Robux</button>
+                <div class="sum-scroll" id="sumBody"></div>
+
+                <div class="code">
+                    <div id="codeForm" class="code-row">
+                        <input id="codeInput" type="text" placeholder="Discount code" autocomplete="off"
+                            spellcheck="false" aria-label="Discount code">
+                        <button type="button" id="codeApply">Apply</button>
+                    </div>
+                    <div id="codeApplied" hidden></div>
+                    <p class="code-msg" id="codeMsg" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="total">
+                    <div id="totalRows"></div>
+                    <div class="total-big">
+                        <span id="totalLabel">Total</span>
+                        <b id="totalOut">&euro;0</b>
+                    </div>
+
+                    <div class="facts">
+                        <div class="fact">
+                            <small>Work time</small>
+                            <b id="daysOut">0 days</b>
+                        </div>
+                        <div class="fact">
+                            <small>Ready around</small>
+                            <b id="dateOut">soon</b>
+                        </div>
+                        <div class="fact wide">
+                            <small>After launch</small>
+                            <b id="monthlyOut">Nothing monthly</b>
+                        </div>
+                        <div class="fact wide">
+                            <small>Payment schedule</small>
+                            <ul class="sched" id="schedOut"></ul>
                         </div>
                     </div>
 
-                    <div class="price">
-                        <small id="priceLabel">Total excluding VAT</small>
-                        <b id="priceOut">&euro;0</b>
-                        <div class="price-sub">
-                            <span id="timeOut">about 4 working days</span>
-                            <span id="altOut"></span>
-                        </div>
+                    <div class="actions">
+                        <button type="button" class="btn btn-solid" id="sendBtn">Send this quote</button>
+                        <button type="button" class="btn btn-line btn-sm" id="linkBtn">Copy link</button>
+                        <button type="button" class="btn btn-line btn-sm" id="resetBtn">Start over</button>
                     </div>
-
-                    <div class="breakdown" id="breakdown"></div>
-
-                    <form class="code" id="codeForm" autocomplete="off">
-                        <input id="codeInput" type="text" placeholder="Discount code" aria-label="Discount code"
-                            maxlength="24" spellcheck="false">
-                        <button type="submit">Apply</button>
-                    </form>
-                    <p class="code-msg" id="codeMsg" aria-live="polite"></p>
-
-                    <div class="sheet-act">
-                        <button class="btn btn-solid" id="send" type="button">Send this quote</button>
-                        <button class="btn btn-line" id="copy" type="button">Copy</button>
-                    </div>
-                    <div class="sheet-foot">
-                        <span id="rateNote">Estimate, confirmed in writing</span>
-                        <button type="button" id="reset">Start over</button>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="print wrap">
-            <div class="print-grid">
-                <div class="rv">
-                    <h3>How the price becomes final</h3>
-                    <p>Send the quote and I'll confirm it in writing, usually within a day. For the same scope the
-                        written price
-                        is never higher than what you see here. Half is paid upfront, half on delivery.</p>
+                    <p class="fine" id="fineOut"></p>
                 </div>
-                <div class="rv" style="--d:80ms">
-                    <h3>Robux and VAT</h3>
-                    <p>Robux amounts use the DevEx rate of $0.0038 per Robux. VAT depends on who is paying: private
-                        customers and
-                        Dutch businesses pay 21 percent, businesses elsewhere are handled on the invoice.</p>
-                </div>
-                <div class="rv" style="--d:160ms">
-                    <h3>Discount codes</h3>
-                    <p>One code per quote. Codes apply to the total after the bundle discount and are checked again when
-                        the
-                        quote is confirmed.</p>
-                </div>
-            </div>
-        </section>
+            </aside>
+        </div>
     </main>
 
+    <div class="mbar" id="mbar">
+        <div>
+            <small>Your total</small>
+            <b id="mbarTotal">&euro;0</b>
+        </div>
+        <a class="btn btn-solid btn-sm" href="#summary">Overview</a>
+    </div>
+
     <footer class="foot">
-        <div class="wrap foot-in">
-            <div>
-                <span>&copy; 2026 HugoLabs</span>
-                <span>KvK 42141256</span>
-                <span>VAT NL005528728B96</span>
-            </div>
-            <div>
-                <a href="/">Home</a>
-                <a href="mailto:support@hugolabs.eu">support@hugolabs.eu</a>
-            </div>
+        <div class="wrap">
+            <span>&copy; 2026 HugoLabs. KvK 42141256. VAT NL005528728B96.</span>
+            <span><a href="/">hugolabs.eu</a></span>
         </div>
     </footer>
 
@@ -1401,1151 +1448,1104 @@
         (function () {
             'use strict';
 
-            var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            /* ==================================================================
+               SETTINGS
+               Every price on this page is in euro, excluding VAT.
+            ================================================================== */
+            var SETTINGS = {
+                devexUsdPerRobux: 0.0038,           // Roblox DevEx rate
+                usdPerEuro: 1.14,                   // update now and then
+                bundle: { 2: 0.05, 3: 0.08, 4: 0.10 }, // off project work, by number of projects
+                upfrontDiscount: 0.03,              // for paying everything at the start
+                thirdsMinimum: 300,                 // three payments only above this amount
+                multiProjectTime: 0.9               // combined projects overlap a little
+            };
 
             /* ==================================================================
                DISCOUNT CODES
-               pct is the percentage off. expires is the last valid day (optional).
-               Codes are case insensitive. Add or remove codes here.
+               kind:     'percent' or 'fixed' (euro off)
+               only:     limit to project types: website, bot, webapp, roblox
+               minSpend: minimum order value in euro, before discounts
+               expires:  last valid day, YYYY-MM-DD
+               One code per quote. Codes are visible in the page source, so
+               only add codes you are fine with people finding.
             ================================================================== */
             var CODES = {
-                HUGO26: { pct: 10, expires: '2026-12-31', note: '10% off, valid through 2026' }
+                HUGO26: { kind: 'percent', value: 10, label: '10% off everything', expires: '2026-12-31' },
+                WELCOME15: { kind: 'percent', value: 15, label: '15% off your first project', minSpend: 50 },
+                RETURN12: { kind: 'percent', value: 12, label: '12% off for returning clients' },
+                STUDIO20: { kind: 'percent', value: 20, label: '20% off Roblox systems', only: ['roblox'], minSpend: 100 },
+                BOTS15: { kind: 'percent', value: 15, label: '15% off Discord bots', only: ['bot'] },
+                FRIEND10: { kind: 'fixed', value: 10, label: '\u20ac10 off, from a friend', minSpend: 60 }
             };
-
-            /* ==================================================================
-               RATES AND QUOTE SETTINGS
-            ================================================================== */
-            var RATE = {
-                devexUsdPerRobux: 0.0038,
-                usdPerEuro: 1.14,
-                bundlePct: 0.05,       /* off the project total when a quote has 2 or more projects */
-                maxProjects: 5
-            };
-
-            var SETTINGS = [
-                {
-                    id: 'support', kind: 'choice', label: 'Support after launch', def: 'd30',
-                    hint: 'Free fixes for anything that was in scope.',
-                    options: [
-                        { id: 'd30', label: '30 days', price: 0 },
-                        { id: 'd90', label: '90 days', price: 20 },
-                        { id: 'y1', label: '12 months', price: 60 }
-                    ]
-                },
-                {
-                    id: 'billing', kind: 'choice', label: 'Who is paying', def: 'private',
-                    hint: 'Decides the VAT on the invoice.',
-                    options: [
-                        { id: 'private', label: 'Private person', vat: 0.21, tag: '21% VAT' },
-                        { id: 'nl', label: 'Business in the Netherlands', vat: 0.21, tag: '21% VAT' },
-                        { id: 'eu', label: 'Business elsewhere in the EU', vat: 0, tag: 'VAT reverse charged' },
-                        { id: 'world', label: 'Business outside the EU', vat: 0, tag: 'No Dutch VAT' }
-                    ]
-                }
-            ];
 
             /* ==================================================================
                PROJECT TYPES
-               kind: range or stepper (a number), choice (pick one), chips (pick any)
-               price: euro, pct: share of the project's fixed items, monthly: per month
-               perOf: price is multiplied by the value of another group
-               days: working days added, daysMul: multiplies the project's days
+               choice : pick one. price adds, mult scales the project,
+                        perOf charges per unit of another control,
+                        monthly is a recurring cost after launch
+               range  : slider, the first `included` are free, then `per` each
+               stepper: same idea with plus and minus buttons
+               chips  : pick any number of features
+               when   : only show when another control has one of these values
             ================================================================== */
-            var DESIGN = {
-                id: 'design', kind: 'choice', label: 'Design', def: 'custom',
-                options: [
-                    { id: 'custom', label: 'Designed from scratch', pct: 0.25, days: 1 },
-                    { id: 'reference', label: 'Based on a site you like', pct: 0.10, days: 0.5 },
-                    { id: 'provided', label: 'You provide the design', price: 0 }
-                ]
-            };
-
-            var DELIVERY = {
-                title: 'Depth and timing',
-                groups: [
-                    {
-                        id: 'level', kind: 'choice', label: 'How deep it goes', def: 'standard',
-                        hint: 'Simple is fine for most small projects. Advanced means more edge cases, polish and testing.',
-                        options: [
-                            { id: 'simple', label: 'Simple', pct: -0.15, daysMul: 0.85 },
-                            { id: 'standard', label: 'Standard', price: 0 },
-                            { id: 'advanced', label: 'Advanced', pct: 0.35, daysMul: 1.3 }
-                        ]
-                    },
-                    {
-                        id: 'timing', kind: 'choice', label: 'Timing', def: 'normal',
-                        options: [
-                            { id: 'flex', label: 'Flexible, no deadline', pct: -0.05, daysMul: 1.3 },
-                            { id: 'normal', label: 'Normal', price: 0 },
-                            { id: 'rush', label: 'Rush', pct: 0.30, daysMul: 0.6 },
-                            { id: 'express', label: 'Express', pct: 0.60, daysMul: 0.4 }
-                        ]
-                    }
-                ]
-            };
-
             var TYPES = {
                 website: {
-                    name: 'Website', base: 60, baseLabel: 'Website base build', baseDays: 3,
-                    sections: [
+                    name: 'Website', blurb: 'Business sites, portfolios, landing pages and webshops', from: 45,
+                    featureDays: 0.5,
+                    controls: [
                         {
-                            title: 'Size',
-                            groups: [
-                                { id: 'pages', kind: 'range', label: 'Pages', unit: 'page', min: 1, max: 30, def: 5, included: 3, price: 15, days: 0.4, hint: 'Home, about, services and contact is four pages.' },
-                                { id: 'complex', kind: 'stepper', label: 'Complex pages', unit: 'complex page', min: 0, max: 10, def: 0, price: 20, days: 0.6, hint: 'Pages with custom layouts, calculators or interactive parts, on top of the pages above.' },
-                                { id: 'langs', kind: 'stepper', label: 'Extra languages', unit: 'language', min: 0, max: 6, def: 0, price: 25, days: 0.5, hint: 'Each language beyond the first.' }
+                            id: 'kind', kind: 'choice', label: 'Type of site', def: 'business', options: [
+                                { v: 'landing', label: 'Landing page', price: 45, days: 2, line: 'Landing page build' },
+                                { v: 'business', label: 'Business site', price: 60, days: 3, line: 'Business site build' },
+                                { v: 'portfolio', label: 'Portfolio', price: 55, days: 3, line: 'Portfolio build' },
+                                { v: 'shop', label: 'Webshop', price: 140, days: 6, line: 'Webshop build' }
+                            ]
+                        },
+                        { id: 'pages', kind: 'range', label: 'Pages', unit: 'pages', unit1: 'page', min: 1, max: 30, def: 5, included: 3, per: 15, days: 0.4 },
+                        { id: 'products', kind: 'range', label: 'Products in the shop', unit: 'products', unit1: 'product', min: 0, max: 500, step: 5, def: 20, included: 10, per: 0.5, days: 0.02, when: { id: 'kind', in: ['shop'] } },
+                        { id: 'langs', kind: 'stepper', label: 'Languages', unit: 'languages', unit1: 'language', min: 1, max: 8, def: 1, included: 1, per: 25, days: 0.8 },
+                        {
+                            id: 'design', kind: 'choice', label: 'Design', def: 'custom', options: [
+                                { v: 'yours', label: 'I have a design' },
+                                { v: 'template', label: 'Template based', mult: 1.1, line: 'Template design' },
+                                { v: 'custom', label: 'Custom design', mult: 1.25, line: 'Custom design', days: 1 }
                             ]
                         },
                         {
-                            title: 'Design and content',
-                            groups: [
-                                DESIGN,
-                                {
-                                    id: 'copy', kind: 'choice', label: 'Text', def: 'yours',
-                                    options: [
-                                        { id: 'yours', label: 'You write it', price: 0 },
-                                        { id: 'polish', label: 'I polish your text', price: 15, days: 0.5 },
-                                        { id: 'write', label: 'I write it', price: 8, perOf: 'pages', unit: 'page', days: 1 }
-                                    ]
-                                },
-                                {
-                                    id: 'brand', kind: 'choice', label: 'Branding', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'Already sorted', price: 0 },
-                                        { id: 'logo', label: 'Simple logo', price: 40, days: 1 },
-                                        { id: 'kit', label: 'Logo and brand kit', price: 90, days: 2 }
-                                    ]
-                                },
-                                {
-                                    id: 'media', kind: 'chips', label: 'Media',
-                                    options: [
-                                        { id: 'stock', label: 'Stock photo sourcing', price: 10, days: 0.3 },
-                                        { id: 'icons', label: 'Custom icon set', price: 20, days: 0.5 },
-                                        { id: 'illus', label: 'Custom illustrations', price: 45, days: 1.5 }
-                                    ]
-                                }
+                            id: 'copy', kind: 'choice', label: 'Text', def: 'client', options: [
+                                { v: 'client', label: 'I write the text' },
+                                { v: 'polish', label: 'Polish my text', price: 4, perOf: 'pages', line: 'Text polishing' },
+                                { v: 'write', label: 'Write it for me', price: 8, perOf: 'pages', line: 'Copywriting', days: 1 }
                             ]
                         },
                         {
-                            title: 'Features',
-                            groups: [
-                                {
-                                    id: 'feat', kind: 'chips', label: 'Pick everything it needs',
-                                    options: [
-                                        { id: 'form', label: 'Contact form', price: 10, days: 0.3 },
-                                        { id: 'booking', label: 'Booking or appointments', price: 35, days: 1 },
-                                        { id: 'news', label: 'Newsletter signup', price: 12, days: 0.3 },
-                                        { id: 'blog', label: 'Blog or news', price: 30, days: 1 },
-                                        { id: 'cms', label: 'Edit the text yourself', price: 45, days: 1 },
-                                        { id: 'gallery', label: 'Image gallery', price: 15, days: 0.4 },
-                                        { id: 'video', label: 'Video embeds', price: 5, days: 0.2 },
-                                        { id: 'map', label: 'Map and opening hours', price: 8, days: 0.2 },
-                                        { id: 'table', label: 'Pricing table', price: 10, days: 0.3 },
-                                        { id: 'reviews', label: 'Reviews section', price: 8, days: 0.2 },
-                                        { id: 'faq', label: 'FAQ section', price: 8, days: 0.2 },
-                                        { id: 'search', label: 'Site search', price: 20, days: 0.6 },
-                                        { id: 'theme', label: 'Light and dark mode', price: 12, days: 0.4 },
-                                        { id: 'motion', label: 'Custom animations', price: 30, days: 1 },
-                                        { id: 'members', label: 'Members only area', price: 60, days: 2 },
-                                        { id: 'shop', label: 'Simple shop, up to 20 products', price: 90, days: 3 }
-                                    ]
-                                }
+                            id: 'images', kind: 'choice', label: 'Images', def: 'yours', options: [
+                                { v: 'yours', label: 'I provide them' },
+                                { v: 'stock', label: 'Find stock images', price: 10, line: 'Stock image sourcing' },
+                                { v: 'custom', label: 'Custom graphics', price: 35, line: 'Custom graphics', days: 1 }
                             ]
                         },
                         {
-                            title: 'Launch',
-                            groups: [
-                                {
-                                    id: 'launch', kind: 'chips', label: 'Getting it live',
-                                    options: [
-                                        { id: 'seo', label: 'SEO basics', price: 15, days: 0.3 },
-                                        { id: 'seo2', label: 'Advanced SEO', price: 40, days: 1 },
-                                        { id: 'analytics', label: 'Analytics', price: 10, days: 0.2 },
-                                        { id: 'cookies', label: 'Cookie banner', price: 10, days: 0.2 },
-                                        { id: 'a11y', label: 'Accessibility check', price: 25, days: 0.6 },
-                                        { id: 'speed', label: 'Speed optimisation', price: 20, days: 0.5 },
-                                        { id: 'host', label: 'Hosting setup', price: 10, days: 0.2 },
-                                        { id: 'mail', label: 'Domain email setup', price: 15, days: 0.3 }
-                                    ]
-                                },
-                                { id: 'rev', kind: 'stepper', label: 'Extra revision rounds', unit: 'revision round', min: 0, max: 6, def: 0, price: 10, days: 0.5, hint: 'Two rounds of changes are always included.' },
-                                {
-                                    id: 'care', kind: 'choice', label: 'Maintenance', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'None', price: 0 },
-                                        { id: 'basic', label: 'Updates and backups', monthly: 5 },
-                                        { id: 'plus', label: 'Plus small edits', monthly: 15 }
-                                    ]
-                                }
+                            id: 'logo', kind: 'choice', label: 'Logo', def: 'have', options: [
+                                { v: 'have', label: 'I have one' },
+                                { v: 'need', label: 'Make me one', price: 35, line: 'Logo design', days: 1 }
+                            ]
+                        },
+                        {
+                            id: 'features', kind: 'chips', label: 'Features', items: [
+                                { id: 'form', label: 'Contact form', price: 10 },
+                                { id: 'booking', label: 'Booking or appointments', price: 40 },
+                                { id: 'blog', label: 'Blog or news', price: 30 },
+                                { id: 'cms', label: 'Edit the text yourself', price: 45 },
+                                { id: 'anim', label: 'Custom animations', price: 30 },
+                                { id: 'seo', label: 'SEO setup', price: 15 },
+                                { id: 'analytics', label: 'Analytics', price: 10 },
+                                { id: 'news', label: 'Newsletter signup', price: 15 },
+                                { id: 'cookie', label: 'Cookie banner', price: 8 },
+                                { id: 'search', label: 'Site search', price: 20 },
+                                { id: 'gallery', label: 'Image gallery', price: 15 },
+                                { id: 'maps', label: 'Map', price: 8 },
+                                { id: 'social', label: 'Social media feed', price: 12 },
+                                { id: 'chat', label: 'Live chat widget', price: 10 },
+                                { id: 'login', label: 'Member login area', price: 50 },
+                                { id: 'payments', label: 'Online payments', price: 60 },
+                                { id: 'dark', label: 'Light and dark mode', price: 12 },
+                                { id: 'a11y', label: 'Accessibility check', price: 20 },
+                                { id: 'speed', label: 'Speed optimisation', price: 15 }
+                            ]
+                        },
+                        {
+                            id: 'hosting', kind: 'choice', label: 'Hosting', def: 'setup', options: [
+                                { v: 'self', label: 'I host it myself' },
+                                { v: 'setup', label: 'Set it up for me', price: 10, line: 'Hosting setup' },
+                                { v: 'managed', label: 'Managed hosting', monthly: 5, line: 'Managed hosting' }
+                            ]
+                        },
+                        {
+                            id: 'domain', kind: 'choice', label: 'Domain', def: 'have', options: [
+                                { v: 'have', label: 'I have a domain' },
+                                { v: 'setup', label: 'Register and connect one', price: 10, line: 'Domain setup' }
                             ]
                         }
                     ]
                 },
 
                 bot: {
-                    name: 'Discord bot', base: 30, baseLabel: 'Bot base build', baseDays: 2,
-                    sections: [
+                    name: 'Discord bot', blurb: 'Moderation, tickets, levels, verification and more', from: 30,
+                    base: 30, baseLabel: 'Bot base build', baseDays: 2, featureDays: 0.4,
+                    controls: [
+                        { id: 'commands', kind: 'range', label: 'Slash commands', unit: 'commands', unit1: 'command', min: 1, max: 60, def: 8, included: 3, per: 4, days: 0.15 },
                         {
-                            title: 'Size',
-                            groups: [
-                                { id: 'cmds', kind: 'range', label: 'Commands', unit: 'command', min: 2, max: 60, def: 8, included: 3, price: 4, days: 0.15, hint: 'Slash commands your members or staff will use.' },
-                                {
-                                    id: 'servers', kind: 'choice', label: 'Where it runs', def: 'one',
-                                    options: [
-                                        { id: 'one', label: 'One server', price: 0 },
-                                        { id: 'few', label: 'A few of your servers', pct: 0.15, days: 0.5 },
-                                        { id: 'public', label: 'Public bot, any server', pct: 0.40, days: 1.5 }
-                                    ]
-                                }
+                            id: 'size', kind: 'choice', label: 'Server size', def: 'small', options: [
+                                { v: 'small', label: 'Under 1.000 members' },
+                                { v: 'mid', label: '1.000 to 10.000', mult: 1.1, line: 'Medium server scaling' },
+                                { v: 'big', label: 'Over 10.000', mult: 1.25, line: 'Large server scaling' }
                             ]
                         },
                         {
-                            title: 'Modules',
-                            groups: [
-                                {
-                                    id: 'mods', kind: 'chips', label: 'Pick everything it needs',
-                                    options: [
-                                        { id: 'mod', label: 'Moderation commands', price: 20, days: 0.5 },
-                                        { id: 'automod', label: 'Auto moderation filters', price: 20, days: 0.6 },
-                                        { id: 'logs', label: 'Logging', price: 15, days: 0.4 },
-                                        { id: 'tickets', label: 'Ticket system', price: 25, days: 0.8 },
-                                        { id: 'transcripts', label: 'Ticket transcripts', price: 10, days: 0.3 },
-                                        { id: 'verify', label: 'Verification', price: 15, days: 0.4 },
-                                        { id: 'rblx', label: 'Roblox account linking', price: 30, days: 1 },
-                                        { id: 'roles', label: 'Button or reaction roles', price: 12, days: 0.3 },
-                                        { id: 'welcome', label: 'Welcome messages', price: 8, days: 0.2 },
-                                        { id: 'levels', label: 'Levels and XP', price: 25, days: 0.8 },
-                                        { id: 'economy', label: 'Economy', price: 25, days: 0.8 },
-                                        { id: 'giveaways', label: 'Giveaways', price: 15, days: 0.4 },
-                                        { id: 'polls', label: 'Polls', price: 8, days: 0.2 },
-                                        { id: 'suggest', label: 'Suggestions', price: 12, days: 0.3 },
-                                        { id: 'apps', label: 'Application forms', price: 20, days: 0.6 },
-                                        { id: 'remind', label: 'Reminders and scheduling', price: 12, days: 0.4 },
-                                        { id: 'social', label: 'Twitch or YouTube alerts', price: 20, days: 0.6 },
-                                        { id: 'stats', label: 'Server stats channels', price: 10, days: 0.3 },
-                                        { id: 'embeds', label: 'Embed builder', price: 15, days: 0.5 },
-                                        { id: 'ai', label: 'AI chat replies', price: 40, days: 1 }
-                                    ]
-                                }
+                            id: 'servers', kind: 'choice', label: 'Where it runs', def: 'one', options: [
+                                { v: 'one', label: 'One server' },
+                                { v: 'multi', label: 'A few of my servers', price: 30, line: 'Multi server support' },
+                                { v: 'public', label: 'Public bot, any server', price: 60, line: 'Public bot setup', days: 2 }
                             ]
                         },
                         {
-                            title: 'Data and dashboard',
-                            groups: [
-                                {
-                                    id: 'db', kind: 'choice', label: 'Database', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'Not needed', price: 0 },
-                                        { id: 'local', label: 'Simple local database', price: 15, days: 0.4 },
-                                        { id: 'hosted', label: 'Hosted, with backups', price: 25, days: 0.6 }
-                                    ]
-                                },
-                                {
-                                    id: 'dash', kind: 'choice', label: 'Web dashboard', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'No dashboard', price: 0 },
-                                        { id: 'basic', label: 'Basic settings panel', price: 75, days: 3 },
-                                        { id: 'full', label: 'Full dashboard with login', price: 150, days: 6 }
-                                    ]
-                                }
+                            id: 'features', kind: 'chips', label: 'Features', items: [
+                                { id: 'mod', label: 'Moderation commands', price: 20 },
+                                { id: 'automod', label: 'Auto moderation filters', price: 15 },
+                                { id: 'logs', label: 'Logging', price: 15 },
+                                { id: 'tickets', label: 'Ticket system', price: 25 },
+                                { id: 'transcripts', label: 'Ticket transcripts', price: 10 },
+                                { id: 'verify', label: 'Verification', price: 15 },
+                                { id: 'rr', label: 'Reaction roles', price: 10 },
+                                { id: 'levels', label: 'Levels and XP', price: 25 },
+                                { id: 'economy', label: 'Economy', price: 25 },
+                                { id: 'giveaways', label: 'Giveaways', price: 15 },
+                                { id: 'polls', label: 'Polls', price: 8 },
+                                { id: 'welcome', label: 'Welcome messages', price: 8 },
+                                { id: 'rblink', label: 'Roblox account linking', price: 30 },
+                                { id: 'rbrank', label: 'Roblox group rank sync', price: 35 },
+                                { id: 'embeds', label: 'Embed builder', price: 20 },
+                                { id: 'sched', label: 'Scheduled messages', price: 10 },
+                                { id: 'api', label: 'Outside API connection', price: 35 },
+                                { id: 'db', label: 'Database', price: 15 },
+                                { id: 'dash', label: 'Web dashboard', price: 75, days: 3 }
                             ]
                         },
                         {
-                            title: 'Running it',
-                            groups: [
-                                {
-                                    id: 'hosting', kind: 'choice', label: 'Hosting', def: 'self',
-                                    options: [
-                                        { id: 'self', label: 'You host it', price: 0 },
-                                        { id: 'setup', label: 'I set it up on your server', price: 10, days: 0.3 },
-                                        { id: 'managed', label: 'I host it for you', monthly: 4 }
-                                    ]
-                                },
-                                {
-                                    id: 'extras', kind: 'chips', label: 'Extras',
-                                    options: [
-                                        { id: 'brand', label: 'Custom name, avatar and embeds', price: 8, days: 0.2 },
-                                        { id: 'guide', label: 'Guide for your staff', price: 10, days: 0.3 },
-                                        { id: 'migrate', label: 'Move over from an old bot', price: 30, days: 1 }
-                                    ]
-                                }
+                            id: 'hosting', kind: 'choice', label: 'Hosting', def: 'setup', options: [
+                                { v: 'self', label: 'I host it myself' },
+                                { v: 'setup', label: 'Set it up for me', price: 10, line: 'Hosting setup' },
+                                { v: 'managed', label: 'Managed hosting', monthly: 4, line: 'Managed bot hosting' }
                             ]
                         }
                     ]
                 },
 
                 webapp: {
-                    name: 'Web app', base: 180, baseLabel: 'Application base build', baseDays: 10,
-                    sections: [
+                    name: 'Web app', blurb: 'Dashboards, stores, platforms and internal tools', from: 180,
+                    base: 180, baseLabel: 'Application base build', baseDays: 10, featureDays: 1.2,
+                    controls: [
+                        { id: 'screens', kind: 'range', label: 'Screens', unit: 'screens', unit1: 'screen', min: 2, max: 40, def: 6, included: 3, per: 35, days: 1 },
+                        { id: 'roles', kind: 'stepper', label: 'User roles', unit: 'roles', unit1: 'role', min: 1, max: 8, def: 2, included: 1, per: 20, days: 0.5 },
+                        { id: 'integrations', kind: 'stepper', label: 'Outside services to connect', unit: 'integrations', unit1: 'integration', min: 0, max: 10, def: 0, included: 0, per: 35, days: 1.5 },
                         {
-                            title: 'Size',
-                            groups: [
-                                { id: 'screens', kind: 'range', label: 'Screens', unit: 'screen', min: 2, max: 40, def: 6, included: 3, price: 35, days: 1, hint: 'Count the main views, like dashboard, settings and orders. Not every popup.' },
-                                { id: 'roles', kind: 'stepper', label: 'User roles', unit: 'role', min: 1, max: 8, def: 1, included: 1, price: 20, days: 0.5, hint: 'For example customer, staff and admin is three roles.' }
+                            id: 'design', kind: 'choice', label: 'Design', def: 'custom', options: [
+                                { v: 'yours', label: 'I have a design' },
+                                { v: 'template', label: 'Template based', mult: 1.1, line: 'Template design' },
+                                { v: 'custom', label: 'Custom design', mult: 1.25, line: 'Custom design', days: 3 }
                             ]
                         },
                         {
-                            title: 'Accounts',
-                            groups: [
-                                {
-                                    id: 'auth', kind: 'choice', label: 'Login', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'No accounts', price: 0 },
-                                        { id: 'email', label: 'Email and password', price: 40, days: 1 },
-                                        { id: 'magic', label: 'Email with login links', price: 50, days: 1.2 }
-                                    ]
-                                },
-                                { id: 'oauth', kind: 'stepper', label: 'Sign in with Discord, Google or Roblox', unit: 'provider', min: 0, max: 4, def: 0, price: 25, days: 0.5 }
+                            id: 'scale', kind: 'choice', label: 'Expected users', def: 'small', options: [
+                                { v: 'small', label: 'Up to 1.000' },
+                                { v: 'medium', label: 'Up to 50.000', mult: 1.12, line: 'Built for medium traffic' },
+                                { v: 'large', label: 'More than that', mult: 1.3, line: 'Built for high traffic', days: 3 }
                             ]
                         },
                         {
-                            title: 'Design',
-                            groups: [DESIGN]
-                        },
-                        {
-                            title: 'Features',
-                            groups: [
-                                {
-                                    id: 'feat', kind: 'chips', label: 'Pick everything it needs',
-                                    options: [
-                                        { id: 'pay', label: 'One time payments', price: 80, days: 2 },
-                                        { id: 'subs', label: 'Subscriptions', price: 60, days: 2 },
-                                        { id: 'admin', label: 'Admin panel', price: 70, days: 2.5 },
-                                        { id: 'charts', label: 'Dashboard with charts', price: 45, days: 1.5 },
-                                        { id: 'files', label: 'File uploads', price: 30, days: 1 },
-                                        { id: 'mail', label: 'Email notifications', price: 20, days: 0.6 },
-                                        { id: 'notify', label: 'In app notifications', price: 25, days: 0.8 },
-                                        { id: 'realtime', label: 'Live updates', price: 60, days: 2 },
-                                        { id: 'search', label: 'Search and filters', price: 30, days: 1 },
-                                        { id: 'export', label: 'CSV or PDF export', price: 25, days: 0.8 },
-                                        { id: 'audit', label: 'Activity log', price: 25, days: 0.8 },
-                                        { id: 'api', label: 'Public API', price: 50, days: 2 },
-                                        { id: 'pwa', label: 'Installable on phones', price: 35, days: 1 },
-                                        { id: 'i18n', label: 'Multiple languages', price: 30, days: 1 }
-                                    ]
-                                },
-                                { id: 'integr', kind: 'stepper', label: 'Integrations with other services', unit: 'integration', min: 0, max: 10, def: 0, price: 35, days: 1, hint: 'Things like Stripe, Discord, Roblox, Google Sheets or your own API.' }
+                            id: 'platform', kind: 'choice', label: 'Platform', def: 'web', options: [
+                                { v: 'web', label: 'Web only' },
+                                { v: 'pwa', label: 'Web plus installable app', mult: 1.12, line: 'Installable app (PWA)', days: 2 }
                             ]
                         },
                         {
-                            title: 'Data and quality',
-                            groups: [
-                                {
-                                    id: 'migrate', kind: 'choice', label: 'Existing data', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'Starting fresh', price: 0 },
-                                        { id: 'import', label: 'Import a spreadsheet', price: 40, days: 1 },
-                                        { id: 'complex', label: 'Move from another system', price: 90, days: 3 }
-                                    ]
-                                },
-                                {
-                                    id: 'tests', kind: 'choice', label: 'Testing', def: 'standard',
-                                    options: [
-                                        { id: 'standard', label: 'Tested by hand', price: 0 },
-                                        { id: 'auto', label: 'Automated tests too', pct: 0.15, days: 2 }
-                                    ]
-                                },
-                                {
-                                    id: 'hosting', kind: 'choice', label: 'Hosting', def: 'setup',
-                                    options: [
-                                        { id: 'self', label: 'You host it', price: 0 },
-                                        { id: 'setup', label: 'I set it up for you', price: 20, days: 0.5 },
-                                        { id: 'managed', label: 'I host and monitor it', monthly: 12 }
-                                    ]
-                                }
+                            id: 'features', kind: 'chips', label: 'Features', items: [
+                                { id: 'auth', label: 'Accounts and login', price: 60 },
+                                { id: 'oauth', label: 'Sign in with Google or Discord', price: 25 },
+                                { id: 'twofa', label: 'Two factor login', price: 25 },
+                                { id: 'pay', label: 'Payments', price: 80 },
+                                { id: 'subs', label: 'Subscriptions', price: 50 },
+                                { id: 'admin', label: 'Admin panel', price: 70 },
+                                { id: 'db', label: 'Database design', price: 40 },
+                                { id: 'uploads', label: 'File uploads', price: 30 },
+                                { id: 'email', label: 'Email notifications', price: 20 },
+                                { id: 'realtime', label: 'Live updates', price: 60 },
+                                { id: 'search', label: 'Search and filters', price: 30 },
+                                { id: 'charts', label: 'Charts and stats', price: 45 },
+                                { id: 'export', label: 'CSV or PDF export', price: 25 },
+                                { id: 'i18n', label: 'Multiple languages', price: 40 },
+                                { id: 'audit', label: 'Activity log', price: 30 },
+                                { id: 'api', label: 'Public API', price: 70, days: 3 }
+                            ]
+                        },
+                        {
+                            id: 'hosting', kind: 'choice', label: 'Hosting', def: 'setup', options: [
+                                { v: 'self', label: 'I host it myself' },
+                                { v: 'setup', label: 'Set it up for me', price: 20, line: 'Hosting setup' },
+                                { v: 'managed', label: 'Managed hosting', monthly: 12, line: 'Managed app hosting' }
                             ]
                         }
                     ]
                 },
 
                 roblox: {
-                    name: 'Roblox system', base: 45, baseLabel: 'Systems base build', baseDays: 3,
-                    sections: [
+                    name: 'Roblox system', blurb: 'Saves, economies, leaderboards and anti exploit work', from: 45,
+                    base: 45, baseLabel: 'Systems base build', baseDays: 3, featureDays: 0.9,
+                    controls: [
+                        { id: 'systems', kind: 'range', label: 'Separate systems', unit: 'systems', unit1: 'system', min: 1, max: 20, def: 3, included: 1, per: 25, days: 0.8 },
                         {
-                            title: 'Size and scope',
-                            groups: [
-                                { id: 'systems', kind: 'range', label: 'Separate systems', unit: 'system', min: 1, max: 20, def: 3, included: 1, price: 25, days: 0.8, hint: 'Shop, quests and inventory counts as three.' },
-                                {
-                                    id: 'code', kind: 'choice', label: 'Codebase', def: 'new',
-                                    options: [
-                                        { id: 'new', label: 'New game or place', price: 0 },
-                                        { id: 'extend', label: 'Adding to your game', pct: 0.15, days: 1 },
-                                        { id: 'fix', label: 'Fixing or rewriting code', pct: 0.25, days: 1.5 }
-                                    ]
-                                },
-                                {
-                                    id: 'scale', kind: 'choice', label: 'Expected players', def: 'small',
-                                    options: [
-                                        { id: 'small', label: 'Up to 100 at once', price: 0 },
-                                        { id: 'mid', label: '100 to 1.000', pct: 0.10, days: 0.5 },
-                                        { id: 'large', label: 'Over 1.000', pct: 0.25, days: 1.5 }
-                                    ]
-                                }
+                            id: 'stage', kind: 'choice', label: 'Where we start', def: 'new', options: [
+                                { v: 'new', label: 'A new game' },
+                                { v: 'existing', label: 'Existing code', mult: 1.15, line: 'Working in existing code', days: 1 }
                             ]
                         },
                         {
-                            title: 'Systems',
-                            groups: [
-                                {
-                                    id: 'sys', kind: 'chips', label: 'Pick everything it needs',
-                                    options: [
-                                        { id: 'save', label: 'Save data', price: 30, days: 0.8 },
-                                        { id: 'lock', label: 'Session locking', price: 25, days: 0.6 },
-                                        { id: 'lb', label: 'Global leaderboards', price: 20, days: 0.5 },
-                                        { id: 'cur', label: 'Currencies', price: 35, days: 0.8 },
-                                        { id: 'shop', label: 'Shop', price: 25, days: 0.8 },
-                                        { id: 'monet', label: 'Gamepasses and dev products', price: 20, days: 0.5 },
-                                        { id: 'inv', label: 'Inventory', price: 30, days: 1 },
-                                        { id: 'quests', label: 'Quests', price: 35, days: 1.2 },
-                                        { id: 'daily', label: 'Daily rewards', price: 15, days: 0.4 },
-                                        { id: 'trade', label: 'Trading', price: 60, days: 2 },
-                                        { id: 'pets', label: 'Pets and eggs', price: 50, days: 2 },
-                                        { id: 'rebirth', label: 'Rebirths', price: 20, days: 0.5 },
-                                        { id: 'badges', label: 'Badges', price: 10, days: 0.2 },
-                                        { id: 'admin', label: 'Admin panel', price: 25, days: 0.8 },
-                                        { id: 'tp', label: 'Teleports and matchmaking', price: 40, days: 1.5 },
-                                        { id: 'msg', label: 'Cross server messaging', price: 30, days: 1 },
-                                        { id: 'anti', label: 'Anti exploit, server authority', price: 45, days: 1.5 },
-                                        { id: 'review', label: 'Exploit review of your game', price: 45, days: 1.5 },
-                                        { id: 'tutorial', label: 'Tutorial', price: 20, days: 0.6 },
-                                        { id: 'events', label: 'Analytics events', price: 20, days: 0.5 }
-                                    ]
-                                }
+                            id: 'ui', kind: 'choice', label: 'Interface', def: 'none', options: [
+                                { v: 'none', label: 'No UI work' },
+                                { v: 'build', label: 'Build my UI designs', price: 30, line: 'UI implementation', days: 1 },
+                                { v: 'design', label: 'Design and build UI', price: 70, line: 'UI design and build', days: 2 }
                             ]
                         },
                         {
-                            title: 'Interface and handover',
-                            groups: [
-                                {
-                                    id: 'ui', kind: 'choice', label: 'UI', def: 'none',
-                                    options: [
-                                        { id: 'none', label: 'Not needed', price: 0 },
-                                        { id: 'build', label: 'Build your designs', price: 30, days: 1 },
-                                        { id: 'design', label: 'Design and build it', price: 60, days: 2 }
-                                    ]
-                                },
-                                {
-                                    id: 'extras', kind: 'chips', label: 'Extras',
-                                    options: [
-                                        { id: 'docs', label: 'Documentation for your scripters', price: 15, days: 0.4 },
-                                        { id: 'config', label: 'Easy config module', price: 10, days: 0.3 }
-                                    ]
-                                }
+                            id: 'features', kind: 'chips', label: 'Features', items: [
+                                { id: 'saves', label: 'Save data', price: 30 },
+                                { id: 'locking', label: 'Session locking', price: 20 },
+                                { id: 'lb', label: 'Leaderboards', price: 20 },
+                                { id: 'glb', label: 'Global leaderboards', price: 30 },
+                                { id: 'economy', label: 'Economy and shop', price: 35 },
+                                { id: 'monet', label: 'Game passes and dev products', price: 25 },
+                                { id: 'inv', label: 'Inventory', price: 35 },
+                                { id: 'quests', label: 'Quests', price: 35 },
+                                { id: 'daily', label: 'Daily rewards', price: 15 },
+                                { id: 'trading', label: 'Trading', price: 60, days: 2 },
+                                { id: 'pets', label: 'Pets and eggs', price: 50 },
+                                { id: 'rebirth', label: 'Rebirths', price: 20 },
+                                { id: 'admin', label: 'Admin commands', price: 25 },
+                                { id: 'anti', label: 'Anti exploit checks', price: 45 },
+                                { id: 'analytics', label: 'Analytics', price: 25 },
+                                { id: 'tp', label: 'Teleports and matchmaking', price: 40 },
+                                { id: 'msg', label: 'Cross server messaging', price: 30 }
                             ]
                         }
                     ]
                 }
             };
 
-            /* ==================================================================
-               ENGINE
-            ================================================================== */
-            var robuxPerEuro = RATE.usdPerEuro / RATE.devexUsdPerRobux;
-            var nf = function (n) { return Math.round(n).toLocaleString('nl-NL'); };
-            var euro = function (n) { return '\u20ac' + nf(n); };
-            var robux = function (n) { return 'R$ ' + (Math.round(n * robuxPerEuro / 10) * 10).toLocaleString('nl-NL'); };
-            var plural = function (unit, n) { return n === 1 ? unit : unit + 's'; };
+            var ORDER = [
+                {
+                    id: 'depth', kind: 'choice', label: 'How deep it goes', def: 'standard', options: [
+                        { v: 'simple', label: 'Simple', mult: 0.85, line: 'Simple build', note: 'Basic styling, fewer edge cases' },
+                        { v: 'standard', label: 'Standard', note: 'What most projects need' },
+                        { v: 'advanced', label: 'Advanced', mult: 1.35, line: 'Advanced build', note: 'Extra polish and testing' }
+                    ]
+                },
+                {
+                    id: 'timeline', kind: 'choice', label: 'When you need it', def: 'normal', options: [
+                        { v: 'flexible', label: 'Whenever suits', mult: 0.95, line: 'Flexible timeline', note: 'Start within two weeks' },
+                        { v: 'normal', label: 'Normal', note: 'Start within a few days' },
+                        { v: 'rush', label: 'Rush', mult: 1.3, line: 'Rush delivery', note: 'Start next working day' },
+                        { v: 'express', label: 'Express', mult: 1.6, line: 'Express delivery', note: 'Start today, top priority' }
+                    ]
+                },
+                { id: 'revisions', kind: 'stepper', label: 'Rounds of changes', unit: 'rounds', unit1: 'round', min: 2, max: 10, def: 2, included: 2, per: 10, days: 0.5, note: 'Two rounds are always included.' },
+                {
+                    id: 'extras', kind: 'chips', label: 'Handover extras', items: [
+                        { id: 'docs', label: 'Full documentation', price: 20 },
+                        { id: 'call', label: 'Walkthrough call', price: 15 },
+                        { id: 'tests', label: 'Automated tests', price: 30, days: 1 },
+                        { id: 'repo', label: 'GitHub repository setup', price: 10 }
+                    ]
+                },
+                {
+                    id: 'support', kind: 'choice', label: 'Support after the free 30 days', def: 'none', options: [
+                        { v: 'none', label: 'No thanks' },
+                        { v: 'q', label: '3 months', monthly: 9, line: 'Support, 3 months' },
+                        { v: 'y', label: '12 months', monthly: 7, line: 'Support, 12 months' }
+                    ]
+                }
+            ];
 
-            var sectionsFor = function (type) { return TYPES[type].sections.concat([DELIVERY]); };
-            var groupsFor = function (type) {
-                var out = [];
-                sectionsFor(type).forEach(function (s) { out = out.concat(s.groups); });
-                return out;
+            var PAYMENT = [
+                {
+                    id: 'client', kind: 'choice', label: 'Who is paying', def: 'private', options: [
+                        { v: 'private', label: 'Private person', vat: 0.21, note: '21% VAT' },
+                        { v: 'nl', label: 'Business in the Netherlands', vat: 0.21, note: '21% VAT' },
+                        { v: 'eu', label: 'EU business with a VAT number', vat: 0, note: 'VAT reverse charged' },
+                        { v: 'world', label: 'Outside the EU', vat: 0, note: 'No Dutch VAT' }
+                    ]
+                },
+                {
+                    id: 'schedule', kind: 'choice', label: 'When you pay', def: 'half', options: [
+                        { v: 'half', label: 'Half now, half on delivery', note: 'The usual' },
+                        { v: 'full', label: 'Everything upfront', note: '3% off' },
+                        { v: 'thirds', label: 'Three payments', note: 'Above \u20ac300' }
+                    ]
+                }
+            ];
+
+            /* ------------------------------------------------------------------ State */
+            var defaultsFor = function (controls) {
+                var o = {};
+                controls.forEach(function (c) { o[c.id] = c.kind === 'chips' ? [] : c.def; });
+                return o;
             };
-            var findOpt = function (g, id) { return g.options.filter(function (o) { return o.id === id; })[0]; };
 
-            var newProject = function (type) {
-                var values = {};
-                groupsFor(type).forEach(function (g) {
-                    if (g.kind === 'chips') values[g.id] = [];
-                    else values[g.id] = g.def;
-                });
-                return { type: type, values: values };
+            var fresh = function () {
+                var cfg = {};
+                Object.keys(TYPES).forEach(function (t) { cfg[t] = defaultsFor(TYPES[t].controls); });
+                return { types: ['website'], cfg: cfg, order: defaultsFor(ORDER), pay: defaultsFor(PAYMENT), currency: 'eur', code: '' };
             };
 
-            var state = {
-                projects: [newProject('website')],
-                active: 0,
-                currency: 'eur',
-                settings: { support: 'd30', billing: 'private' },
-                code: null
-            };
+            var state = fresh();
 
-            var computeProject = function (p) {
-                var cfg = TYPES[p.type];
-                var flats = [{ label: cfg.baseLabel, amount: cfg.base }];
-                var pcts = [];
-                var monthly = [];
-                var days = cfg.baseDays;
-                var mul = 1;
-
-                groupsFor(p.type).forEach(function (g) {
-                    var v = p.values[g.id];
-                    if (g.kind === 'range' || g.kind === 'stepper') {
-                        var extra = Math.max(0, v - (g.included || 0));
-                        if (extra > 0) {
-                            var lbl = (g.included ? extra + ' extra ' : extra + ' ') + plural(g.unit, extra);
-                            flats.push({ label: lbl, amount: extra * g.price });
-                            days += extra * (g.days || 0);
-                        }
-                    } else if (g.kind === 'chips') {
-                        g.options.forEach(function (o) {
-                            if (v.indexOf(o.id) > -1) {
-                                flats.push({ label: o.label, amount: o.price });
-                                days += o.days || 0.3;
-                            }
+            (function restore() {
+                var m = location.hash.match(/q=([^&]+)/);
+                if (!m) return;
+                try {
+                    var data = JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1])))));
+                    var base = fresh();
+                    if (Array.isArray(data.types)) base.types = data.types.filter(function (t) { return TYPES[t]; });
+                    Object.keys(TYPES).forEach(function (t) {
+                        if (data.cfg && data.cfg[t]) Object.keys(base.cfg[t]).forEach(function (k) {
+                            if (data.cfg[t][k] !== undefined) base.cfg[t][k] = data.cfg[t][k];
                         });
-                    } else if (g.kind === 'choice') {
-                        var o = findOpt(g, v);
-                        if (!o) return;
-                        if (o.price && o.perOf) {
-                            var n = p.values[o.perOf] || 0;
-                            flats.push({ label: g.label + ': ' + o.label + ', ' + n + ' ' + plural(o.unit, n), amount: o.price * n });
-                        } else if (o.price) {
-                            flats.push({ label: g.label + ': ' + o.label, amount: o.price });
-                        }
-                        if (o.pct) pcts.push({ label: g.label + ': ' + o.label, pct: o.pct });
-                        if (o.monthly) monthly.push({ label: g.label + ': ' + o.label, amount: o.monthly });
-                        days += o.days || 0;
-                        if (o.daysMul) mul *= o.daysMul;
-                    }
-                });
+                    });
+                    ['order', 'pay'].forEach(function (g) {
+                        if (data[g]) Object.keys(base[g]).forEach(function (k) { if (data[g][k] !== undefined) base[g][k] = data[g][k]; });
+                    });
+                    if (data.currency === 'robux') base.currency = 'robux';
+                    if (typeof data.code === 'string') base.code = data.code;
+                    state = base;
+                } catch (e) { /* ignore a broken link */ }
+            })();
 
-                var flatSum = flats.reduce(function (s, i) { return s + i.amount; }, 0);
-                var items = flats.slice();
-                pcts.forEach(function (x) {
-                    items.push({ label: x.label + ' (' + (x.pct > 0 ? '+' : '') + Math.round(x.pct * 100) + '%)', amount: Math.round(flatSum * x.pct) });
-                });
-                var total = items.reduce(function (s, i) { return s + i.amount; }, 0);
-                return {
-                    name: cfg.name,
-                    items: items,
-                    total: total,
-                    monthly: monthly,
-                    days: Math.max(1, Math.ceil(days * mul))
-                };
-            };
+            try {
+                var qp = new URLSearchParams(location.search).get('code');
+                if (qp) state.code = qp.toUpperCase();
+            } catch (e) { }
 
-            var codeStatus = function (raw) {
-                var key = String(raw || '').trim().toUpperCase();
-                if (!key) return { ok: false, msg: '' };
-                var c = CODES[key];
-                if (!c) return { ok: false, msg: 'That code is not valid.' };
-                if (c.expires) {
-                    var end = new Date(c.expires + 'T23:59:59');
-                    if (new Date() > end) return { ok: false, msg: 'That code has expired.' };
-                }
-                return { ok: true, key: key, pct: c.pct, msg: key + ' applied, ' + (c.note || c.pct + '% off') + '.' };
-            };
-
-            var computeQuote = function () {
-                var projects = state.projects.map(computeProject);
-                var projectSum = projects.reduce(function (s, p) { return s + p.total; }, 0);
-                var extras = [];
-
-                if (projects.length > 1) {
-                    extras.push({ label: 'Combined projects (' + Math.round(RATE.bundlePct * 100) + '% off)', amount: -Math.round(projectSum * RATE.bundlePct) });
-                }
-
-                var sup = findOpt(SETTINGS[0], state.settings.support);
-                if (sup && sup.price) extras.push({ label: 'Support: ' + sup.label, amount: sup.price });
-
-                var pre = projectSum + extras.reduce(function (s, i) { return s + i.amount; }, 0);
-
-                var code = state.code ? codeStatus(state.code) : null;
-                var codeAmount = 0;
-                if (code && code.ok) {
-                    codeAmount = -Math.round(pre * code.pct / 100);
-                    extras.push({ label: 'Code ' + code.key + ' (' + code.pct + '% off)', amount: codeAmount });
-                }
-
-                var total = pre + codeAmount;
-                var bill = findOpt(SETTINGS[1], state.settings.billing);
-                var vat = Math.round(total * (bill ? bill.vat : 0.21));
-                var monthly = [];
-                projects.forEach(function (p) { monthly = monthly.concat(p.monthly); });
-
-                var saved = -extras.reduce(function (s, i) { return s + (i.amount < 0 ? i.amount : 0); }, 0);
-
-                return {
-                    projects: projects,
-                    extras: extras,
-                    total: total,
-                    vat: vat,
-                    vatRate: bill ? bill.vat : 0.21,
-                    bill: bill,
-                    monthly: monthly,
-                    monthlySum: monthly.reduce(function (s, m) { return s + m.amount; }, 0),
-                    days: projects.reduce(function (s, p) { return s + p.days; }, 0),
-                    saved: saved
-                };
-            };
-
-            /* ==================================================================
-               UI
-            ================================================================== */
-            var fmt = function (n) {
-                var sign = n < 0 ? '-' : '';
+            /* ------------------------------------------------------------------ Formatting */
+            var robuxPerEuro = SETTINGS.usdPerEuro / SETTINGS.devexUsdPerRobux;
+            var euro = function (n) { return '\u20ac' + Math.round(n).toLocaleString('nl-NL'); };
+            var robux = function (n) { return 'R$ ' + (Math.round(n * robuxPerEuro / 10) * 10).toLocaleString('nl-NL'); };
+            var money = function (n) {
+                var sign = n < -0.49 ? '-' : '';
                 var v = Math.abs(n);
                 return sign + (state.currency === 'robux' ? robux(v) : euro(v));
             };
-
-            var tagFor = function (o) {
-                if (o.tag) return o.tag;
-                if (o.monthly) return fmt(o.monthly) + ' per month';
-                if (o.pct) return (o.pct > 0 ? '+' : '-') + Math.round(Math.abs(o.pct) * 100) + '%';
-                if (o.price && o.perOf) return fmt(o.price) + ' per ' + o.unit;
-                if (o.price) return '+' + fmt(o.price);
-                return 'Included';
+            var pct = function (m) {
+                var p = Math.round((m - 1) * 100);
+                return (p > 0 ? '+' : '') + p + '%';
             };
 
+            var optHint = function (o, controls) {
+                var h;
+                if (o.perOf) {
+                    var ref = controls.filter(function (c) { return c.id === o.perOf; })[0];
+                    h = money(o.price) + ' per ' + (ref ? ref.unit1 : 'unit');
+                } else if (o.price) h = '+' + money(o.price);
+                else if (o.monthly) h = money(o.monthly) + ' a month';
+                else if (o.mult && o.mult !== 1) h = pct(o.mult);
+                if (h && o.note) return h + ', ' + o.note.toLowerCase();
+                return h || o.note || 'Included';
+            };
+
+            /* ------------------------------------------------------------------ Building */
             var el = function (tag, cls, text) {
-                var n = document.createElement(tag);
-                if (cls) n.className = cls;
-                if (text != null) n.textContent = text;
-                return n;
+                var e = document.createElement(tag);
+                if (cls) e.className = cls;
+                if (text !== undefined) e.textContent = text;
+                return e;
             };
 
-            var ICON_MINUS = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
-            var ICON_PLUS = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
-            var ICON_X = '<svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><path d="M1.5 1.5l5 5M6.5 1.5l-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
-
-            var active = function () { return state.projects[state.active]; };
-
-            var unitText = function (g, v) {
-                if (g.kind === 'range' || g.kind === 'stepper') return v + ' ' + plural(g.unit, v);
-                return '';
+            var visible = function (c, values) {
+                return !c.when || c.when.in.indexOf(values[c.when.id]) > -1;
             };
 
-            var priceText = function (g) {
-                if (g.included) return g.included + ' included, then ' + fmt(g.price) + ' each';
-                return fmt(g.price) + ' each';
-            };
-
-            var renderGroup = function (g, values, scope) {
-                var wrap = el('div', 'grp');
-                wrap.dataset.g = g.id;
-                wrap.dataset.kind = g.kind;
-                wrap.dataset.scope = scope;
-
-                var head = el('div', 'grp-head');
-                head.appendChild(el('span', 'grp-label', g.label));
-                if (g.kind === 'range' || g.kind === 'stepper') {
-                    head.appendChild(el('span', 'grp-val', unitText(g, values[g.id])));
-                }
+            var buildControl = function (c, values, controls) {
+                var wrap = el('div', 'ctrl');
+                wrap.dataset.ctrl = c.id;
+                var head = el('div', 'ctrl-h');
+                head.appendChild(el('p', null, c.label));
+                var side = el('span');
+                head.appendChild(side);
                 wrap.appendChild(head);
-                if (g.hint) wrap.appendChild(el('p', 'grp-hint', g.hint));
 
-                var ctrl = el('div', 'grp-ctrl');
-
-                if (g.kind === 'range') {
-                    var r = document.createElement('input');
-                    r.type = 'range';
-                    r.min = g.min; r.max = g.max; r.value = values[g.id];
-                    r.setAttribute('aria-label', g.label);
-                    r.style.setProperty('--fill', ((values[g.id] - g.min) / (g.max - g.min) * 100) + '%');
-                    ctrl.appendChild(r);
-                    wrap.appendChild(ctrl);
-                    wrap.appendChild(el('p', 'grp-price', priceText(g)));
-                } else if (g.kind === 'stepper') {
-                    var st = el('div', 'stepper');
-                    var dec = el('button'); dec.type = 'button'; dec.dataset.act = 'dec'; dec.innerHTML = ICON_MINUS; dec.setAttribute('aria-label', 'Fewer');
-                    var out = el('output', null, String(values[g.id]));
-                    var inc = el('button'); inc.type = 'button'; inc.dataset.act = 'inc'; inc.innerHTML = ICON_PLUS; inc.setAttribute('aria-label', 'More');
-                    dec.disabled = values[g.id] <= g.min;
-                    inc.disabled = values[g.id] >= g.max;
-                    st.appendChild(dec); st.appendChild(out); st.appendChild(inc);
-                    ctrl.appendChild(st);
-                    wrap.appendChild(ctrl);
-                    wrap.appendChild(el('p', 'grp-price', priceText(g)));
-                } else if (g.kind === 'choice') {
+                if (c.kind === 'choice') {
                     var opts = el('div', 'opts');
-                    g.options.forEach(function (o) {
+                    c.options.forEach(function (o) {
                         var b = el('button', 'opt');
                         b.type = 'button';
-                        b.dataset.o = o.id;
-                        b.setAttribute('aria-pressed', values[g.id] === o.id ? 'true' : 'false');
+                        b.dataset.v = o.v;
+                        b.setAttribute('aria-pressed', values[c.id] === o.v ? 'true' : 'false');
                         b.appendChild(el('b', null, o.label));
-                        var sm = el('small', null, tagFor(o));
-                        sm.dataset.tag = '1';
-                        b.appendChild(sm);
+                        b.appendChild(el('small', null, optHint(o, controls)));
+                        b.addEventListener('click', function () {
+                            if (b.disabled) return;
+                            values[c.id] = o.v;
+                            opts.querySelectorAll('.opt').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+                            b.setAttribute('aria-pressed', 'true');
+                            update();
+                        });
                         opts.appendChild(b);
                     });
-                    ctrl.appendChild(opts);
-                    wrap.appendChild(ctrl);
-                } else if (g.kind === 'chips') {
-                    var chips = el('div', 'chips');
-                    g.options.forEach(function (o) {
-                        var c = el('button', 'chip');
-                        c.type = 'button';
-                        c.dataset.o = o.id;
-                        c.setAttribute('aria-pressed', values[g.id].indexOf(o.id) > -1 ? 'true' : 'false');
-                        c.appendChild(document.createTextNode(o.label + ' '));
-                        var u = el('u', null, fmt(o.price));
-                        c.appendChild(u);
-                        chips.appendChild(c);
-                    });
-                    ctrl.appendChild(chips);
-                    wrap.appendChild(ctrl);
-                    var cnt = el('p', 'chip-count');
-                    wrap.appendChild(cnt);
-                    updateChipCount(wrap, g, values);
+                    wrap.appendChild(opts);
                 }
+
+                if (c.kind === 'range') {
+                    var row = el('div', 'range-row');
+                    var input = document.createElement('input');
+                    input.type = 'range';
+                    input.min = c.min;
+                    input.max = c.max;
+                    input.step = c.step || 1;
+                    input.value = values[c.id];
+                    input.setAttribute('aria-label', c.label);
+                    var out = el('output', 'num');
+                    var paint = function () {
+                        out.textContent = values[c.id];
+                        input.style.setProperty('--fill', ((values[c.id] - c.min) / (c.max - c.min) * 100) + '%');
+                    };
+                    input.addEventListener('input', function () {
+                        values[c.id] = parseInt(input.value, 10);
+                        paint();
+                        update();
+                    });
+                    paint();
+                    row.appendChild(input);
+                    row.appendChild(out);
+                    wrap.appendChild(row);
+                    side.textContent = c.included + ' included, then ' + money(c.per) + ' each';
+                }
+
+                if (c.kind === 'stepper') {
+                    var st = el('div', 'stepper');
+                    var minus = el('button', null, '\u2212');
+                    var plus = el('button', null, '+');
+                    minus.type = 'button';
+                    plus.type = 'button';
+                    minus.setAttribute('aria-label', 'Fewer ' + c.unit);
+                    plus.setAttribute('aria-label', 'More ' + c.unit);
+                    var val = el('output', 'num');
+                    var paintS = function () {
+                        val.textContent = values[c.id];
+                        minus.disabled = values[c.id] <= c.min;
+                        plus.disabled = values[c.id] >= c.max;
+                    };
+                    minus.addEventListener('click', function () { values[c.id] = Math.max(c.min, values[c.id] - 1); paintS(); update(); });
+                    plus.addEventListener('click', function () { values[c.id] = Math.min(c.max, values[c.id] + 1); paintS(); update(); });
+                    paintS();
+                    st.appendChild(minus);
+                    st.appendChild(val);
+                    st.appendChild(plus);
+                    wrap.appendChild(st);
+                    side.textContent = (c.included ? c.included + ' included, then ' : '') + money(c.per) + ' each';
+                    if (c.note) wrap.appendChild(el('p', 'ctrl-note', c.note));
+                }
+
+                if (c.kind === 'chips') {
+                    var chips = el('div', 'chips');
+                    c.items.forEach(function (it) {
+                        var b = el('button', 'chip');
+                        b.type = 'button';
+                        b.setAttribute('aria-pressed', values[c.id].indexOf(it.id) > -1 ? 'true' : 'false');
+                        b.appendChild(document.createTextNode(it.label + ' '));
+                        b.appendChild(el('u', null, '+' + money(it.price)));
+                        b.addEventListener('click', function () {
+                            var list = values[c.id];
+                            var at = list.indexOf(it.id);
+                            if (at > -1) list.splice(at, 1); else list.push(it.id);
+                            b.setAttribute('aria-pressed', at > -1 ? 'false' : 'true');
+                            update();
+                        });
+                        chips.appendChild(b);
+                    });
+                    wrap.appendChild(chips);
+                    side.dataset.count = c.id;
+                }
+
+                if (!visible(c, values)) wrap.hidden = true;
                 return wrap;
             };
 
-            var updateChipCount = function (wrap, g, values) {
-                var cnt = wrap.querySelector('.chip-count');
-                if (!cnt) return;
-                var sel = values[g.id];
-                if (!sel.length) { cnt.textContent = 'Nothing selected'; return; }
-                var sum = g.options.reduce(function (s, o) { return s + (sel.indexOf(o.id) > -1 ? o.price : 0); }, 0);
-                cnt.textContent = sel.length + ' selected, ' + fmt(sum);
-            };
-
-            var sectionsEl = document.getElementById('sections');
-            var settingsEl = document.getElementById('settings');
-
-            var renderSections = function () {
-                var p = active();
-                sectionsEl.innerHTML = '';
-                sectionsFor(p.type).forEach(function (s, i) {
-                    var card = el('div', 'card' + (reduced ? '' : ' swapin'));
-                    card.style.animationDelay = (i * 40) + 'ms';
-                    var h = el('div', 'card-h');
-                    h.appendChild(el('h2', null, s.title));
-                    card.appendChild(h);
-                    s.groups.forEach(function (g) { card.appendChild(renderGroup(g, p.values, 'project')); });
-                    sectionsEl.appendChild(card);
+            var typeOrder = Object.keys(TYPES);
+            var typeWrap = document.getElementById('typecards');
+            var buildTypeCards = function () {
+                typeWrap.innerHTML = '';
+                typeOrder.forEach(function (t) {
+                    var T = TYPES[t];
+                    var b = el('button', 'typecard');
+                    b.type = 'button';
+                    b.setAttribute('aria-pressed', state.types.indexOf(t) > -1 ? 'true' : 'false');
+                    var chk = el('span', 'check');
+                    chk.innerHTML = '<svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.3l2.4 2.4 4.6-5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                    b.appendChild(chk);
+                    b.appendChild(el('b', null, T.name));
+                    b.appendChild(el('span', null, T.blurb));
+                    b.appendChild(el('small', null, 'from ' + money(T.from)));
+                    b.addEventListener('click', function () {
+                        var at = state.types.indexOf(t);
+                        if (at > -1) state.types.splice(at, 1); else state.types.push(t);
+                        state.types.sort(function (a, c) { return typeOrder.indexOf(a) - typeOrder.indexOf(c); });
+                        b.setAttribute('aria-pressed', at > -1 ? 'false' : 'true');
+                        buildProjects();
+                        update();
+                    });
+                    typeWrap.appendChild(b);
                 });
             };
 
-            var renderSettings = function () {
-                settingsEl.innerHTML = '';
-                SETTINGS.forEach(function (g) { settingsEl.appendChild(renderGroup(g, state.settings, 'settings')); });
-            };
-
-            var projectsEl = document.getElementById('projects');
-            var renderProjects = function (q) {
-                projectsEl.innerHTML = '';
-                state.projects.forEach(function (p, i) {
-                    var t = el('div', 'ptab' + (i === state.active ? ' on' : ''));
-                    t.dataset.i = i;
-                    t.setAttribute('role', 'button');
-                    t.tabIndex = 0;
-                    var b = el('b', null, (i + 1) + '. ' + TYPES[p.type].name);
-                    var sm = el('small', null, fmt(q.projects[i].total));
-                    t.appendChild(b); t.appendChild(sm);
-                    if (state.projects.length > 1) {
-                        var x = el('button', 'x');
-                        x.type = 'button';
-                        x.dataset.remove = i;
-                        x.innerHTML = ICON_X;
-                        x.setAttribute('aria-label', 'Remove project ' + (i + 1));
-                        t.appendChild(x);
-                    }
-                    projectsEl.appendChild(t);
-                });
-                var add = el('button', 'padd');
-                add.type = 'button';
-                add.id = 'addProject';
-                add.innerHTML = ICON_PLUS + '<span>Add a project</span>';
-                add.disabled = state.projects.length >= RATE.maxProjects;
-                projectsEl.appendChild(add);
-
-                document.getElementById('projCount').textContent = state.projects.length + ' ' + plural('project', state.projects.length);
-                var note = document.getElementById('bundleNote');
-                if (state.projects.length > 1) {
-                    note.innerHTML = '<b>' + Math.round(RATE.bundlePct * 100) + '% off</b> for combining ' + state.projects.length + ' projects in one quote.';
-                } else {
-                    note.textContent = 'Need a website and a bot? Add both here and get ' + Math.round(RATE.bundlePct * 100) + '% off the combined total.';
-                }
-            };
-
-            /* Segmented controls */
-            var placeInd = function (seg) {
-                var ind = seg.querySelector('.seg-ind');
-                var on = seg.querySelector('button[aria-pressed="true"]');
-                if (!ind || !on) return;
-                ind.style.width = on.offsetWidth + 'px';
-                ind.style.transform = 'translateX(' + on.offsetLeft + 'px)';
-            };
-            var typeSeg = document.getElementById('type');
-            var curSeg = document.getElementById('currency');
-            var syncTypeSeg = function () {
-                typeSeg.querySelectorAll('button').forEach(function (b) {
-                    b.setAttribute('aria-pressed', b.dataset.val === active().type ? 'true' : 'false');
-                });
-                placeInd(typeSeg);
-            };
-
-            /* Summary */
-            var priceOut = document.getElementById('priceOut');
-            var priceLabel = document.getElementById('priceLabel');
-            var timeOut = document.getElementById('timeOut');
-            var altOut = document.getElementById('altOut');
-            var breakdown = document.getElementById('breakdown');
-            var miniPrice = document.getElementById('miniPrice');
-            var rateNote = document.getElementById('rateNote');
-
-            var tween = null, shown = 0;
-            var showPrice = function (target, instant) {
-                if (reduced || instant) {
-                    if (tween) cancelAnimationFrame(tween);
-                    priceOut.textContent = fmt(target);
-                    shown = target;
+            var projWrap = document.getElementById('projects');
+            var buildProjects = function () {
+                projWrap.innerHTML = '';
+                if (!state.types.length) {
+                    projWrap.appendChild(el('div', 'empty', 'Pick at least one project above to see its options.'));
                     return;
                 }
-                var from = shown, start = performance.now();
+                state.types.forEach(function (t) {
+                    var T = TYPES[t];
+                    var card = el('div', 'proj');
+                    card.dataset.type = t;
+                    var h = el('div', 'proj-h');
+                    h.appendChild(el('h3', null, T.name));
+                    var sub = el('span', 'num');
+                    sub.dataset.sub = t;
+                    h.appendChild(sub);
+                    card.appendChild(h);
+                    var body = el('div', 'proj-b');
+                    T.controls.forEach(function (c) { body.appendChild(buildControl(c, state.cfg[t], T.controls)); });
+                    card.appendChild(body);
+                    projWrap.appendChild(card);
+                });
+            };
+
+            var orderWrap = document.getElementById('orderCtrls');
+            var payWrap = document.getElementById('payCtrls');
+            var buildGlobal = function () {
+                orderWrap.innerHTML = '';
+                ORDER.forEach(function (c) { orderWrap.appendChild(buildControl(c, state.order, ORDER)); });
+                payWrap.innerHTML = '';
+                PAYMENT.forEach(function (c) { payWrap.appendChild(buildControl(c, state.pay, PAYMENT)); });
+            };
+
+            var buildAll = function () {
+                buildTypeCards();
+                buildProjects();
+                buildGlobal();
+            };
+
+            /* ------------------------------------------------------------------ Calculation */
+            var computeProject = function (t) {
+                var T = TYPES[t];
+                var v = state.cfg[t];
+                var items = [];
+                var mults = [];
+                var monthly = [];
+                var days = T.baseDays || 0;
+                if (T.base) items.push({ label: T.baseLabel, amount: T.base });
+
+                T.controls.forEach(function (c) {
+                    if (!visible(c, v)) return;
+                    var val = v[c.id];
+                    if (c.kind === 'range' || c.kind === 'stepper') {
+                        var extra = Math.max(0, val - c.included);
+                        if (extra > 0) {
+                            items.push({ label: extra + ' extra ' + (extra === 1 ? c.unit1 : c.unit), amount: extra * c.per });
+                            days += extra * (c.days || 0);
+                        }
+                    } else if (c.kind === 'choice') {
+                        var o = c.options.filter(function (x) { return x.v === val; })[0] || c.options[0];
+                        if (o.price) items.push({ label: o.line || o.label, amount: o.perOf ? o.price * v[o.perOf] : o.price });
+                        if (o.days) days += o.days;
+                        if (o.mult && o.mult !== 1) mults.push(o);
+                        if (o.monthly) monthly.push({ label: o.line || o.label, amount: o.monthly });
+                    } else if (c.kind === 'chips') {
+                        c.items.forEach(function (it) {
+                            if (val.indexOf(it.id) > -1) {
+                                items.push({ label: it.label, amount: it.price });
+                                days += it.days || T.featureDays;
+                            }
+                        });
+                    }
+                });
+
+                var sub = items.reduce(function (s, i) { return s + i.amount; }, 0);
+                mults.forEach(function (o) {
+                    var a = sub * (o.mult - 1);
+                    items.push({ label: (o.line || o.label) + ', ' + pct(o.mult), amount: a, minus: a < 0 });
+                    sub += a;
+                });
+                return { type: t, name: T.name, items: items, sub: sub, days: days, monthly: monthly };
+            };
+
+            var pick = function (list, id, v) {
+                var c = list.filter(function (x) { return x.id === id; })[0];
+                return c.options.filter(function (o) { return o.v === v; })[0] || c.options[0];
+            };
+            var ctrlOf = function (list, id) { return list.filter(function (x) { return x.id === id; })[0]; };
+
+            var checkCode = function (code, projects, gross) {
+                if (!code) return { ok: false, silent: true };
+                var c = CODES[code];
+                if (!c) return { ok: false, msg: 'That code does not exist.' };
+                if (c.expires) {
+                    var end = new Date(c.expires + 'T23:59:59');
+                    if (new Date() > end) return { ok: false, msg: 'This code expired on ' + end.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.' };
+                }
+                if (c.only && !projects.some(function (p) { return c.only.indexOf(p.type) > -1; })) {
+                    return { ok: false, msg: 'This code only works on ' + c.only.map(function (t) { return TYPES[t].name; }).join(' and ') + ' projects.' };
+                }
+                if (c.minSpend && gross < c.minSpend) return { ok: false, msg: 'Spend at least ' + euro(c.minSpend) + ' to use this code.' };
+                return { ok: true, code: code, def: c };
+            };
+
+            var addWorkdays = function (from, n) {
+                var d = new Date(from);
+                var added = 0;
+                while (added < n) {
+                    d.setDate(d.getDate() + 1);
+                    if (d.getDay() !== 0 && d.getDay() !== 6) added++;
+                }
+                return d;
+            };
+
+            var compute = function () {
+                var projects = state.types.map(computeProject);
+                var n = projects.length;
+                var work = projects.reduce(function (s, p) { return s + p.sub; }, 0);
+                var orderLines = [];
+                var discountLines = [];
+
+                var depth = pick(ORDER, 'depth', state.order.depth);
+                var tl = pick(ORDER, 'timeline', state.order.timeline);
+                var factor = 1;
+                if (depth.mult && depth.mult !== 1) {
+                    var dA = work * (depth.mult - 1);
+                    orderLines.push({ label: depth.line + ', ' + pct(depth.mult), amount: dA, minus: dA < 0 });
+                    factor *= depth.mult;
+                }
+                if (tl.mult && tl.mult !== 1) {
+                    var tA = work * factor * (tl.mult - 1);
+                    orderLines.push({ label: tl.line + ', ' + pct(tl.mult), amount: tA, minus: tA < 0 });
+                    factor *= tl.mult;
+                }
+                var projectTotal = work * factor;
+
+                var revC = ctrlOf(ORDER, 'revisions');
+                var extraRev = Math.max(0, state.order.revisions - revC.included);
+                var extrasTotal = 0;
+                var extraDays = extraRev * revC.days;
+                if (extraRev > 0) {
+                    orderLines.push({ label: extraRev + ' extra ' + (extraRev === 1 ? 'round' : 'rounds') + ' of changes', amount: extraRev * revC.per });
+                    extrasTotal += extraRev * revC.per;
+                }
+                ctrlOf(ORDER, 'extras').items.forEach(function (it) {
+                    if (state.order.extras.indexOf(it.id) > -1) {
+                        orderLines.push({ label: it.label, amount: it.price });
+                        extrasTotal += it.price;
+                        extraDays += it.days || 0.3;
+                    }
+                });
+
+                var gross = n ? projectTotal + extrasTotal : 0;
+
+                var bundleRate = SETTINGS.bundle[Math.min(n, 4)] || 0;
+                var bundleA = 0;
+                if (bundleRate) {
+                    bundleA = -projectTotal * bundleRate;
+                    discountLines.push({ label: 'Bundle of ' + n + ' projects, -' + Math.round(bundleRate * 100) + '%', amount: bundleA, minus: true });
+                }
+
+                var codeRes = checkCode(state.code, projects, gross);
+                var codeA = 0;
+                if (codeRes.ok) {
+                    var c = codeRes.def;
+                    var eligible = c.only
+                        ? projects.filter(function (p) { return c.only.indexOf(p.type) > -1; }).reduce(function (s, p) { return s + p.sub; }, 0) * factor * (1 - bundleRate)
+                        : gross + bundleA;
+                    codeA = c.kind === 'percent' ? -eligible * c.value / 100 : -Math.min(c.value, gross + bundleA);
+                    discountLines.push({ label: codeRes.code + ', ' + c.label, amount: codeA, minus: true });
+                }
+
+                var afterCodes = gross + bundleA + codeA;
+                var upA = 0;
+                if (state.pay.schedule === 'full' && n) {
+                    upA = -afterCodes * SETTINGS.upfrontDiscount;
+                    discountLines.push({ label: 'Paid upfront, -' + Math.round(SETTINGS.upfrontDiscount * 100) + '%', amount: upA, minus: true });
+                }
+
+                var net = Math.max(0, Math.round(afterCodes + upA));
+                var client = pick(PAYMENT, 'client', state.pay.client);
+                var vat = Math.round(net * client.vat);
+                var total = net + vat;
+
+                var days = projects.reduce(function (s, p) { return s + p.days; }, 0);
+                if (n > 1) days *= SETTINGS.multiProjectTime;
+                var depthDays = { simple: 0.85, standard: 1, advanced: 1.3 }[state.order.depth];
+                var tlDays = { flexible: 1.2, normal: 1, rush: 0.65, express: 0.45 }[state.order.timeline];
+                var lead = { flexible: 8, normal: 3, rush: 1, express: 0 }[state.order.timeline];
+                days = n ? Math.max(1, Math.ceil((days * depthDays + extraDays) * tlDays)) : 0;
+                var ready = addWorkdays(new Date(), lead + days);
+
+                var monthly = [];
+                projects.forEach(function (p) { p.monthly.forEach(function (m) { monthly.push({ label: m.label, amount: m.amount }); }); });
+                var sup = pick(ORDER, 'support', state.order.support);
+                if (sup.monthly) monthly.push({ label: sup.line, amount: sup.monthly });
+
+                var schedule = state.pay.schedule;
+                if (schedule === 'thirds' && gross < SETTINGS.thirdsMinimum) schedule = 'half';
+                var sched;
+                if (schedule === 'full') sched = [['At the start', total]];
+                else if (schedule === 'thirds') {
+                    var third = Math.round(total / 3);
+                    sched = [['At the start', third], ['Halfway', third], ['On delivery', total - third * 2]];
+                } else {
+                    var half = Math.round(total / 2);
+                    sched = [['At the start', half], ['On delivery', total - half]];
+                }
+
+                return {
+                    projects: projects, orderLines: orderLines, discountLines: discountLines, gross: gross,
+                    net: net, vat: vat, client: client, total: total, days: days, ready: ready,
+                    monthly: monthly, sched: sched, codeRes: codeRes, savings: -(bundleA + codeA + upA)
+                };
+            };
+
+            /* ------------------------------------------------------------------ Overview */
+            var sumBody = document.getElementById('sumBody');
+            var totalRows = document.getElementById('totalRows');
+            var totalOut = document.getElementById('totalOut');
+            var totalLabel = document.getElementById('totalLabel');
+            var mbarTotal = document.getElementById('mbarTotal');
+            var codeMsg = document.getElementById('codeMsg');
+            var codeForm = document.getElementById('codeForm');
+            var codeApplied = document.getElementById('codeApplied');
+            var codeInput = document.getElementById('codeInput');
+
+            var group = function (title, amount, lines, emptyText) {
+                var g = el('div', 'grp');
+                var h = el('div', 'grp-h');
+                h.appendChild(el('span', null, title));
+                if (amount !== null) h.appendChild(el('span', 'num', money(amount)));
+                g.appendChild(h);
+                if (!lines.length) {
+                    g.appendChild(el('p', 'grp-empty', emptyText || 'Nothing added'));
+                    return g;
+                }
+                var ul = el('ul');
+                lines.forEach(function (l) {
+                    var li = el('li', l.minus ? 'minus' : null);
+                    li.appendChild(el('span', null, l.label));
+                    li.appendChild(el('span', null, money(l.amount)));
+                    ul.appendChild(li);
+                });
+                g.appendChild(ul);
+                return g;
+            };
+
+            var tween = null;
+            var shown = 0;
+            var showTotal = function (target) {
                 if (tween) cancelAnimationFrame(tween);
+                var from = shown;
+                var start = performance.now();
                 var step = function (now) {
-                    var p = Math.min((now - start) / 500, 1);
+                    var p = Math.min((now - start) / 450, 1);
                     var e = 1 - Math.pow(1 - p, 3);
-                    priceOut.textContent = fmt(from + (target - from) * e);
-                    if (p < 1) tween = requestAnimationFrame(step); else shown = target;
+                    totalOut.textContent = money(from + (target - from) * e);
+                    if (p < 1) tween = requestAnimationFrame(step);
+                    else shown = target;
                 };
                 tween = requestAnimationFrame(step);
             };
 
-            var lineList = function (items) {
-                var ul = el('ul', 'blines');
-                items.forEach(function (it) {
-                    var li = el('li', it.amount < 0 ? 'neg' : '');
-                    li.appendChild(el('span', null, it.label));
-                    li.appendChild(el('span', null, fmt(it.amount)));
-                    ul.appendChild(li);
-                });
-                return ul;
+            var refHash = function (s) {
+                var h = 2166136261;
+                for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+                var out = (h >>> 0).toString(36).toUpperCase();
+                return ('0000' + out).slice(-4);
             };
 
-            var renderSummary = function (instant) {
-                var q = computeQuote();
-                var isRobux = state.currency === 'robux';
-
-                breakdown.innerHTML = '';
-                q.projects.forEach(function (p, i) {
-                    var box = el('div', 'bproj');
-                    var h = el('h4');
-                    h.appendChild(el('span', null, (i + 1) + '. ' + p.name + ', ' + p.days + ' ' + plural('day', p.days)));
-                    h.appendChild(el('span', null, fmt(p.total)));
-                    box.appendChild(h);
-                    box.appendChild(lineList(p.items));
-                    breakdown.appendChild(box);
-                });
-
-                var tail = [];
-                q.extras.forEach(function (x) { tail.push(x); });
-                if (!isRobux && q.vatRate > 0) tail.push({ label: 'VAT, ' + Math.round(q.vatRate * 100) + ' percent', amount: q.vat });
-                if (!isRobux && q.vatRate === 0 && q.bill) tail.push({ label: q.bill.tag, amount: 0 });
-                q.monthly.forEach(function (m) { tail.push({ label: m.label + ', per month', amount: m.amount }); });
-                if (tail.length) {
-                    var t = el('div', 'totals');
-                    t.appendChild(lineList(tail));
-                    breakdown.appendChild(t);
-                }
-
-                showPrice(q.total, instant);
-                miniPrice.textContent = fmt(q.total);
-                priceLabel.textContent = isRobux ? 'Total in Robux' : 'Total excluding VAT';
-                timeOut.textContent = 'about ' + q.days + ' working ' + plural('day', q.days);
-
-                altOut.innerHTML = '';
-                if (q.saved > 0) {
-                    var sv = el('span', 'save', 'You save ' + fmt(q.saved));
-                    altOut.appendChild(sv);
-                } else if (isRobux) {
-                    altOut.textContent = 'same as ' + euro(q.total);
-                } else {
-                    altOut.textContent = euro(q.total + q.vat) + ' with VAT';
-                }
-
-                rateNote.textContent = isRobux
-                    ? 'DevEx rate, about ' + Math.round(robuxPerEuro) + ' Robux per euro'
-                    : (q.monthlySum ? 'Plus ' + euro(q.monthlySum) + ' per month' : 'Estimate, confirmed in writing');
-
-                renderProjects(q);
-                return q;
+            var encodeState = function () {
+                return encodeURIComponent(btoa(unescape(encodeURIComponent(JSON.stringify(state)))));
+            };
+            var saveLink = function () {
+                try { history.replaceState(null, '', location.pathname + location.search + '#q=' + encodeState()); } catch (e) { }
             };
 
-            var refreshTags = function () {
-                document.querySelectorAll('.grp').forEach(function (wrap) {
-                    var scope = wrap.dataset.scope;
-                    var gid = wrap.dataset.g;
-                    var g = scope === 'settings'
-                        ? SETTINGS.filter(function (x) { return x.id === gid; })[0]
-                        : groupsFor(active().type).filter(function (x) { return x.id === gid; })[0];
-                    if (!g) return;
-                    var values = scope === 'settings' ? state.settings : active().values;
-                    var pr = wrap.querySelector('.grp-price');
-                    if (pr) pr.textContent = priceText(g);
-                    wrap.querySelectorAll('.opt').forEach(function (b) {
-                        var o = findOpt(g, b.dataset.o);
-                        b.querySelector('small').textContent = tagFor(o);
+            var result;
+            var update = function () {
+                result = compute();
+                var r = result;
+
+                document.querySelectorAll('.proj').forEach(function (card) {
+                    var t = card.dataset.type;
+                    TYPES[t].controls.forEach(function (c) {
+                        var node = card.querySelector('[data-ctrl="' + c.id + '"]');
+                        if (node) node.hidden = !visible(c, state.cfg[t]);
                     });
-                    wrap.querySelectorAll('.chip').forEach(function (c) {
-                        var o = findOpt(g, c.dataset.o);
-                        c.querySelector('u').textContent = fmt(o.price);
-                    });
-                    if (g.kind === 'chips') updateChipCount(wrap, g, values);
                 });
-            };
 
-            /* Interaction, delegated */
-            var groupOf = function (wrap) {
-                var gid = wrap.dataset.g;
-                if (wrap.dataset.scope === 'settings') {
-                    return { g: SETTINGS.filter(function (x) { return x.id === gid; })[0], values: state.settings };
+                r.projects.forEach(function (p) {
+                    var s = document.querySelector('[data-sub="' + p.type + '"]');
+                    if (s) s.textContent = money(p.sub);
+                });
+
+                document.querySelectorAll('[data-count]').forEach(function (side) {
+                    var card = side.closest('.proj');
+                    var values = card ? state.cfg[card.dataset.type] : state.order;
+                    var cnt = (values[side.dataset.count] || []).length;
+                    side.textContent = cnt ? cnt + ' selected' : 'Pick any';
+                });
+
+                /* Three payments only above the minimum */
+                var thirds = payWrap.querySelector('[data-ctrl="schedule"] [data-v="thirds"]');
+                if (thirds) {
+                    thirds.disabled = r.gross < SETTINGS.thirdsMinimum;
+                    if (thirds.disabled && state.pay.schedule === 'thirds') {
+                        state.pay.schedule = 'half';
+                        payWrap.querySelectorAll('[data-ctrl="schedule"] .opt').forEach(function (b) {
+                            b.setAttribute('aria-pressed', b.dataset.v === 'half' ? 'true' : 'false');
+                        });
+                        r = result = compute();
+                    }
                 }
-                return { g: groupsFor(active().type).filter(function (x) { return x.id === gid; })[0], values: active().values };
-            };
 
-            var onClick = function (e) {
-                var wrap = e.target.closest('.grp');
-                if (!wrap) return;
-                var ref = groupOf(wrap);
-                var g = ref.g, values = ref.values;
-                if (!g) return;
+                var n = state.types.length;
+                var curRate = SETTINGS.bundle[Math.min(n, 4)];
+                var nextRate = SETTINGS.bundle[Math.min(n + 1, 4)];
+                var note = document.getElementById('bundleNote');
+                note.innerHTML = '';
+                if (n >= 4) note.appendChild(el('b', null, 'Biggest bundle discount applied, ' + Math.round(curRate * 100) + '% off project work.'));
+                else if (curRate) {
+                    note.appendChild(el('b', null, 'Bundle discount, ' + Math.round(curRate * 100) + '% off project work. '));
+                    note.appendChild(document.createTextNode('Add one more for ' + Math.round(nextRate * 100) + '%.'));
+                } else note.textContent = 'Add a second project to get ' + Math.round(SETTINGS.bundle[2] * 100) + '% off.';
 
-                if (g.kind === 'stepper') {
-                    var btn = e.target.closest('button[data-act]');
-                    if (!btn) return;
-                    var v = values[g.id] + (btn.dataset.act === 'inc' ? 1 : -1);
-                    v = Math.max(g.min, Math.min(g.max, v));
-                    values[g.id] = v;
-                    wrap.querySelector('output').textContent = v;
-                    wrap.querySelector('.grp-val').textContent = unitText(g, v);
-                    wrap.querySelector('[data-act="dec"]').disabled = v <= g.min;
-                    wrap.querySelector('[data-act="inc"]').disabled = v >= g.max;
-                } else if (g.kind === 'choice') {
-                    var ob = e.target.closest('.opt');
-                    if (!ob) return;
-                    values[g.id] = ob.dataset.o;
-                    wrap.querySelectorAll('.opt').forEach(function (b) { b.setAttribute('aria-pressed', b === ob ? 'true' : 'false'); });
-                } else if (g.kind === 'chips') {
-                    var cb = e.target.closest('.chip');
-                    if (!cb) return;
-                    var list = values[g.id];
-                    var at = list.indexOf(cb.dataset.o);
-                    if (at > -1) { list.splice(at, 1); cb.setAttribute('aria-pressed', 'false'); }
-                    else { list.push(cb.dataset.o); cb.setAttribute('aria-pressed', 'true'); }
-                    updateChipCount(wrap, g, values);
+                sumBody.innerHTML = '';
+                if (!r.projects.length) sumBody.appendChild(group('Projects', null, [], 'No projects picked yet'));
+                r.projects.forEach(function (p) { sumBody.appendChild(group(p.name, p.sub, p.items)); });
+                if (r.orderLines.length) sumBody.appendChild(group('Delivery and extras', null, r.orderLines));
+                if (r.discountLines.length) sumBody.appendChild(group('Discounts', null, r.discountLines));
+
+                totalRows.innerHTML = '';
+                var row = function (a, b, cls) {
+                    var d = el('div', 'total-row' + (cls ? ' ' + cls : ''));
+                    d.appendChild(el('span', null, a));
+                    d.appendChild(el('span', null, b));
+                    totalRows.appendChild(d);
+                };
+                row('Subtotal', money(r.net));
+                row(r.client.vat ? 'VAT, 21%' : 'VAT, ' + r.client.note.toLowerCase(), money(r.vat));
+                if (r.savings > 0.5) row('You save', money(r.savings), 'save');
+                totalLabel.textContent = r.client.vat ? 'Total including VAT' : 'Total';
+                showTotal(r.total);
+                mbarTotal.textContent = money(r.total);
+
+                document.getElementById('daysOut').textContent = n ? 'about ' + r.days + ' working ' + (r.days === 1 ? 'day' : 'days') : 'nothing yet';
+                document.getElementById('dateOut').textContent = n ? r.ready.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }) : 'n/a';
+                document.getElementById('monthlyOut').textContent = r.monthly.length
+                    ? r.monthly.map(function (m) { return m.label + ' ' + money(m.amount); }).join(', ') + ' a month'
+                    : 'Nothing monthly';
+
+                var sOut = document.getElementById('schedOut');
+                sOut.innerHTML = '';
+                r.sched.forEach(function (s) {
+                    var li = el('li');
+                    li.appendChild(el('span', null, s[0]));
+                    li.appendChild(el('span', null, money(s[1])));
+                    sOut.appendChild(li);
+                });
+
+                if (r.codeRes.ok) {
+                    codeForm.hidden = true;
+                    codeApplied.hidden = false;
+                    codeApplied.innerHTML = '';
+                    var tag = el('span', 'applied', r.codeRes.code + ' applied');
+                    var x = el('button', null, '\u00d7');
+                    x.type = 'button';
+                    x.setAttribute('aria-label', 'Remove code');
+                    x.addEventListener('click', function () {
+                        state.code = '';
+                        codeInput.value = '';
+                        codeMsg.textContent = '';
+                        codeMsg.className = 'code-msg';
+                        update();
+                    });
+                    tag.appendChild(x);
+                    codeApplied.appendChild(tag);
+                    codeMsg.className = 'code-msg ok';
+                    codeMsg.textContent = r.codeRes.def.label + ', saving ' + money(-r.discountLines.filter(function (l) { return l.label.indexOf(r.codeRes.code) === 0; })[0].amount) + '.';
                 } else {
-                    return;
+                    codeForm.hidden = false;
+                    codeApplied.hidden = true;
+                    if (state.code && !r.codeRes.silent) {
+                        codeMsg.className = 'code-msg bad';
+                        codeMsg.textContent = r.codeRes.msg;
+                    }
                 }
-                renderSummary();
+
+                document.getElementById('fineOut').textContent = state.currency === 'robux'
+                    ? 'Robux at the DevEx rate of $0.0038 each, about ' + Math.round(robuxPerEuro) + ' Robux per euro. Your written quote never comes in higher for the same scope.'
+                    : 'Your written quote never comes in higher for the same scope. Monthly costs are billed separately.';
+
+                var now = new Date();
+                var ymd = String(now.getFullYear()).slice(2) + ('0' + (now.getMonth() + 1)).slice(-2) + ('0' + now.getDate()).slice(-2);
+                document.getElementById('ref').textContent = 'HL-' + ymd + '-' + refHash(JSON.stringify(state));
+                saveLink();
             };
 
-            var onInput = function (e) {
-                if (e.target.type !== 'range') return;
-                var wrap = e.target.closest('.grp');
-                var ref = groupOf(wrap);
-                var g = ref.g;
-                var v = parseInt(e.target.value, 10);
-                ref.values[g.id] = v;
-                e.target.style.setProperty('--fill', ((v - g.min) / (g.max - g.min) * 100) + '%');
-                wrap.querySelector('.grp-val').textContent = unitText(g, v);
-                renderSummary();
+            /* ------------------------------------------------------------------ Currency */
+            var cur = document.getElementById('currency');
+            var curInd = cur.querySelector('.cur-ind');
+            var placeCur = function () {
+                var on = cur.querySelector('[aria-pressed="true"]');
+                if (!on) return;
+                curInd.style.width = on.offsetWidth + 'px';
+                curInd.style.transform = 'translateX(' + on.offsetLeft + 'px)';
             };
-
-            sectionsEl.addEventListener('click', onClick);
-            settingsEl.addEventListener('click', onClick);
-            sectionsEl.addEventListener('input', onInput);
-
-            typeSeg.addEventListener('click', function (e) {
+            var syncCur = function () {
+                cur.querySelectorAll('button').forEach(function (x) {
+                    x.setAttribute('aria-pressed', x.dataset.val === state.currency ? 'true' : 'false');
+                });
+                placeCur();
+            };
+            cur.addEventListener('click', function (e) {
                 var b = e.target.closest('button');
-                if (!b || b.dataset.val === active().type) return;
-                state.projects[state.active] = newProject(b.dataset.val);
-                syncTypeSeg();
-                renderSections();
-                renderSummary();
-            });
-
-            curSeg.addEventListener('click', function (e) {
-                var b = e.target.closest('button');
-                if (!b || b.dataset.val === state.currency) return;
-                curSeg.querySelectorAll('button').forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
-                placeInd(curSeg);
+                if (!b || b.getAttribute('aria-pressed') === 'true') return;
                 state.currency = b.dataset.val;
-                refreshTags();
-                if (reduced) { renderSummary(true); return; }
-                priceOut.classList.add('swap-out');
-                setTimeout(function () { renderSummary(true); priceOut.classList.remove('swap-out'); }, 220);
+                syncCur();
+                shown = 0;
+                buildAll();
+                update();
             });
 
-            projectsEl.addEventListener('click', function (e) {
-                var rm = e.target.closest('[data-remove]');
-                if (rm) {
-                    e.stopPropagation();
-                    var idx = parseInt(rm.dataset.remove, 10);
-                    state.projects.splice(idx, 1);
-                    if (state.active >= state.projects.length) state.active = state.projects.length - 1;
-                    else if (state.active > idx) state.active--;
-                    syncTypeSeg(); renderSections(); renderSummary();
-                    return;
-                }
-                if (e.target.closest('#addProject')) {
-                    if (state.projects.length >= RATE.maxProjects) return;
-                    var used = state.projects.map(function (p) { return p.type; });
-                    var next = ['website', 'bot', 'roblox', 'webapp'].filter(function (t) { return used.indexOf(t) < 0; })[0] || 'website';
-                    state.projects.push(newProject(next));
-                    state.active = state.projects.length - 1;
-                    syncTypeSeg(); renderSections(); renderSummary();
-                    return;
-                }
-                var tab = e.target.closest('.ptab');
-                if (tab) {
-                    state.active = parseInt(tab.dataset.i, 10);
-                    syncTypeSeg(); renderSections(); renderSummary(true);
-                }
-            });
-            projectsEl.addEventListener('keydown', function (e) {
-                var tab = e.target.closest('.ptab');
-                if (tab && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); tab.click(); }
-            });
-
-            /* Discount code */
-            var codeForm = document.getElementById('codeForm');
-            var codeInput = document.getElementById('codeInput');
-            var codeMsg = document.getElementById('codeMsg');
-            var applyCode = function (raw, quiet) {
-                var s = codeStatus(raw);
-                codeMsg.className = 'code-msg';
-                if (!String(raw || '').trim()) { codeMsg.textContent = ''; return; }
-                if (s.ok) {
-                    state.code = s.key;
-                    codeInput.value = s.key;
-                    codeMsg.classList.add('ok');
-                    codeMsg.textContent = s.msg;
-                    var rmv = el('button', null, 'Remove');
-                    rmv.type = 'button';
-                    rmv.id = 'removeCode';
-                    codeMsg.appendChild(rmv);
-                } else {
-                    state.code = null;
-                    if (!quiet) { codeMsg.classList.add('bad'); codeMsg.textContent = s.msg; }
-                }
-                renderSummary();
-            };
-            codeForm.addEventListener('submit', function (e) { e.preventDefault(); applyCode(codeInput.value); });
-            codeMsg.addEventListener('click', function (e) {
-                if (e.target.id !== 'removeCode') return;
-                state.code = null;
-                codeInput.value = '';
-                codeMsg.className = 'code-msg';
-                codeMsg.textContent = '';
-                renderSummary();
-            });
-
-            /* Text version of the quote, for email and copying */
-            var quoteText = function () {
-                var q = computeQuote();
-                var cur = state.currency;
-                var lines = ['HugoLabs quote from hugolabs.eu/pricing', ''];
-                q.projects.forEach(function (p, i) {
-                    lines.push((i + 1) + '. ' + p.name + ' (about ' + p.days + ' working ' + plural('day', p.days) + ')');
-                    p.items.forEach(function (it) { lines.push('   ' + it.label + ': ' + fmt(it.amount)); });
-                    lines.push('   Subtotal: ' + fmt(p.total));
-                    lines.push('');
-                });
-                q.extras.forEach(function (x) { lines.push(x.label + ': ' + fmt(x.amount)); });
-                lines.push('Who is paying: ' + (q.bill ? q.bill.label : ''));
-                if (cur === 'robux') {
-                    lines.push('Total: ' + robux(q.total) + ' (' + euro(q.total) + ')');
-                } else {
-                    lines.push('Total excluding VAT: ' + euro(q.total));
-                    if (q.vatRate > 0) lines.push('VAT ' + Math.round(q.vatRate * 100) + '%: ' + euro(q.vat));
-                    lines.push('Total including VAT: ' + euro(q.total + q.vat));
-                }
-                q.monthly.forEach(function (m) { lines.push(m.label + ': ' + fmt(m.amount) + ' per month'); });
-                lines.push('Estimated delivery: about ' + q.days + ' working ' + plural('day', q.days));
-                return { text: lines.join('\n'), q: q };
-            };
-
-            document.getElementById('send').addEventListener('click', function () {
-                var r = quoteText();
-                var body = 'Hi Hugo,\n\nHere is what I put together:\n\n' + r.text + '\n\nAbout the project:\n\n';
-                var subject = 'Quote: ' + r.q.projects.map(function (p) { return p.name; }).join(' and ') + ', ' + fmt(r.q.total);
-                window.location.href = 'mailto:support@hugolabs.eu?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-            });
-
+            /* ------------------------------------------------------------------ Codes */
             var toast = document.getElementById('toast');
             var say = function (msg) {
                 toast.textContent = msg;
                 toast.classList.add('show');
                 clearTimeout(say.t);
-                say.t = setTimeout(function () { toast.classList.remove('show'); }, 1900);
+                say.t = setTimeout(function () { toast.classList.remove('show'); }, 2200);
             };
+
+            var applyCode = function () {
+                var v = codeInput.value.trim().toUpperCase().replace(/\s+/g, '');
+                if (!v) return;
+                state.code = v;
+                update();
+                if (!result.codeRes.ok) {
+                    codeMsg.classList.remove('shake');
+                    void codeMsg.offsetWidth;
+                    codeMsg.classList.add('shake');
+                    state.code = '';
+                    saveLink();
+                } else {
+                    say('Code applied, you save ' + money(result.savings));
+                }
+            };
+            document.getElementById('codeApply').addEventListener('click', applyCode);
+            codeInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') applyCode(); });
+
+            /* ------------------------------------------------------------------ Actions */
             var copyText = function (text, okMsg) {
                 var fallback = function () {
                     try {
                         var ta = document.createElement('textarea');
-                        ta.value = text; ta.setAttribute('readonly', '');
-                        ta.style.position = 'fixed'; ta.style.opacity = '0';
-                        document.body.appendChild(ta); ta.select();
+                        ta.value = text;
+                        ta.setAttribute('readonly', '');
+                        ta.style.position = 'fixed';
+                        ta.style.opacity = '0';
+                        document.body.appendChild(ta);
+                        ta.select();
                         var ok = document.execCommand('copy');
                         document.body.removeChild(ta);
-                        say(ok ? okMsg : 'Copy is blocked here');
-                    } catch (err) { say('Copy is blocked here'); }
+                        say(ok ? okMsg : 'Copying is blocked here');
+                    } catch (err) { say('Copying is blocked here'); }
                 };
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(text).then(function () { say(okMsg); }, fallback);
-                } else { fallback(); }
+                } else fallback();
             };
-            document.getElementById('copy').addEventListener('click', function () {
-                copyText(quoteText().text, 'Quote copied');
+
+            var summaryText = function () {
+                var r = result;
+                var out = ['Quote ' + document.getElementById('ref').textContent, ''];
+                r.projects.forEach(function (p) {
+                    out.push(p.name + ': ' + money(p.sub));
+                    p.items.forEach(function (i) { out.push('  ' + i.label + ': ' + money(i.amount)); });
+                    out.push('');
+                });
+                [['Delivery and extras', r.orderLines], ['Discounts', r.discountLines]].forEach(function (g) {
+                    if (!g[1].length) return;
+                    out.push(g[0]);
+                    g[1].forEach(function (i) { out.push('  ' + i.label + ': ' + money(i.amount)); });
+                    out.push('');
+                });
+                out.push('Subtotal: ' + money(r.net));
+                out.push('VAT: ' + money(r.vat) + ' (' + r.client.label + ')');
+                out.push('Total: ' + money(r.total));
+                out.push('Work time: about ' + r.days + ' working days, ready around ' + r.ready.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }));
+                if (r.monthly.length) out.push('Monthly: ' + r.monthly.map(function (m) { return m.label + ' ' + money(m.amount); }).join(', '));
+                out.push('Payment: ' + r.sched.map(function (s) { return s[0].toLowerCase() + ' ' + money(s[1]); }).join(', '));
+                out.push('');
+                out.push('Link: ' + location.href);
+                return out.join('\n');
+            };
+
+            document.getElementById('sendBtn').addEventListener('click', function () {
+                if (!result.projects.length) { say('Pick a project first'); return; }
+                var body = 'Hi Hugo,\n\nHere is what I put together:\n\n' + summaryText() + '\n\nAbout the project:\n\n';
+                window.location.href = 'mailto:support@hugolabs.eu?subject=' +
+                    encodeURIComponent('Quote ' + document.getElementById('ref').textContent + ', ' + money(result.total)) +
+                    '&body=' + encodeURIComponent(body);
             });
 
-            document.getElementById('reset').addEventListener('click', function () {
-                state.projects = [newProject('website')];
-                state.active = 0;
-                state.settings = { support: 'd30', billing: 'private' };
-                syncTypeSeg(); renderSections(); renderSettings();
-                renderSummary();
+            document.getElementById('linkBtn').addEventListener('click', function () {
+                copyText(location.href, 'Link copied, it opens this exact quote');
+            });
+
+            document.getElementById('resetBtn').addEventListener('click', function () {
+                var keep = state.code;
+                state = fresh();
+                state.code = keep;
+                shown = 0;
+                buildAll();
+                syncCur();
+                update();
                 say('Started over');
             });
 
-            /* Wrap button labels so they roll on hover */
+            /* ------------------------------------------------------------------ Scroll helpers */
+            var stepLinks = [].slice.call(document.querySelectorAll('[data-step]'));
+            var stepTargets = stepLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (en) {
+                        if (!en.isIntersecting) return;
+                        stepLinks.forEach(function (a, i) { a.classList.toggle('on', stepTargets[i] === en.target); });
+                    });
+                }, { rootMargin: '-40% 0px -55% 0px' });
+                stepTargets.forEach(function (t) { io.observe(t); });
+
+                var mbar = document.getElementById('mbar');
+                new IntersectionObserver(function (en) {
+                    mbar.classList.toggle('hide', en[0].isIntersecting);
+                }, { threshold: 0.2 }).observe(document.getElementById('summary'));
+            }
+
             document.querySelectorAll('.btn').forEach(function (b) {
                 var text = b.textContent.trim().replace(/\s+/g, ' ');
                 b.textContent = '';
-                var roll = el('span', 'roll');
-                var inner = el('span', null, text);
-                inner.setAttribute('data-t', text);
-                roll.appendChild(inner);
-                b.appendChild(roll);
+                var r = el('span', 'roll');
+                var i = el('span', null, text);
+                i.setAttribute('data-t', text);
+                r.appendChild(i);
+                b.appendChild(r);
             });
 
-            /* Reveal on scroll */
-            var rvObs = new IntersectionObserver(function (entries) {
-                entries.forEach(function (en) {
-                    if (en.isIntersecting) { en.target.classList.add('in'); rvObs.unobserve(en.target); }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.rv').forEach(function (n) { rvObs.observe(n); });
-
-            /* Mobile total hides when the summary is on screen */
-            var mini = document.getElementById('miniTotal');
-            new IntersectionObserver(function (en) {
-                mini.classList.toggle('hide', en[0].isIntersecting);
-            }, { threshold: 0.1 }).observe(document.getElementById('sheet'));
-
-            /* Start */
-            renderSections();
-            renderSettings();
-            syncTypeSeg();
-            renderSummary(true);
-
-            var placeAll = function () { placeInd(typeSeg); placeInd(curSeg); };
-            placeAll();
-            window.addEventListener('resize', placeAll);
-            window.addEventListener('load', placeAll);
-            if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeAll);
-
-            /* A code in the link, like /pricing?code=HUGO26, is applied automatically */
-            try {
-                var fromUrl = new URLSearchParams(window.location.search).get('code');
-                if (fromUrl) applyCode(fromUrl, true);
-            } catch (err) { }
+            /* ------------------------------------------------------------------ Start */
+            buildAll();
+            update();
+            if (state.code) {
+                codeInput.value = state.code;
+                if (!result.codeRes.ok) { state.code = ''; saveLink(); }
+            }
+            syncCur();
+            window.addEventListener('resize', placeCur);
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeCur);
         })();
     </script>
 </body>
