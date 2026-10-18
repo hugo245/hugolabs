@@ -1,0 +1,23 @@
+:root {
+  --blue: #1769ff;
+  --blue-dark: #0d3fb8;
+  --cyan: #0bbcff;
+  --signal: #1769ff;
+  --ink: #08090b;
+  --cream: #f3f5f8;
+  --white: #ffffff;
+  --line-dark: rgba(16, 16, 16, 0.22);
+  --line-light: rgba(255, 255, 255, 0.28);
+  --muted-dark: rgba(16, 16, 16, 0.62);
+  --muted-light: rgba(255, 255, 255, 0.68);
+  --font: 'Inter Variable', Inter, 'Segoe UI', sans-serif;
+  --display: 'Inter Variable', Inter, 'Segoe UI', sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+  --page: min(94vw, 1520px);
+  --pad: clamp(1rem, 2vw, 2rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
