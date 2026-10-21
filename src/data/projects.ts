@@ -3,7 +3,7 @@ export interface PortfolioProject {
   readonly domain: string;
   readonly url: string;
   readonly mark: string;
-  readonly theme: 'blue' | 'ink' | 'ice' | 'violet' | 'white' | 'cyan';
+  readonly theme: 'blue' | 'ink' | 'ice' | 'white' | 'cyan';
 }
 
 export const portfolioProjects: readonly PortfolioProject[] = [
@@ -33,7 +33,7 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     domain: 'paradox-nns8.onrender.com',
     url: 'https://paradox-nns8.onrender.com/',
     mark: 'PX',
-    theme: 'violet',
+    theme: 'blue',
   },
   {
     name: 'PlayVerse',

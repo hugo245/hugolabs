@@ -9,13 +9,13 @@ export function SelectedWork() {
     <section className="portfolio" id="work" aria-labelledby="work-heading">
       <motion.header
         className="portfolio__head"
-        initial={reducedMotion ? false : { opacity: 0, y: 32 }}
+        initial={reducedMotion ? false : { opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 id="work-heading">Selected work.</h2>
-        <p>Six live websites. Open any project and have a look around.</p>
+        <h2 id="work-heading">A few things we have shipped.</h2>
+        <p>Live sites, not mockups. Click through and judge the work for yourself.</p>
       </motion.header>
 
       <div className="portfolio__grid">
@@ -27,12 +27,12 @@ export function SelectedWork() {
             rel="noreferrer"
             aria-label={`Visit ${project.name}`}
             key={project.url}
-            initial={reducedMotion ? false : { opacity: 0, y: 48 }}
+            initial={reducedMotion ? false : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            whileHover={reducedMotion ? undefined : { y: -8 }}
+            whileHover={reducedMotion ? undefined : { y: -4 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{
-              duration: 0.68,
+              duration: 0.6,
               delay: reducedMotion ? 0 : (index % 2) * 0.08,
               ease: [0.16, 1, 0.3, 1],
             }}
