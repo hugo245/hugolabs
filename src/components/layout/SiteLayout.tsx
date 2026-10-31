@@ -11,14 +11,16 @@ export function SiteLayout() {
     <>
       <Header />
       <motion.div
-        key={location.pathname}
-        className="route-shell"
-        initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-      >
+        key={`curtain-${location.pathname}`}
+        className="route-curtain"
+        initial={reducedMotion ? false : { scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        transition={{ duration: .72, ease: [0.76, 0, 0.24, 1] }}
+        aria-hidden="true"
+      />
+      <div key={location.pathname} className="route-shell">
         <Outlet />
-      </motion.div>
+      </div>
       <Footer />
       <ScrollRestoration />
     </>

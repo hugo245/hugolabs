@@ -2,7 +2,8 @@ export interface PortfolioProject {
   readonly name: string;
   readonly domain: string;
   readonly url: string;
-  readonly mark: string;
+  readonly favicon: string;
+  readonly fallback: string;
   readonly theme: 'blue' | 'ink' | 'ice' | 'white' | 'cyan';
 }
 
@@ -11,42 +12,48 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     name: 'Worth Works',
     domain: 'worthworks.nl',
     url: 'https://worthworks.nl/',
-    mark: 'WW',
+    favicon: 'https://www.google.com/s2/favicons?domain=worthworks.nl&sz=128',
+    fallback: 'WW',
     theme: 'blue',
   },
   {
     name: 'Worth',
     domain: 'worth.nl',
     url: 'https://worth.nl/',
-    mark: 'W',
+    favicon: 'https://www.google.com/s2/favicons?domain=worth.nl&sz=128',
+    fallback: 'W',
     theme: 'white',
   },
   {
     name: 'Evo Studios',
     domain: 'evostudios.vercel.app',
     url: 'https://evostudios.vercel.app/',
-    mark: 'EVO',
+    favicon: 'https://www.google.com/s2/favicons?domain=evostudios.vercel.app&sz=128',
+    fallback: 'E',
     theme: 'ink',
   },
   {
     name: 'Paradox',
     domain: 'paradox-nns8.onrender.com',
     url: 'https://paradox-nns8.onrender.com/',
-    mark: 'PX',
+    favicon: 'https://www.google.com/s2/favicons?domain=paradox-nns8.onrender.com&sz=128',
+    fallback: 'P',
     theme: 'blue',
   },
   {
     name: 'PlayVerse',
     domain: 'playverse.cc',
     url: 'https://www.playverse.cc/',
-    mark: 'PLAY',
+    favicon: 'https://www.google.com/s2/favicons?domain=playverse.cc&sz=128',
+    fallback: 'PV',
     theme: 'cyan',
   },
   {
     name: 'SupStore',
     domain: 'supstore.dev',
     url: 'https://supstore.dev/',
-    mark: 'SUP',
+    favicon: 'https://www.google.com/s2/favicons?domain=supstore.dev&sz=128',
+    fallback: 'S',
     theme: 'ice',
   },
 ] as const;

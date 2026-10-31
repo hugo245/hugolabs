@@ -1,8 +1,13 @@
 import { motion, useReducedMotion } from 'motion/react';
 
-const steps = [['Listen', 'We get the real problem on the table before talking about features.'], ['Define', 'You get a written scope, a price, and a clear description of what will be delivered.'], ['Make', 'Working versions arrive early. You can test the important parts while we build.'], ['Release', 'We test, launch, document, and hand over the code and access you need.']] as const;
+const steps = [['Listen first', 'We get the real problem clear before discussing features.'], ['Write it down', 'You receive the scope, price, and intended result in plain language.'], ['Show the work', 'You see working versions early enough to change something that matters.'], ['Leave it usable', 'We test, launch, document, and hand over the code and access you need.']] as const;
 
 export function AboutProcess() {
   const reducedMotion = useReducedMotion();
-  return <section className="about-v3" id="about" aria-labelledby="about-heading"><motion.div className="about-v3__statement" initial={reducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .35 }} transition={{ duration: .7, ease: [0.16, 1, 0.3, 1] }}><h2 id="about-heading">A small studio that stays close to the work.</h2><div><p>You work directly with the people doing the design and development. No account-manager relay. No mystery around progress.</p><p>If the sensible answer is a smaller build, we will say so.</p></div></motion.div><div className="about-v3__steps">{steps.map(([title, copy], index) => <motion.article key={title} initial={reducedMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} whileHover={reducedMotion ? undefined : { x: 5 }} viewport={{ once: true, amount: .6 }} transition={{ duration: .5, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}><h3>{title}</h3><p>{copy}</p></motion.article>)}</div></section>;
+  return (
+    <section className="process" id="about" aria-labelledby="about-heading">
+      <div className="process__statement"><h2 id="about-heading">Close to the work.<br /><em>Clear about the work.</em></h2><p>You deal with the people doing the design and development. If a smaller answer is the right answer, we say so.</p></div>
+      <div className="process__steps">{steps.map(([title, copy], index) => <motion.article key={title} initial={reducedMotion ? false : { clipPath: 'inset(0 0 100% 0)' }} whileInView={{ clipPath: 'inset(0 0 0% 0)' }} viewport={{ once: true, amount: .65 }} transition={{ duration: .65, delay: index * .05, ease: [0.16, 1, 0.3, 1] }}><h3>{title}</h3><p>{copy}</p></motion.article>)}</div>
+    </section>
+  );
 }

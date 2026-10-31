@@ -5,7 +5,7 @@ export function Pricing() {
   const reducedMotion = useReducedMotion();
   return (
     <main id="main" className="pricing-page">
-      <motion.header className="page-hero" initial={reducedMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, ease: [0.16, 1, 0.3, 1] }}><h1>PICK WHAT<br /><span>YOU NEED.</span></h1><p>Use the calculator to get a rough starting price. We review the requirements with you before giving a final quote.</p></motion.header>
+      <motion.header className="page-hero" initial={reducedMotion ? false : { clipPath: 'inset(0 0 100% 0)' }} animate={{ clipPath: 'inset(0 0 0% 0)' }} transition={{ duration: .8, ease: [0.16, 1, 0.3, 1] }}><h1>Shape a<br /><span>starting point.</span></h1><p>Use the builder for a rough first number. Every estimate is flexible and negotiable—we review your goals, scope, and budget together before giving a final quote.</p></motion.header>
       <PricingSimulator />
     </main>
   );

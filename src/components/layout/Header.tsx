@@ -20,6 +20,17 @@ export function Header() {
     return () => window.removeEventListener('scroll', update);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: KeyboardEvent) => event.key === 'Escape' && setOpen(false);
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', close);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', close);
+    };
+  }, [open]);
+
   return (
     <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
       <motion.div className="site-scroll-progress" style={{ scaleX: reducedMotion ? 0 : progress }} aria-hidden="true" />
@@ -28,7 +39,7 @@ export function Header() {
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map((item) => (
             <Link
-              className={location.pathname === item.href ? 'active' : ''}
+              className={location.pathname === item.href || `${location.pathname}${location.hash}` === item.href ? 'active' : ''}
               key={item.label}
               to={item.href}
             >
@@ -52,13 +63,13 @@ export function Header() {
           <motion.nav
             className="mobile-nav"
             aria-label="Mobile navigation"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.22 }}
+            initial={reducedMotion ? false : { clipPath: 'inset(0 0 100% 0)' }}
+            animate={{ clipPath: 'inset(0 0 0% 0)' }}
+            exit={reducedMotion ? undefined : { clipPath: 'inset(0 0 100% 0)' }}
+            transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
           >
             {navigation.map((item, index) => (
-              <motion.div key={item.label} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: index * 0.035 }}>
+              <motion.div key={item.label} initial={reducedMotion ? false : { opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.045 }}>
                 <Link to={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
               </motion.div>
             ))}
