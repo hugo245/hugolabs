@@ -11,13 +11,13 @@ export function Footer() {
           <p>{company.description}</p>
         </div>
         <div>
-          <span className="eyebrow">Navigate</span>
+          <span className="eyebrow">Have a look around</span>
           <nav aria-label="Footer navigation">
             {navigation.slice(1).map((item) => <Link key={item.label} to={item.href}>{item.label}</Link>)}
           </nav>
         </div>
         <div>
-          <span className="eyebrow">Write to us</span>
+          <span className="eyebrow">Email HugoLabs</span>
           <a href={`mailto:${company.emails.projects}`}>{company.emails.projects}</a>
           <a href={`mailto:${company.emails.general}`}>{company.emails.general}</a>
           <a href={`mailto:${company.emails.support}`}>{company.emails.support}</a>
@@ -25,7 +25,7 @@ export function Footer() {
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} HugoLabs</span>
-        <span>Independent software studio</span>
+        <span>Small studio. Direct contact.</span>
       </div>
     </footer>
   );

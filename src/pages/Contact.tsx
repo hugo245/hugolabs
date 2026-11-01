@@ -25,30 +25,30 @@ export function Contact() {
 
   return (
     <main id="main" className="contact-page">
-      <motion.header className="contact-intro" initial={reducedMotion ? false : { clipPath: 'inset(0 0 100% 0)' }} animate={{ clipPath: 'inset(0 0 0% 0)' }} transition={{ duration: .8, ease: [0.16, 1, 0.3, 1] }}><h1>What should<br /><span>exist next?</span></h1><p>Send us the useful basics. The form prepares an email to <a href={`mailto:${company.emails.projects}`}>{company.emails.projects}</a>, so you can review everything before sending it.</p></motion.header>
+      <motion.header className="contact-intro" initial={reducedMotion ? false : { clipPath: 'inset(0 0 100% 0)' }} animate={{ clipPath: 'inset(0 0 0% 0)' }} transition={{ duration: .8, ease: [0.16, 1, 0.3, 1] }}><h1>Tell us what<br /><span>you’re working on.</span></h1><p>A rough idea is fine. Fill in what you know and we’ll prepare an email to <a href={`mailto:${company.emails.projects}`}>{company.emails.projects}</a> for you to check before it leaves your computer.</p></motion.header>
       <div className="contact-layout">
         <motion.form className="contact-form" onSubmit={submit} noValidate initial={reducedMotion ? false : { opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .12, ease: [0.16, 1, 0.3, 1] }}>
           <div className="form-grid">
             <label><span>Name *</span><input required maxLength={contactLimits.name} autoComplete="name" value={fields.name} onChange={(event) => update('name', event.target.value)} placeholder="Your name" /></label>
             <label><span>Email *</span><input required maxLength={contactLimits.email} type="email" inputMode="email" autoComplete="email" value={fields.email} onChange={(event) => update('email', event.target.value)} placeholder="you@company.com" /></label>
-            <label><span>Project type</span><select value={fields.projectType} onChange={(event) => update('projectType', event.target.value)}><option value="">Select one</option><option>Website</option><option>Discord bot</option><option>Custom software</option><option>Website + Discord bot</option><option>Automation</option><option>Something else</option></select></label>
-            <label><span>Estimated budget</span><select value={fields.budget} onChange={(event) => update('budget', event.target.value)}><option value="">Choose a range</option><option>Under $500</option><option>$500 to $1,000</option><option>$1,000 to $2,500</option><option>$2,500+</option><option>Not sure yet</option></select></label>
-            <label><span>Desired timeline</span><input maxLength={contactLimits.timeline} value={fields.timeline} onChange={(event) => update('timeline', event.target.value)} placeholder="For example: flexible, 6 to 8 weeks" /></label>
+            <label><span>What do you need?</span><select value={fields.projectType} onChange={(event) => update('projectType', event.target.value)}><option value="">Pick the closest option</option><option>Website</option><option>Discord bot</option><option>Custom software</option><option>Website + Discord bot</option><option>Automation</option><option>Something else</option></select></label>
+            <label><span>Budget you have in mind</span><select value={fields.budget} onChange={(event) => update('budget', event.target.value)}><option value="">Choose a range</option><option>Under $500</option><option>$500 to $1,000</option><option>$1,000 to $2,500</option><option>$2,500+</option><option>Not sure yet</option></select></label>
+            <label><span>When do you need it?</span><input maxLength={contactLimits.timeline} value={fields.timeline} onChange={(event) => update('timeline', event.target.value)} placeholder="No rush, before December, six weeks…" /></label>
             <label><span>Discord username</span><input maxLength={contactLimits.discord} value={fields.discord} onChange={(event) => update('discord', event.target.value)} placeholder="Optional" /></label>
             <label><span>Existing website</span><input maxLength={contactLimits.website} type="url" inputMode="url" autoComplete="url" value={fields.website} onChange={(event) => update('website', event.target.value)} placeholder="https://" /></label>
             <label><span>Preferred domain</span><input maxLength={contactLimits.domain} inputMode="url" value={fields.domain} onChange={(event) => update('domain', event.target.value)} placeholder="example.com" /></label>
           </div>
-          <label className="form-message"><span>Project description *</span><textarea required minLength={20} maxLength={contactLimits.description} rows={7} value={fields.description} onChange={(event) => update('description', event.target.value)} placeholder="What are you hoping to create? What should it help people do?" /></label>
+          <label className="form-message"><span>What’s the job? *</span><textarea required minLength={20} maxLength={contactLimits.description} rows={7} value={fields.description} onChange={(event) => update('description', event.target.value)} placeholder="What is happening now, what needs to change, and who will use the finished thing?" /></label>
           {error && <p className="form-error" role="alert">{error}</p>}
-          <button className="button button--solid" type="submit">Prepare inquiry ↗</button>
-          <p className="form-note">This form uses your email app. It does not submit data to a server or claim a message was sent.</p>
+          <button className="button button--solid" type="submit">Open the email ↗</button>
+          <p className="form-note">Nothing is sent automatically. This opens a draft in your email app so you can edit it first.</p>
         </motion.form>
         <motion.aside className="contact-directory" initial={reducedMotion ? false : { opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .7, delay: .2, ease: [0.16, 1, 0.3, 1] }}>
-          <span className="eyebrow">Direct contact</span>
+          <span className="eyebrow">Rather email us yourself?</span>
           <div><small>Projects & hiring</small><a href={`mailto:${company.emails.projects}`}>{company.emails.projects}</a></div>
           <div><small>General inquiries</small><a href={`mailto:${company.emails.general}`}>{company.emails.general}</a></div>
           <div><small>Information & support</small><a href={`mailto:${company.emails.support}`}>{company.emails.support}</a></div>
-          <p>We’ll use the details you provide only to understand and respond to your inquiry.</p>
+          <p>We only use what you send us to reply and work out whether we’re a good fit.</p>
         </motion.aside>
       </div>
     </main>

@@ -20,7 +20,7 @@ export const contactLimits = {
   description: 3000,
 } as const;
 
-const projectTypes = new Set(['', 'Website', 'Discord bot', 'Website + Discord bot', 'Automation', 'Something else']);
+const projectTypes = new Set(['', 'Website', 'Discord bot', 'Custom software', 'Website + Discord bot', 'Automation', 'Something else']);
 const budgets = new Set(['', 'Under $500', '$500 to $1,000', '$1,000 to $2,500', '$2,500+', 'Not sure yet']);
 const emailPattern = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 const domainPattern = /^(?=.{1,253}$)(?!-)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i;

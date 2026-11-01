@@ -47,7 +47,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link className="header-cta" to="/contact">Start a project <span>↗</span></Link>
+        <Link className="header-cta" to="/contact">Tell us your idea <span>↗</span></Link>
         <button
           className="menu-toggle"
           type="button"

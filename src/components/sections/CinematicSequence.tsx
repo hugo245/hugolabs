@@ -6,9 +6,9 @@ import { BotVisual, SoftwareVisual, WebVisual } from '../visuals/ProductVisuals'
 gsap.registerPlugin(ScrollTrigger);
 
 const stories = [
-  { title: 'A site people remember.', copy: 'Clear structure, deliberate design, and a fast build—working together from the start.', Visual: WebVisual },
-  { title: 'A bot that earns its place.', copy: 'Support, moderation, roles, and integrations handled quietly in the background.', Visual: BotVisual },
-  { title: 'Software shaped around the job.', copy: 'Focused tools that remove repeated work without becoming another system to manage.', Visual: SoftwareVisual },
+  { title: 'Make it easy to find the next click.', copy: 'We sort out the pages, the words, and the awkward edge cases before they become expensive problems.', Visual: WebVisual },
+  { title: 'Let the bot handle the boring parts.', copy: 'It can answer, route, verify, log, and nudge people along while your team gets on with everything else.', Visual: BotVisual },
+  { title: 'Build one tool that does its job well.', copy: 'No giant platform to learn. Just the screens and automations your process calls for.', Visual: SoftwareVisual },
 ] as const;
 
 export function CinematicSequence() {
@@ -79,7 +79,7 @@ export function CinematicSequence() {
   return (
     <section className="story" id="cinematic" ref={root} aria-labelledby="story-heading">
       <div className="story__pin" ref={pin}>
-        <header className="story__heading"><h2 id="story-heading">Three ways to build better.</h2><p>One studio, moving from idea to working product.</p></header>
+        <header className="story__heading"><h2 id="story-heading">Pick the right tool. Then make it well.</h2><p>Sometimes that’s a site. Sometimes it’s a bot. Sometimes it’s software of your own.</p></header>
         <div className="story-stage">
           {stories.map(({ title, copy, Visual }) => <div className="story-panel" key={title}><Visual /><article className="story-copy"><h3>{title}</h3><p>{copy}</p></article></div>)}
         </div>

@@ -1,6 +1,6 @@
 export const company = {
   name: 'HugoLabs',
-  description: 'Websites, Discord bots, and custom software built with care in one small studio.',
+  description: 'A small studio building websites, Discord bots, and software for people who need something specific.',
   emails: {
     general: 'hello@hugolabs.eu',
     support: 'info@hugolabs.eu',

@@ -6,7 +6,7 @@ export function SelectedWork() {
   const reducedMotion = useReducedMotion();
   return (
     <section className="work" id="work" aria-labelledby="work-heading">
-      <header className="work__header"><h2 id="work-heading">Work you can visit.</h2><p>Real websites, live on the internet. No invented case studies.</p></header>
+      <header className="work__header"><h2 id="work-heading">A few things we’ve shipped.</h2><p>They’re live. Open one, click around, and see what we actually make.</p></header>
       <div className="work__list">
         {portfolioProjects.map((project, index) => (
           <motion.a href={project.url} target="_blank" rel="noreferrer" key={project.url} initial={reducedMotion ? false : { '--line': '0%' }} whileInView={{ '--line': '100%' }} viewport={{ once: true, amount: .55 }} transition={{ duration: .8, delay: index * .04, ease: [0.16, 1, 0.3, 1] }}>
